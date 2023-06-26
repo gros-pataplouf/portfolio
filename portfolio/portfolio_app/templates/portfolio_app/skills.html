@@ -1,0 +1,48 @@
+{% extends "portfolio_app/base.html" %}
+{% load portfolio_extras %}
+
+{% block content %}
+<h3>Skills</h3>
+
+
+{% for entry in skills %}
+    <h2 class="text-accent">{{ entry.name }}</h2>
+    <h3>{{ entry.skill_type }}</h3>
+
+    {% if entry.proficiency %}
+    <p>{{ entry.proficiency }}</p>
+    {% endif %}
+    <p>  
+        {% if entry.rating %}
+        {{ entry.rating|star_rating:"☆"}} </p>
+        {% endif %}
+    
+    {% if entry.project_set.all %}
+    <h3>Related projects</h3>
+    {% for project in entry.project_set.all %}
+    {{ project }}
+    {% endfor %}
+    {% endif %}
+
+    {% if entry.workexperience_set.all %}
+    <h3>Related work experience</h3>
+    {% for work in entry.workexperience_set.all %}
+    {{ work }}
+    {% endfor %}
+    {% endif %}
+
+    {% if entry.education_set.all %}
+
+    <h3>Related Education</h3>
+    {% for education in entry.education_set.all %}
+    {{ education }}
+    {% endfor %}
+
+    {% endif %}
+
+
+{% endfor %}
+
+{% endblock %}
+
+

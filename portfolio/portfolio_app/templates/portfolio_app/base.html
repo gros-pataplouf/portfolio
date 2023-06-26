@@ -1,0 +1,44 @@
+{% load static %}
+{% load portfolio_extras %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/portfolio_app/output.css">
+    <title>Cornelia Petry</title>
+</head>
+<body>
+    <nav class="bg-primary text-background">
+        <ul class="flex p-6 justify-evenly">
+            <li>
+                <a href={% url 'about' %} class={{request.path|anchor_color:'/about/, text-accent, hover:text-shade'}}>About</a> 
+            </li>
+            <li>
+                <a href={% url 'skills' %} class={{request.path|anchor_color:'/skills/, text-accent, hover:text-shade'}}> Skills </a>
+            </li>
+            <li>
+                <a href={% url 'projects' %} class={{request.path|anchor_color:'/projects/, text-accent, hover:text-shade'}}>Projects</a>
+            </li>
+            <li>
+                <a href={% url 'work' %} class={{request.path|anchor_color:'/work/, text-accent, hover:text-shade'}}>Work Experience</a>
+            </li>
+            <li>
+                <a href={% url 'education' %} class={{request.path|anchor_color:'/education/, text-accent, hover:text-shade'}}>Education</a>
+            </li>
+            <li>
+                <a href={% url 'contact' %} class={{request.path|anchor_color:'/contact/, text-accent, hover:text-shade'}}>Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+</body>
+</html>
