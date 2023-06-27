@@ -8,6 +8,8 @@
 
     :root {
         --primary: 215deg 50% 23%;
+        --primarydark: 215deg 50% 10%;
+        --primarylight: 215deg 50% 80%;
         --accent: 355deg 78% 56%;
         --lightaccent: 355deg 78% 80%;
         --background: 105deg 55% 96%;
@@ -16,4 +18,48 @@
         --shade: 182deg 43% 76%;
     }
     
+}
+
+@layer components {
+
+    .anchorActive {
+        color: hsl(var(--accent));
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: hsla(0, 9%, 71%, 0.2);
+        border-radius: 5%;
+        padding-left: 2%;
+
+        
+        
+
+    }
+
+    .anchorInactive {
+        padding-left: 2%;
+        &:hover {
+            font-weight: bold;
+            background-color: hsla(0, 9%, 71%, 0.1);
+            border-radius: 5%;
+            padding-left: 2%;
+
+        }
+    }
+
+    .typed-out{
+        overflow: hidden;
+        border-right: .15em solid white;
+        white-space: nowrap;
+        animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
+        width: 0;
+        color: white;
+      }
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blinking {
+        from { border-color: transparent }
+        to { border-color: white; }
+      }
 }

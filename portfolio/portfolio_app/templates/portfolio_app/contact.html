@@ -2,14 +2,30 @@
 {% extends "portfolio_app/base.html" %}
 
 {% block content %}
-<h3 class="bg-accent">Contact form</h3>
+
+<div class="p-2 rounded-md md:py-4 md:mx-8 md:my-16 bg-primary">
+  <div class="w-min md:p-10">
+<h3 class="text-md md:text-2xl md:font-semibold typed-out">I would love to hear from you!</h3>
+</div>
+</div>
+
+<form class="flex flex-col p-2 mt-0 md:mx-8 md:p-10 space-y-2 bg-primarylight md:[&>*>*]:text-2xl md:[&>*>label]:font-semibold md:[&>*>label]:mt-6 md:[&>*>input]:min-h-20 [&>*]:flex [&>*]:flex-col [&>div]:space-y-6 [&>*>label]:text-slate-800 [&>*>input[name='message']]:h-48 [&>*>input[name='message']]:align-top rounded-md" method="POST" action="/contact/">
+  {% csrf_token %}
+  {{ form.as_div }}
+<div class="pt-2">
+    <button class="font-bold rounded-full mx-auto px-6 py-1.5 bg-action text-white"type="submit">Send</button>
+</div>
+</form>
+<div class="flex flex-col items-center justify-center">
+
+  <h2 class="m-auto my-4 text-lg text-primary">Or let's connect on</h2>
+
+  <div><a href="https://www.linkedin.com/m/in/cpetry/"><i class="mx-4 text-3xl fa-brands fa-linkedin text-primary"></i></a>
+    <a href="https://github.com/gros-pataplouf"><i class="mx-4 text-3xl fa-brands fa-github-square text-primary"></i></a></div>
+  
+  
 
 
-<div>
-{{ form.as_div }}
-<div>
-    <button type="submit">Send</button>
-  </div>
 </div>
 
 {% endblock %}

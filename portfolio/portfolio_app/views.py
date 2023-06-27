@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from django.shortcuts import render
+from django.core.mail import send_mail
 
 from .models import Skill, WorkExperience, Project, Education
 from .forms import ContactForm
 
+
+from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
 
 # Create your views here.
 
@@ -50,9 +53,20 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect("/thanks/")
+                send_mail(
+                f"A new message from {request.POST['name']}: {request.POST['email']}, {request.POST['phone']}",
+                f"{request.POST['message']}",                                
+                EMAIL_HOST_USER,
+                [EMAIL_DEST],
+                fail_silently=True,
+                )
+        return HttpResponseRedirect("/thanks/")
 
     else:
         form = ContactForm()
 
     return render(request, "portfolio_app/contact.html", {"form": form})
+
+
+def thanks(request):
+    return render(request, "portfolio_app/thanks.html")
