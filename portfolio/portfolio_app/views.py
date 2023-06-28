@@ -54,7 +54,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
                 send_mail(
-                f"A new message from {request.POST['name']}: {request.POST['email']}, {request.POST['phone']}",
+                f"A new message from {request.POST['email']}",
                 f"{request.POST['message']}",                                
                 EMAIL_HOST_USER,
                 [EMAIL_DEST],

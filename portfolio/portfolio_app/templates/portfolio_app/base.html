@@ -17,7 +17,7 @@
 </head>
 <body>
     <nav class="w-full shadow-md bg-primary text-background shadow-primary">
-        <ul class="flex justify-start flex-wrap [&>*]:pr-6 [&>*]:h-12 mx-2 [&>*]:flex [&>*]:flex-col [&>*]:justify-center md:[&>*]:h-20 md:[&>*]:text-xl">
+        <ul class="flex justify-start flex-wrap [&>*]:pr-6 [&>*]:h-12 mx-2 [&>*]:flex [&>*]:flex-col [&>*]:justify-center md:[&>*]:h-20 lg:[&>*]:h-16 md:[&>*]:text-xl">
             <li class={{request.path|anchor_color:'/about/, anchorActive, anchorInactive'}}>
                 <a href={% url 'about' %}>About</a> 
             </li>
@@ -39,7 +39,7 @@
         </ul>
     </nav>
 
-    <div class="p-4 mt-4 space-y-4" id="content">
+    <div class="p-4 mt-4 space-y-4 lg:flex lg:flex-col lg:justify-center lg:items-center" id="content">
         {% block content %}{% endblock %}
     </div>
     

@@ -16,3 +16,13 @@ def anchor_color(path, args):
     args_lst = args.split(",")
     clean_args = [arg.strip(" ") for arg in args_lst]
     return (clean_args[1] if path == clean_args[0] else clean_args[2])
+
+@register.filter()
+def parse_items(args):
+    """checks whether we are on the route matching the link and adjusts styles
+    first arg is href of the anchor
+    second arg is style if we are on the matching route
+    third arg is style if anchor href does not match current path"""
+    arg_list = args.split("#")
+    clean_args = [arg.strip(" ") for arg in arg_list]
+    return (clean_args)
