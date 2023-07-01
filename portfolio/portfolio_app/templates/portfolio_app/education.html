@@ -2,23 +2,38 @@
 {% extends "portfolio_app/base.html" %}
 
 {% block content %}
-<h3>Education</h3>
 
-
-{% for entry in education %}
-    <h2 class="bg-primary">{{ entry.name }}</h2>
-    <h3 class="bg-accent">{{ entry.school }}</h3>
-    <p class="bg-background">{{entry.start_date}} - {%if entry.end_date %} <span>{{entry.end_date}} </span>  {% else %}  <span>now</span>  {% endif %}</p>
-    <h3 class="bg-text">Skills</h3>
-    <ul>
-    {% for skill in entry.skills.all %}
-    <li class="bg-action">{{skill}}</li>
+<div class="md:ml-56 md:mt-10 lg:-ml-96">
+    <h3 class="text-2xl font-semibold md:text-3xl text-accent">Education</h3>
+    
+    
+    {% for entry in education %}
+    <div class="flex flex-col ">
+    
+        <h2 class="mt-6 text-xl font-bold text-primary">{{ entry.name }}</h2>
+        <h3>{{ entry.school }}</h3>
+        <p>{{entry.start_date}} - {%if entry.end_date %} <span>{{entry.end_date}} </span>  {% else %}  <span>now</span>  {% endif %}</p>
+        <p class="italic">{{ entry.place }}</p>
+    
+   
+    
+        <div class="text-primarydark">
+        <h3 class="my-2 font-bold">Skills</h3>
+        <ul class="flex flex-wrap mb-6">
+        {% for skill in entry.skills.all %}
+        <li class="px-2 mr-2 rounded-md bg-shade ">{{skill}}</li>
+        {% endfor %}
+        </ul>
+        </div>
+    
+    
+    </div>
+    <hr class="mb-6">
+    
     {% endfor %}
-    </ul>
+    </div>
+    
 
-
-
-{% endfor %}
 
 {% endblock %}
 

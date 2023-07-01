@@ -62,4 +62,17 @@
         from { border-color: transparent }
         to { border-color: white; }
       }
+
+      .popup{
+        animation: appear 3s ease-in-out infinite alternate-reverse;
+      }
+
+      @keyframes zoom {
+        from { 
+            scale: 1;
+         }
+        to { 
+            scale: 0.8;
+         }
+      }
 }

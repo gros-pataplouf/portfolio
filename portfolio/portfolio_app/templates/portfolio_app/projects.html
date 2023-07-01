@@ -1,24 +1,40 @@
 
 {% extends "portfolio_app/base.html" %}
+{% load static %}
 
 {% block content %}
-<h3>Projects</h3>
+    <h3 class="mb-4 text-2xl font-semibold md:text-3xl text-accent md:w-2/3 md:mx-auto lg:w-1/3">Projects</h3>
 
-{% for entry in projects %}
-    <h2>{{ entry.name }}</h2>
-    <h3>{{ entry.github }}</h3>
-    <p>{{entry.deployment}}</p>
-    <h3>Skills</h3>
-    <ul>
-    {% for skill in entry.skills.all %}
-    <li>{{skill}}</li>
-    {% endfor %}
-    </ul>
-    <p>Description</p>
+    {% for entry in projects %}
+
+    <div class="p-2 mb-6 rounded-md shadow-lg bg-shade/20 md:w-2/3 md:mx-auto lg:w-1/3">
+    <h2 class="mt-6 text-xl font-bold md:text-3xl text-primary">{{ entry.name }} 
+        <a href={{entry.github}}><i class="mx-4 text-3xl md:text-3xl fa-brands fa-github-square text-primary"></i></a>
+    </h2>
+    {% if entry.deployment %}
+    <a class="block mb-2"href={{ entry.deployment }}>Live Demo</a>
+    {% endif %}
+    {% if entry.image %}
+    <div class="aspect-[5/3] min-h-56 mb-6 md:mb-12 md:max-h-96 lg:max-h-80 md:m-auto">
+        <div class="relative aspect-[5/3] top-0 left-0 [&>div]:absolute ">
+            <div class="max-h-full min-w-full min-h-56">
+                <img src="/static/portfolio_app/laptop.png" alt="" class="object-contain w-full">
+            </div>
+            <div class="flex items-center justify-center w-full max-h-full min-h-56">
+                <img src={{entry.image}} class="block object-contain m-auto max-w-[70%] translate-y-[10%] touch:zoom hover:zoom" alt="">
+            </div>
+        </div>
+    </div>
+    {% endif %}
     {{entry.description}}
-
-
-{% endfor %}
+    <ul class="flex flex-wrap mb-2 mr-2">
+        {% for skill in entry.skills.all %}
+        <li class="px-2 mt-2 mr-2 rounded-md bg-shade">{{skill}}</li>
+        {% endfor %}
+    </ul>
+    
+</div>
+    {% endfor %}
 
 {% endblock %}
 

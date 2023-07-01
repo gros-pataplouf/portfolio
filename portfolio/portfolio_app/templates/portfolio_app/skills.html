@@ -4,35 +4,41 @@
 {% block content %}
 
 
+<h3 class="mb-4 text-2xl font-semibold md:text-3xl text-accent md:w-2/3 md:mx-auto lg:w-1/3">Skills</h3>
 {% regroup skills by skill_type as skill_list %}
 
 {% for skill_type in  skill_list%}
 
-<section class="p-2 rounded-md shadow-lg bg-background/50">
-<h1 class="p-2 text-xl rounded-md text-background bg-primary">{{skill_type.grouper|title}}</h1>
+
+
+<section class="p-2 mb-6 rounded-md shadow-lg md:w-2/3 md:mx-auto lg:w-1/3 bg-white/70">
+<h1 class="text-xl font-bold md:text-3xl text-primary">{{skill_type.grouper|title}}</h1>
 
 {% for entry in skill_type.list %}
-    <h2 class="text-accent">{{ entry.name }}</h2>
-    {% if entry.proficiency %}
-    <p>{{ entry.proficiency }}</p>
-    {% endif %}
-    <p>  
+    <h2 class="my-2 font-bold text-accent">{{ entry.name }}
         {% if entry.rating %}
-        {{ entry.rating|star_rating:"☆"}} </p>
+        <span>  
+        {{ entry.rating|star_rating:"☆"}} </span>
         {% endif %}
-    
+    </h2>
     {% if entry.project_set.all %}
-    <h3>Related projects</h3>
+    <h3 class="font-bold">Projects:</h3>
+    <ul>
     {% for project in entry.project_set.all %}
+    <li    class="list-disc list-inside -p-2">
     {{ project }}
+    </li>
     {% endfor %}
     {% endif %}
 
     {% if entry.workexperience_set.all %}
-    <h3>Related work experience</h3>
-    {% for work in entry.workexperience_set.all %}
-    {{ work }}
-    {% endfor %}
+    <h3 class="font-bold">Work experience:</h3>
+    <ul>
+        {% for work in entry.workexperience_set.all %}
+        <li class="list-disc list-inside -p-2">    {{ work }}</li>
+        {% endfor %}
+    </ul>
+
     {% endif %}
 
     {% if entry.education_set.all %}
