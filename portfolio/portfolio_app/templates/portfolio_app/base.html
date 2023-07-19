@@ -14,36 +14,60 @@
     <title>Cornelia Petry</title>
 </head>
 <body>
-    <div class="">
+    <div class="flex flex-col items-center justify-center lg:items-end h-min-screen">
     <canvas class="fixed top-0 -z-20" id="canvas"></canvas>
-    <nav class="w-full shadow-md bg-primary text-background shadow-primary">
-        <ul class="flex justify-start flex-wrap [&>*]:pr-6 [&>*]:h-12 mx-2 [&>*]:flex [&>*]:flex-col [&>*]:justify-center md:[&>*]:h-20 lg:[&>*]:h-16 md:[&>*]:text-xl">
-            <li class={{request.path|anchor_color:'/about/, anchorActive, anchorInactive'}}>
-                <a href={% url 'about' %}>About</a> 
+    <nav id="navbar" class="w-full shadow-md bg-primary text-background shadow-primary ">
+
+<!-- old ul styles -->
+<!-- [&>*]:pr-6 [&>*]:h-12 mx-2 [&>*]:flex [&>*]:flex-col [&>*]:justify-center md:[&>*]:h-20 md:[&>*]:text-xl -->
+        <ul class="flex flex-wrap justify-start">
+            <li class="lg:fixed lg:top-4 lg:left-4 lg:bg-contain lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon">
+                <div class="lg:fixed lg:w-36 lg:h-36 lg:top-6 lg:left-6 
+                lg:bg-[url('/static/portfolio_app/me.jpeg')] lg:bg-contain lg:border-primary/50
+                lg:border-solid lg:border-4 hexagon"></div>
             </li>
-            <li class={{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}>
+            <li class="{{request.path|anchor_color:'/about/, anchorActive, anchorInactive'}} lg:top-[8.53rem] lg:left-[5.2rem]">
+                <a href={% url 'about' %} class="{{request.path|anchor_color:'/about/, anchorActive, anchorInactive'}} lg:h-36 lg:w-36 lg:bg-green-700 lg:top-[9.03rem] lg:left-[5.7rem]">About</a> 
+                <!-- top-[8.660254037844387) -->
+            </li>
+            <!-- <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
                 <a href={% url 'skills' %} > Skills </a>
+            </li> -->
+            <li class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} lg:top-[16rem] lg:left-4">
+                <a href={% url 'projects' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} lg:h-36 lg:w-36 lg:bg-red-700 lg:top-[16.5rem] lg:left-[1.5rem]">Projects</a>
             </li>
-            <li class={{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}}>
-                <a href={% url 'projects' %} >Projects</a>
-            </li>
-            <li class={{request.path|anchor_color:'/work/, anchorActive, anchorInactive'}}>
+            <!-- <li class={{request.path|anchor_color:'/work/, anchorActive, anchorInactive'}}>
                 <a href={% url 'work' %} >CV</a>
             </li>
             <li class={{request.path|anchor_color:'/education/, anchorActive, anchorInactive'}}>
                 <a href={% url 'education' %} >Education</a>
-            </li>
-            <li class={{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}}>
-                <a href={% url 'contact' %} >Contact</a>
+            </li> -->
+            <li class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} lg:top-[23.5rem] lg:left-[5.2rem]">
+                <a href={% url 'contact' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} lg:h-36 lg:w-36 lg:bg-pink-400 lg:top-96 lg:left-[5.7rem]">Contact</a>
             </li>
         </ul>
     </nav>
 
-    <div class="p-4 mt-4 lg:flex lg:flex-col lg:justify-center lg:items-center" id="content">
+    <div class="p-4 mt-4 lg:mt-0 lg:flex lg:flex-col lg:justify-center lg:items-center lg:bg-white/70 lg:w-4/5 lg:border-dashed lg:border-primary/50 lg:border-r-2 lg:border-l-2 lg:min-h-screen" id="content">
         {% block content %}{% endblock %}
     </div>
 </div>
 
-<script src="/static/portfolio_app/main.js"></script>
+<script src="/static/portfolio_app/main.js" defer></script>
+<script defer>function applySkills() {
+    const skillItems = document.querySelectorAll(".js__skill");
+    skillItems.forEach(item => item.addEventListener('click', (e) => {
+    e.target.classList.toggle("js__skill_active");
+    const activeSkills = document.querySelectorAll(".js__skill_active").textContent();
+    console.log(activeSkills);
+
+
+
+
+}))
+}
+
+applySkills();
+</script>
 </body>
 </html>

@@ -19,10 +19,7 @@ def anchor_color(path, args):
 
 @register.filter()
 def parse_items(args):
-    """checks whether we are on the route matching the link and adjusts styles
-    first arg is href of the anchor
-    second arg is style if we are on the matching route
-    third arg is style if anchor href does not match current path"""
+    """parses a string containing items separated by # into a list"""
     arg_list = args.split("#")
     clean_args = [arg.strip(" ") for arg in arg_list]
     return (clean_args)
