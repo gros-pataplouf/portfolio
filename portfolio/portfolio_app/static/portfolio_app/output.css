@@ -781,6 +781,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .aspect-\[5\/3\] {
   aspect-ratio: 5/3;
 }
