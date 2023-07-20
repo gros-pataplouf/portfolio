@@ -1,6 +1,8 @@
 
 const canvas = document.getElementById("canvas");
 let context = canvas.getContext("2d");
+let radius = 30;
+let overlap = radius;
 
 canvas.width = visualViewport.width;
 canvas.height = visualViewport.height;
@@ -59,6 +61,9 @@ function drawRow(cx, cy, radius, numOfHex, row) {
 }
 
 function drawRows(cx, cy, radius, numOfHexagons, numOfRows) {
+    if (visualViewport.width < 768) {
+        return null;
+    }
     for (let i = 0; i < numOfRows; i++) {
         if (i === 0 ) {
             drawRow(cx, cy, radius, numOfHexagons, i); 
@@ -74,19 +79,13 @@ function drawRows(cx, cy, radius, numOfHexagons, numOfRows) {
 
 
 
-if (visualViewport.width > 767){
-drawRows(0, 48, 56, numOfHexagons, numOfRows)
+drawRows(0, overlap, radius, numOfHexagons, numOfRows)
 
-setInterval(() => {
+
+window.addEventListener("resize", () => {
     const canvas = document.getElementById("canvas");
     canvas.width = visualViewport.width;
     canvas.height = visualViewport.height;
-    drawRows(0, 48, 56, numOfHexagons, numOfRows)}, 6666)
-}
+    drawRows(0, overlap, radius, numOfHexagons, numOfRows)
 
-// const navbar = document.querySelector("#navbar");
-// const navUl = document.querySelector("#navbar>ul");
-// navbar.addEventListener("click", (e) => {
-
-// })
-
+})

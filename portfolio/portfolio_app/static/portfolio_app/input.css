@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 
+.js__skill_active {
+  background-color: rgb(14, 13, 13)!important;
+  color: whitesmoke;
+}
 
 @layer base {
 
     :root {
-        --primary: 215deg 50% 23%;
-        --primarydark: 215deg 50% 10%;
-        --primarylight: 215deg 50% 80%;
+        --primary: 215deg 15% 50%;
+        --primarydarken: 215deg 15% 40%;
+        --primarydark: 215deg 15% 30%;
+        --primarylight: 215deg 15% 80%;
         --accent: 355deg 78% 56%;
         --lightaccent: 355deg 78% 80%;
         --background: 105deg 55% 96%;
@@ -17,33 +22,93 @@
         --action: 0deg 68% 48%;
         --shade: 182deg 43% 76%;
     }
+
+    @font-face {
+      font-family: 'Sunrise';
+      src: url(./fonts/WaitingfortheSunrise-Regular.woff2) format('woff2');
+    }
+    
+    
+    @font-face {
+      font-family: 'Sunrise';
+      src: url(./fonts/WaitingfortheSunrise-Regular.woff) format('woff');
+    }
+    
+    @font-face {
+      font-family: "Roboto";
+      src: url("./fonts/roboto-regular-webfont.woff2") format("woff2"),
+        url("./fonts/roboto-regular-webfont.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+body {
+  font-family: Roboto;
+}
+
+.scale-gallery {
+  transform: scale(4) translateX(37.5%) translateY(37.5%);
+
+}
+.scale-gallery-parent:hover > .scale-gallery {
+
+    animation: scrolling 5s alternate-reverse infinite;
+
+
+
+
+
+
+}
+
     
 }
 
+@keyframes scrolling {
+  0% {
+    transform: scale(4) translateX(37.5%) translateY(37.5%);
+
+  }
+  33% {
+    transform: scale(4) translateX(12.5%) translateY(37.5%);
+  }
+  67% {
+    transform: scale(4) translateX(-12.5%) translateY(37.5%);
+  }
+  100% {
+    transform: scale(4) translateX(-37.5%) translateY(37.5%);
+
+  }
+  
+}
 @layer components {
+  .title {
+    font-family: Sunrise;
+  }
 
     .anchorActive {
-        color: hsl(var(--accent));
-        font-weight: bold;
-        text-decoration: underline;
-        background-color: hsla(0, 9%, 71%, 0.2);
-        border-radius: 5%;
-        padding-left: 2%;
-        @apply lg:fixed lg:bg-purple-700 lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon;
-
+        @apply lg:fixed lg:bg-primary lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 lg:flex lg:flex-col lg:items-center lg:justify-center hexagon;
+        &>a {
+          @apply font-bold text-white lg:bg-blue-950;
+        }
     }
 
     .anchorInactive {
         padding-left: 2%;
-        @apply lg:fixed lg:bg-purple-700 lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon;
+        @apply lg:fixed lg:bg-primarydark lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon;
         &:hover {
-            font-weight: bold;
-            background-color: hsla(0, 9%, 71%, 0.1);
-            border-radius: 5%;
-            padding-left: 2%;
-
+            background-color: hsl(var(--primarydark));
+            color: hsl(var(--primarydark));
         }
-    }
+        & a {
+          background-color: hsl(var(--primary));
+          &:hover {
+            background-color: hsl(var(--primarydarken));
+            color: white;
+          }
+        }
+      }
+
     .hexagon {
       clip-path: polygon(
           50% 0%,
@@ -56,9 +121,7 @@
 
     }
 
-    .js__skill_active {
-      background-color: blueviolet!important;
-    }
+
 
     .typed-out{
         overflow: hidden;
@@ -77,16 +140,5 @@
         to { border-color: white; }
       }
 
-      .popup{
-        animation: appear 3s ease-in-out infinite alternate-reverse;
-      }
-
-      @keyframes zoom {
-        from { 
-            scale: 1;
-         }
-        to { 
-            scale: 0.8;
-         }
-      }
 }
+
