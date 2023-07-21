@@ -50,14 +50,14 @@ body {
   transform: scale(4) translateX(37.5%) translateY(37.5%);
 
 }
+.scale-laptop {
+  transform: scale(1.02);
+
+}
+
 .scale-gallery-parent:hover > .scale-gallery {
 
-    animation: scrolling 5s alternate-reverse infinite;
-
-
-
-
-
+    animation: scrolling 6s alternate infinite ease-in-out;
 
 }
 
@@ -69,12 +69,30 @@ body {
     transform: scale(4) translateX(37.5%) translateY(37.5%);
 
   }
-  33% {
+  10% {
+    transform: scale(4) translateX(37.5%) translateY(37.5%);
+  }
+  35% {
     transform: scale(4) translateX(12.5%) translateY(37.5%);
   }
-  67% {
+  45% {
+    transform: scale(4) translateX(12.5%) translateY(37.5%);
+  }
+
+  65% {
     transform: scale(4) translateX(-12.5%) translateY(37.5%);
   }
+
+  75% {
+    transform: scale(4) translateX(-12.5%) translateY(37.5%);
+  }
+
+  90% {
+    transform: scale(4) translateX(-37.5%) translateY(37.5%);
+
+  }
+
+
   100% {
     transform: scale(4) translateX(-37.5%) translateY(37.5%);
 

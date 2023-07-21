@@ -21,7 +21,7 @@
 <!-- old ul styles, will be needed for mobile -->
 <!-- [&>*]:pr-6 [&>*]:h-12 mx-2 [&>*]:flex [&>*]:flex-col [&>*]:justify-center md:[&>*]:h-20 md:[&>*]:text-xl -->
         <ul class="flex flex-wrap justify-start">
-            <li class="lg:fixed lg:top-4 lg:left-4 lg:bg-contain lg:h-40 lg:w-40 lg:p-10 bg-primarydark lg:flex lg:flex-col lg:items-center lg:justify-center hexagon">
+            <li class="hidden lg:fixed lg:top-4 lg:left-4 lg:bg-contain lg:h-40 lg:w-40 lg:p-10 bg-primarydark lg:flex lg:flex-col lg:items-center lg:justify-center hexagon">
                 <div class="lg:fixed lg:w-36 lg:h-36 lg:top-6 lg:left-6 lg:bg-contain lg:border-primary/50 lg:border-solid lg:border-4 hexagon">
             <img src="/static/portfolio_app/me.jpeg"/></div>
             </li>
@@ -47,7 +47,7 @@
         </ul>
     </nav>
 
-    <div class="p-4 mt-4 lg:mt-0 lg:pl-80 lg:flex lg:flex-col lg:justify-start lg:items-start lg:bg-white/70 lg:w-screen lg:min-h-screen" id="content">
+    <div class="p-4 mt-4 bg-primarylight/50 lg:mt-0 lg:pl-80 lg:flex lg:flex-col lg:justify-start lg:items-start lg:bg-white/50 lg:w-screen lg:min-h-screen" id="content">
         {% block content %}{% endblock %}
     </div>
 </div>

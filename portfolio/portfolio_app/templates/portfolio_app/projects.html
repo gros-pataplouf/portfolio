@@ -11,37 +11,37 @@
         <a href="#"><li class="px-2 mt-2 mr-2 rounded-md bg-primary hover:bg-primarydark active:bg-action hover:text-white text-white/90 js__skill">{{skill.name}}</li></a>
         {% endfor %}
     </ul>
-
-    <div class="flex flex-col w-full mt-8 lg:flex-wrap lg:flex-row lg:flex-grow lg:basis-1/2">
+    <!--  -->
+    <div class="flex flex-col w-full mt-8 lg:flex-wrap lg:flex-row lg:justify-between lg:items-stretch">
 <!-- 87,34---1110/690
 1186*796
 1023 breit
 656 hoch -->
     {% for entry in projects %}
 
-    <div class="p-2 mb-6 bg-white rounded-md shadow-lg js__project md:w-2/3 md:mx-auto lg:w-2/5 lg:m-8">
-    <h2 class="mt-6 text-xl font-bold md:text-3xl text-primary">{{ entry.name }} 
-        <a href={{entry.github}}><i class="mx-4 text-3xl md:text-3xl fa-brands fa-github-square text-primary"></i></a>
+    <div class="p-4 my-2 mx-0 space-y-2 border-2 border-primarylight/20 border-solid bg-white rounded-md shadow-2xl js__project lg:w-[48%]">
+    <h2 class="text-xl font-bold md:text-3xl text-primarydark">{{ entry.name }} 
     </h2>
     {% if entry.deployment %}
-    <a class="block mb-2"href={{ entry.deployment }}>Live Demo</a>
+    <a class="block mb-2 text-lg font-bold text-action hover:underline"href={{ entry.deployment }}>Live Demo</a>
     {% endif %}
+    <a class="block mb-2 text-lg font-bold text-primarydark hover:underline" href={{entry.github}}>See code</a>
     {% if entry.image %}
-    <div class="h-4/5 overflow-clip">
-        <div class="relative h-4/5 scale-gallery-parent">
-            
-                <img src={{entry.image}} class="absolute top-0 left-0 inline-block scale-gallery" alt="">
-            
-                <img src="/static/portfolio_app/laptop.png" alt="" class="absolute inline-block">
+    <div class="my-4 bg-white overflow-clip">
+        <div class="relative scale-gallery-parent">
+                <img src={{entry.image}} class="absolute block scale-gallery" alt="">
+                <img src="/static/portfolio_app/laptop.png" alt="" class="relative block scale-laptop">
+
 
 
         </div>
     </div>
     {% endif %}
-    {{entry.description}}
+    <p class="block mb-2 text-lg font-bold text-primarydark">{{entry.description}}</p>
+    
     <ul class="flex flex-wrap mb-2 mr-2">
         {% for skill in entry.skills.all %}
-        <li class="px-2 mt-2 mr-2 rounded-md bg-shade js__project_skill">{{skill}}</li>
+        <li class="px-2 mt-2 mr-2 text-white rounded-md bg-primarydark js__project_skill">{{skill}}</li>
         {% endfor %}
     </ul>
     
