@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.js__skill_active {
-  background-color: rgb(14, 13, 13)!important;
-  color: whitesmoke;
-}
-
 @layer base {
 
     :root {
@@ -41,9 +35,27 @@
       font-weight: 400;
       font-style: normal;
     }
+
+    @font-face {
+      font-family: "Lato";
+      src: url("./fonts/Lato-Regular.woff2") format("woff2"),
+        url("./fonts/Lato-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+    }
     
 body {
   font-family: Roboto;
+}
+
+.font-lato {
+  font-family: Lato;
+
+}
+.font-lato-caps {
+  font-family: Lato;
+  font-variant: small-caps;
+
 }
 
 .scale-gallery {
@@ -52,8 +64,9 @@ body {
 }
 .scale-laptop {
   transform: scale(1.02);
-
 }
+
+
 
 .scale-gallery-parent:hover > .scale-gallery {
 
@@ -105,25 +118,20 @@ body {
   }
 
     .anchorActive {
-        @apply lg:fixed lg:bg-primary lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 lg:flex lg:flex-col lg:items-center lg:justify-center hexagon;
+      background-color: hsl(var(--primarydark));
+        /* @apply lg:fixed lg:bg-primary lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
         &>a {
-          @apply font-bold text-white lg:bg-blue-950;
+          @apply font-bold;
+          cursor:none;
         }
     }
 
     .anchorInactive {
-        padding-left: 2%;
-        @apply lg:fixed lg:bg-primarydark lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon;
+
+
+        /* @apply lg:fixed lg:bg-primarydark lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
         &:hover {
-            background-color: hsl(var(--primarydark));
-            color: hsl(var(--primarydark));
-        }
-        & a {
-          background-color: hsl(var(--primary));
-          &:hover {
             background-color: hsl(var(--primarydarken));
-            color: white;
-          }
         }
       }
 
@@ -158,5 +166,24 @@ body {
         to { border-color: white; }
       }
 
+
 }
 
+.nav-visible {
+  right: 0;
+  transition-property: all;
+  transition-duration: 1s;
+
+
+
+}
+.nav-invisible {
+  right: 100vh;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+.js__skill_active {
+  background-color: rgb(14, 13, 13)!important;
+  color: whitesmoke;
+}
