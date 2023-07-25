@@ -3,58 +3,29 @@
 
 {% block content %}
 
+<div class="">
+    <h1 class="title">Skills</h1>
+    {% regroup skills by skill_type as skill_list %}
+    <button id="js__spin_carousel">spin</button>
 
-<h3 class="mb-4 text-2xl font-semibold md:text-3xl text-accent md:w-2/3 md:mx-auto lg:w-1/3">Skills</h3>
-{% regroup skills by skill_type as skill_list %}
+    <div class="carousel_container">
+        <div class="carousel">
+            {% for skill_type in  skill_list%}
+            <section class="w-72 h-72 carousel_cell">
+                <div>
+                    <h2 class="text-xl font-bold md:text-3xl text-primary">{{skill_type.grouper|title}}</h2>
 
-{% for skill_type in  skill_list%}
+                    {% for entry in skill_type.list %}
+                        <p class="my-2 font-bold text-accent">{{ entry.name }}
+                        </p>
+                    {% endfor %}
 
+                </div>
+            </section>
+            {% endfor %}
+        </div>
+    </div>
 
-
-<section class="p-2 mb-6 rounded-md shadow-lg md:w-2/3 md:mx-auto lg:w-1/3 bg-white/70">
-<h1 class="text-xl font-bold md:text-3xl text-primary">{{skill_type.grouper|title}}</h1>
-
-{% for entry in skill_type.list %}
-    <h2 class="my-2 font-bold text-accent">{{ entry.name }}
-        {% if entry.rating %}
-        <span>  
-        {{ entry.rating|star_rating:"☆"}} </span>
-        {% endif %}
-    </h2>
-    {% if entry.project_set.all %}
-    <h3 class="font-bold">Projects:</h3>
-    <ul>
-    {% for project in entry.project_set.all %}
-    <li    class="list-disc list-inside -p-2">
-    {{ project }}
-    </li>
-    {% endfor %}
-    {% endif %}
-
-    {% if entry.workexperience_set.all %}
-    <h3 class="font-bold">Work experience:</h3>
-    <ul>
-        {% for work in entry.workexperience_set.all %}
-        <li class="list-disc list-inside -p-2">    {{ work }}</li>
-        {% endfor %}
-    </ul>
-
-    {% endif %}
-
-    {% if entry.education_set.all %}
-
-    <h3>Related Education</h3>
-    {% for education in entry.education_set.all %}
-    {{ education }}
-    {% endfor %}
-
-    {% endif %}
-
-
-{% endfor %}
-
-</section>
-{% endfor %}
+</div>
 {% endblock %}
-
 

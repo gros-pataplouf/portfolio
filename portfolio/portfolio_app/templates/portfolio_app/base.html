@@ -14,22 +14,22 @@
     <title>Cornelia Petry</title>
 </head>
 <body>
-    <div class="relative flex flex-col items-center justify-center w-screen md:items-start md:justify-start md:flex-row h-min-screen">
-    <canvas class="fixed top-0 -z-20" id="canvas"></canvas>
-    <div class="fixed z-30 flex flex-col items-center justify-center w-12 h-12 text-white rounded-full bg-primarydark right-4 top-4 md:hidden">
+    <div class="relative flex flex-col items-center justify-center w-screen bg-gradient-to-br from-primarydarkest to-black md:items-start md:justify-start md:flex-row h-min-screen">
+    <canvas class="fixed top-0" id="canvas"></canvas>
+    <div class="fixed z-50 flex flex-col items-center justify-center w-12 h-12 text-white rounded-full bg-primarydark right-4 top-4 md:hidden">
         <i id="toggleMobileNavIcon" class="fixed text-lg text-center align-middle fa-solid fa-bars"></i>
         </div>
-    <nav id="navbar" class="fixed top-0 z-20 w-screen h-screen text-3xl shadow-md md:text-lg font-lato md:sticky md:w-1/4 bg-primary nav-invisible text-background shadow-primary ">
+    <nav id="navbar" class="fixed top-0 z-40 w-screen h-screen text-3xl shadow-md md:text-lg font-lato md:sticky md:w-1/4 bg-primary nav-invisible text-background shadow-primary ">
         <ul class="relative flex flex-col items-center justify-center h-screen space-y-12 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
 
             <li class="hidden md:block ">
-            <div class="md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 bg-primarydark md:flex-col md:items-center md:justify-center hexagon">
+            <div class="bg-gradient-to-r from-accent to-action md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 md:flex-col md:items-center md:justify-center hexagon">
                 <div class="hidden md:block md:h-16 md:w-16 lg:h-20 lg:w-20 md:border-primary/50 md:border-solid md:border-4 hexagon">
             <img src="/static/portfolio_app/me.jpeg"/ class="object-contain"></div>
                 </div>
             <div>
                 <p class="text-2xl text-right font-lato-caps">Cornelia Petry</p>
-                <p class="ml-auto text-2xl text-right font-lato-caps">Web Developer</p>
+                <p class="ml-auto text-xl text-right font-lato-caps">Web Developer</p>
 
             </div>
             </li>
@@ -59,9 +59,15 @@
         </ul>
     </nav>
 
-    <div class="min-h-screen p-4 bg-primarylight/50 md:mt-0 md:flex md:flex-col md:justify-start md:items-start md:bg-white/50 md:w-screen md:min-h-screen" id="content">
+    <div class="relative min-h-screen p-4 md:mt-0 md:flex md:flex-col md:justify-start md:items-start md:bg-transparent md:w-screen md:min-h-screen" id="content">
         {% block content %}{% endblock %}
     </div>
+     
+        <div class="top-0 hidden md:sticky md:flex right-6 animate-social">
+            <a href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 mx-2 text-3xl text-center text-white hover:pt-8 rounded-b-md bg-linkedinblue fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/gros-pataplouf"><i class="w-12 p-2 mx-2 text-3xl text-white rounded-tr-none rounded-b-md bg-primary hover:pt-8 fa-brands fa-github"></i></a>
+        </div>
+
 </div>
 
 <script src="/static/portfolio_app/main.js" defer></script>

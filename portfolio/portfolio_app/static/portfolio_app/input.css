@@ -6,16 +6,22 @@
 
     :root {
         --primary: 215deg 15% 50%;
-        --primarydarken: 215deg 15% 40%;
+        --primarydarker: 215deg 15% 40%;
         --primarydark: 215deg 15% 30%;
+        --primarydarkest: 215deg 15% 20%;
         --primarylight: 215deg 15% 80%;
-        --accent: 355deg 78% 56%;
+        --accent: 215deg 100% 50%;
+        --accent_old: 355deg 78% 56%;
         --lightaccent: 355deg 78% 80%;
         --background: 105deg 55% 96%;
         --text: 216deg 34% 15%;
         --action: 0deg 68% 48%;
         --shade: 182deg 43% 76%;
+        --violet: 228deg 82% 61%;
+        --green: 139deg 67% 54%;
+        --linkedinblue: 210deg 90% 40%;
     }
+
 
     @font-face {
       font-family: 'Sunrise';
@@ -48,10 +54,7 @@ body {
   font-family: Roboto;
 }
 
-.font-lato {
-  font-family: Lato;
 
-}
 .font-lato-caps {
   font-family: Lato;
   font-variant: small-caps;
@@ -66,7 +69,13 @@ body {
   transform: scale(1.02);
 }
 
+.animate-social > a:first-child > i{
+  animation: higher .5s .5s;  
+}
 
+.animate-social > a:last-child > i{
+  animation: higher .5s 1s;  
+}
 
 .scale-gallery-parent:hover > .scale-gallery {
 
@@ -75,6 +84,13 @@ body {
 }
 
     
+}
+
+@keyframes higher {
+  50% {
+    padding-top: 2rem;
+  }
+
 }
 
 @keyframes scrolling {
@@ -113,8 +129,28 @@ body {
   
 }
 @layer components {
+  .button {
+    @apply block px-8 py-4 mt-8 font-bold text-white transition-all rounded-lg bg-gradient-to-r from-accent/90 to-action/90 hover:from-accent hover:to-action hover:px-9 active:underline;
+  }
   .title {
+    @apply p-4 mb-4 text-4xl font-bold text-center text-transparent bg-gradient-to-r from-accent to-action bg-clip-text lg:mt-10 lg:text-6xl md:w-2/3;
     font-family: Sunrise;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(20, end) forwards;
+    width: 0;
+  }
+
+  .text-lato {
+    @apply   p-4 text-lg font-bold text-center text-white;
+    font-family: Lato;
+
+  }
+
+
+
+  .container {
+    @apply flex flex-col items-center justify-center min-h-screen;
   }
 
     .anchorActive {
@@ -131,7 +167,7 @@ body {
 
         /* @apply lg:fixed lg:bg-primarydark lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
         &:hover {
-            background-color: hsl(var(--primarydarken));
+            background-color: hsl(var(--primarydarker));
         }
       }
 
@@ -149,23 +185,12 @@ body {
 
 
 
-    .typed-out{
-        overflow: hidden;
-        border-right: .15em solid white;
-        white-space: nowrap;
-        animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
-        width: 0;
-        color: white;
-      }
+
       @keyframes typing {
         from { width: 0 }
-        to { width: 100% }
+        to { width: 100%;
+         }
       }
-      @keyframes blinking {
-        from { border-color: transparent }
-        to { border-color: white; }
-      }
-
 
 }
 
@@ -184,6 +209,52 @@ body {
 }
 
 .js__skill_active {
-  background-color: rgb(14, 13, 13)!important;
+  background-color: hsl(var(--accent))!important;
   color: whitesmoke;
 }
+
+.send_button_1 {
+  -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
+}
+
+
+
+.carousel_wrapper {
+  width: 420px;
+  height: 280px;
+  position: relative;
+  top: 0;
+  left: 0;
+  perspective: 1000px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg);
+
+}
+
+.carousel_cell {
+  position: absolute;
+  width: 380px;
+  height: 240px;
+  right: 10rem;
+  top: 20px;
+  transform: translateZ(330px);
+  transition: transform 1s;
+  }
+
+.carousel_cell:nth-child(1) {
+    transform: rotateY(  0deg) translateZ(330px);
+    background-color: hsl(var(--lightaccent)/20);
+  }
+.carousel_cell:nth-child(2) { transform: rotateY( -60deg) translateZ(330px); background-color: hsl(var(--shade));}
+.carousel_cell:nth-child(3) { transform: rotateY(-120deg) translateZ(330px); background-color: aqua;}
+.carousel_cell:nth-child(4) { transform: rotateY(-180deg) translateZ(330px); background-color: pink; }
+.carousel_cell:nth-child(5) { transform: rotateY(-240deg) translateZ(330px); background-color: cornsilk; }
+.carousel_cell:nth-child(6) { transform: rotateY(-300deg) translateZ(330px); background-color: lightgreen; }

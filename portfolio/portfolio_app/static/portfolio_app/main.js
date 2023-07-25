@@ -36,13 +36,13 @@ function drawHexagon(cx, cy, radius, position, row) {
     } else {
         region.lineTo(radius * Math.cos(rotation), radius * Math.sin(rotation));
     }
-}
+};
 if (randomStructure[row][position]) {
     const hue = Math.floor(360*Math.random()); 
-    context.fillStyle = `hsla(${hue}, 50%, 70%, 0.5)`;
-        context.fill(region);
+    context.fillStyle = `hsla(${hue}, 50%, 70%, 0.6)`;
+        // context.fill(region);
         region.closePath();
-        context.strokeStyle= "hsla(215, 30%, 40%, 0.2)";
+        context.strokeStyle= "hsla(215, 30%, 50%, 0.2)";
         context.stroke(region);
     }
     
@@ -61,9 +61,9 @@ function drawRow(cx, cy, radius, numOfHex, row) {
 }
 
 function drawRows(cx, cy, radius, numOfHexagons, numOfRows) {
-    if (visualViewport.width < 768) {
-        return null;
-    }
+    // if (visualViewport.width < 768) {
+    //     return null;
+    // }
     for (let i = 0; i < numOfRows; i++) {
         if (i === 0 ) {
             drawRow(cx, cy, radius, numOfHexagons, i); 

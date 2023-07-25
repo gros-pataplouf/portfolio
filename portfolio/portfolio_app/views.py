@@ -13,7 +13,7 @@ from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
 # Create your views here.
 
 def index(request):
-    return render(request, "portfolio_app/base.html")
+    return render(request, "portfolio_app/intro.html")
 
 def about(request):
     return render(request, "portfolio_app/about.html")
