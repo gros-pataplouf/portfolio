@@ -3,22 +3,31 @@
 
 {% block content %}
 
-<div class="">
+<div class="container justify-start">
     <h1 class="title">Skills</h1>
+
+    <div class="flex justify-between w-56">
+        <button id="js__spin_carousel-back" class="w-16 h-16 rounded-full group bg-primarydarkest"><i class="text-3xl font-bold text-white/50 fa-solid fa-chevron-left group-hover:text-white/80"></i></button>
+        <button id="js__spin_carousel-forward" class="w-16 h-16 rounded-full group bg-primarydarkest"><i class="text-3xl font-bold fa-solid fa-chevron-right text-white/50 group-hover:text-white/80"></i></button>
+
+
+    </div>
     {% regroup skills by skill_type as skill_list %}
-    <button id="js__spin_carousel">spin</button>
+    
 
     <div class="carousel_container">
         <div class="carousel">
             {% for skill_type in  skill_list%}
-            <section class="w-72 h-72 carousel_cell">
-                <div>
-                    <h2 class="text-xl font-bold md:text-3xl text-primary">{{skill_type.grouper|title}}</h2>
-
+            <!-- <div class="w-60 h-60 carousel_cell_verso bg-gradient-to-b from-accent to-violet" aria-hidden="true"></div> -->
+            <section class="m-2 rounded-lg w-72 h-72 carousel_cell bg-gradient-to-b from-primarydarker to-primarydarkest">
+                <div class="flex flex-col items-center justify-start p-6">
+                    <h2 class="mb-6 text-xl font-bold text-white md:text-3xl">{{skill_type.grouper|title}}</h2>
+                    <p class="self-center space-y-2 text-center">
                     {% for entry in skill_type.list %}
-                        <p class="my-2 font-bold text-accent">{{ entry.name }}
-                        </p>
+                        <span class="inline-block p-1 mx-2 font-bold text-white rounded-lg text-accent bg-gradient-to-r from-accent to-action hover:cursor-help shadow-accent">{{ entry.name }}
+                        </span>
                     {% endfor %}
+                </p>
 
                 </div>
             </section>
