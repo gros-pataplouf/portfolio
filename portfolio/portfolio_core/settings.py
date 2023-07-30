@@ -50,7 +50,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio_app',
-    'fontawesomefree'
+    'fontawesomefree',
+    'crispy_forms',
+    'crispy_tailwind',
+
 ]
 
 MIDDLEWARE = [
@@ -139,3 +142,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'
+CRISPY_TEMPLATE_PACK = 'tailwind'

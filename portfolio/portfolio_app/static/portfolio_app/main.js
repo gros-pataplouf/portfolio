@@ -117,5 +117,9 @@ scrollUpButton.addEventListener("click", () => {
 const skillNodeList = document.querySelectorAll(".js__show_skill_description");
 
 skillNodeList.forEach(skill => {
-    skill.addEventListener("click", () => { window.alert("you clicked me")})
+    skill.addEventListener("click", () => { 
+        let nextDiv =  skill.childNodes[1];
+        console.log(nextDiv)
+        nextDiv.classList.toggle("hidden");
+    })
 })

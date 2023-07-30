@@ -1,25 +1,17 @@
-
 {% extends "portfolio_app/base.html" %}
+{% load tailwind_filters %}
 
 {% block content %}
 
 <div class="container">
     <h1 class="title">Get in touch</h1>
 
-<p class="text-lato">If you want to get in touch, fill in the form below or send an email to 
+<p class="text-lato w-[33rem]">If you want to get in touch, fill in the form below or send an email to 
   cornelia.myokg@passmail.com and let's have a chat.</p>
 
-  <!-- flex flex-col p-2 mt-0 
-  md:mx-auto md:p-10 lg:p-4 space-y-2
-  md:[&>div>*]:text-2xl
-  md:[&>div>label]:font-semibold md:[&>div>label]:mt-6
-  md:[&>div>input]:min-h-20 [&>div]:flex [&>div]:flex-col [&>div]:lg:flex-row
-  [&>div>label]:lg:w-1/3 [&>div>input]:lg:w-2/3 [&>div>textarea]:lg:w-2/3 [&>div]:space-y-6
-  [&>*>label]:text-slate-50 -->
-
-<form class="flex flex-col items-center justify-center" method="POST" action="/contact/">
+<form class="flex flex-col items-center justify-center text-white [&>div>*]:w-[25rem] space-y-8" method="POST" action="/contact/">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form|crispy }}
     <button class="button" type="submit">Send</button>
 </form>
 
