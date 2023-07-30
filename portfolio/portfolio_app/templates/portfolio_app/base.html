@@ -23,19 +23,21 @@
         <ul class="relative flex flex-col items-center justify-center h-screen space-y-12 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
 
             <li class="hidden md:block ">
+                <a href="/" title="home">
             <div class="bg-gradient-to-r from-accent to-action md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 md:flex-col md:items-center md:justify-center hexagon">
                 <div class="hidden md:block md:h-16 md:w-16 lg:h-20 lg:w-20 md:border-primary/50 md:border-solid md:border-4 hexagon">
             <img src="/static/portfolio_app/me.jpeg"/ class="object-contain"></div>
                 </div>
             <div>
                 <p class="text-2xl text-right font-lato-caps">Cornelia Petry</p>
-                <p class="ml-auto text-xl text-right font-lato-caps">Web Developer</p>
+                <p class="ml-auto text-xl text-right font-lato-caps">Full-Stack Developer</p>
 
             </div>
+            </a>
             </li>
             
-            <li class="{{request.path|anchor_color:'/about/, anchorActive, anchorInactive'}}">
-                <a href={% url 'about' %} class="{{request.path|anchor_color:'/about/, anchorActive, anchorInactive'}} md:ml-auto">About                <i class="hidden md:inline md:ml-6 fa-regular fa-user"></i>
+            <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">
+                <a href={% url 'bio' %} class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">Bio                <i class="hidden md:inline md:ml-6 fa-regular fa-user"></i>
                 </a> 
             </li>
         <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
@@ -46,12 +48,6 @@
                 <a href={% url 'projects' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">Projects                 <i class="hidden md:inline md:ml-6 fa-solid fa-th"></i>
                 </a>
             </li>
-            <!-- <li class={{request.path|anchor_color:'/work/, anchorActive, anchorInactive'}}>
-                <a href={% url 'work' %} >CV</a>
-            </li> 
-            <li class={{request.path|anchor_color:'/education/, anchorActive, anchorInactive'}}>
-                <a href={% url 'education' %} >Education</a>
-            </li>  -->
             <li class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}}">
                 <a href={% url 'contact' %} class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">Contact <i class="hidden md:inline md:ml-6 fa-solid fa-envelope"></i></a>
                 
@@ -63,13 +59,16 @@
         {% block content %}{% endblock %}
     </div>
      
-        <div class="top-0 right-0 hidden md:absolute md:flex animate-social">
+        <div class="top-0 hidden right-4 md:absolute md:flex animate-social">
             <a href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 mx-2 text-3xl text-center text-white hover:pt-8 rounded-b-md bg-linkedinblue fa-brands fa-linkedin-in"></i></a>
           <a href="https://github.com/gros-pataplouf"><i class="w-12 p-2 mx-2 text-3xl text-white rounded-b-md bg-primary hover:pt-8 fa-brands fa-github"></i></a>
         </div>
 
-</div>
-
+        
+    <div id="js__scroll_up" class="fixed hidden flex-col items-center justify-center w-12 h-12 rounded-full top-[90vh] right-4 bg-gradient-to-br from-violet to-green"><i class="text-2xl text-white fa-solid fa-arrow-up"></i></div>
+        
+    </div>
+    
 <script src="/static/portfolio_app/main.js" defer></script>
 <script src="/static/portfolio_app/navigation.js" defer></script>
 

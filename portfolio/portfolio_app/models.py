@@ -16,17 +16,18 @@ class WorkExperience(models.Model):
     start_date = models.DateField("start date")
     end_date = models.DateField("end date", null=True, blank=True)
     skills = models.ManyToManyField(Skill)
-    description = models.CharField(max_length=250)
+    description = models.CharField(max_length=250, null=True, blank=True)
     def __str__(self):
         return self.job_title
 
 class Education(models.Model):
     name = models.CharField(max_length=250)
-    edu_type = models.CharField(choices=[("diploma", "diploma"), ("certificate", "certificate")], max_length=250)
+    edu_type = models.CharField(choices=[("diploma", "diploma"), ("certificate", "certificate"), ("studying", "studying")], max_length=250)
     school = models.CharField(max_length=250)
     start_date = models.DateField("start date", null=True, blank=True)
     end_date = models.DateField("end date", null=True, blank=True)
     skills = models.ManyToManyField(Skill)
+    description = models.CharField(max_length=250, null=True, blank=True)
     def __str__(self):
         return self.name
 

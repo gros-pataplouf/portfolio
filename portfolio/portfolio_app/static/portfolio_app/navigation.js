@@ -16,13 +16,13 @@ jsSpinCarouselBack.addEventListener("click", () => {
 counter ++;
 for (let i = 0; i < jsCarouselCells.length; i++) {
     let cell = jsCarouselCells.item(i);
-    cell.setAttribute("style", `transform: rotateY( ${-60*(i+counter)-5}deg) translateZ(16.5rem)`)
+    cell.setAttribute("style", `transform: rotateY( ${-60*(i+counter)-5}deg) translateZ(22vw)`)
 }
 })
 jsSpinCarouselForward.addEventListener("click", () => {
     counter --;
     for (let i = 0; i < jsCarouselCells.length; i++) {
         let cell = jsCarouselCells.item(i);
-        cell.setAttribute("style", `transform: rotateY( ${-60*(i+counter)-5}deg) translateZ(16.5rem)`)
+        cell.setAttribute("style", `transform: rotateY( ${-60*(i+counter)-5}deg) translateZ(22vw)`)
     }
     })

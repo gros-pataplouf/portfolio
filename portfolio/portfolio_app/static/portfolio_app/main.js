@@ -38,12 +38,13 @@ function drawHexagon(cx, cy, radius, position, row) {
     }
 };
 if (randomStructure[row][position]) {
-    const hue = Math.floor(360*Math.random()); 
-    context.fillStyle = `hsla(${hue}, 50%, 70%, 0.6)`;
-        // context.fill(region);
-        region.closePath();
-        context.strokeStyle= "hsla(215, 30%, 50%, 0.2)";
-        context.stroke(region);
+    //comment in to fill with random color:
+    // const hue = Math.floor(360*Math.random()); 
+    // context.fillStyle = `hsla(${hue}, 50%, 70%, 0.6)`;
+    // context.fill(region);
+    region.closePath();
+    context.strokeStyle= "hsla(215, 30%, 50%, 0.2)";
+    context.stroke(region);
     }
     
 }
@@ -88,4 +89,33 @@ window.addEventListener("resize", () => {
     canvas.height = visualViewport.height;
     drawRows(0, overlap, radius, numOfHexagons, numOfRows)
 
+})
+
+const scrollUpButton = document.getElementById("js__scroll_up");
+window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+    if (window.scrollY > 100 && scrollUpButton.classList.contains("hidden")) {
+        scrollUpButton.classList.remove("hidden");
+        scrollUpButton.classList.add("flex");}
+    else if (window.scrollY < 100 && scrollUpButton.classList.contains("flex")) {
+        scrollUpButton.classList.remove("flex");
+        scrollUpButton.classList.add("hidden");}
+            
+    })
+
+
+
+scrollUpButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+})
+
+
+const skillNodeList = document.querySelectorAll(".js__show_skill_description");
+
+skillNodeList.forEach(skill => {
+    skill.addEventListener("click", () => { window.alert("you clicked me")})
 })

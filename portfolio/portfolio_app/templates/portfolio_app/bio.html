@@ -1,0 +1,86 @@
+
+{% extends "portfolio_app/base.html" %}
+{% load portfolio_extras %}
+
+{% block content %}
+<div class="container">
+<!-- all_by_date = [{end_date: jobitem}, {end_date: educationitem, ...}] -->
+    <h1 class="title">Working & Learning</h1>
+    {% for entry in all_by_date %}
+    <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative flex flex-col first:rounded-t-md last:rounded-b-md w-1 h-[40vh] bg-gradient-to-b from-primarydarker via-primarydarkest to-primarydarker ">
+
+        {% for date, entry in entry.items %}
+        <!-- put work items on the left and education items on the right. Work item = entry has company attribute  -->
+        {% if entry.company %}
+        <div class="absolute space-y-2 text-right right-4 work-item w-96">
+        <div class="absolute w-5 h-5 -right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
+        <p class="text-primarylight text-md">{{entry.start_date.month}}/{{entry.start_date.year}} -
+            {% if entry.end_date%}
+            {{entry.end_date.month}}/{{entry.end_date.year}}
+            {% else %}
+            currently
+            {% endif %}
+        </p>        
+        <div class="text-right text-white">
+        <h2 class="text-2xl font-bold text-white font-lato-caps">{{ entry.job_title }}</h2>
+        <h3 class="italic">{{ entry.company }}</h3>
+        <p class="italic">{{ entry.place }}</p>
+        <ul class="mt-2">
+        {% for task in entry.description|parse_items %}
+        <li class="list-disc list-inside -p-2 rtl">{{ task }}</li>
+        {% endfor %}
+        </ul>
+        <div class="text-primarydark">
+        <ul class="flex flex-wrap justify-end mt-2">
+        {% for skill in entry.skills.all %}
+        <li class="px-1 bg-gradient-to-b from-primarydarkest to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary text-white">{{skill}}</li>
+        {% endfor %}
+        </ul>
+        </div>
+        </div>
+        </div>
+        {% else %}
+
+        <!-- education -->
+        <div class="absolute text-left left-4 w-96">
+            <div class="absolute w-5 h-5 -left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
+            <p class="text-white">
+                <!-- if there is no start date don't try to display it because it is a diploma obtention date -->
+                {% if entry.start_date %}
+                {{entry.start_date.month}}/{{entry.start_date.year}} -
+                {% endif %}
+                {% if entry.end_date%}
+                {{entry.end_date.month}}/{{entry.end_date.year}}
+                {% else %}
+                currently
+                {% endif %} 
+            </p>
+
+            <div class="text-white">
+                <h2 class="text-2xl font-bold text-white font-lato-caps">{{ entry.name }}</h2>
+                <h3 class="italic">{{ entry.school }}</h3>
+                <ul class="mt-2">
+                    {% for task in entry.description|parse_items %}
+                    <li class="list-disc list-inside -p-2">{{ task }}</li>
+                    {% endfor %}
+                </ul>
+             
+                <ul class="mt-2">
+                <div class="text-primarydark">
+                <ul class="flex flex-wrap mt-2">
+                {% for skill in entry.skills.all %}
+                <li class="px-1 bg-gradient-to-b from-primarydarkest to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary text-white">{{skill}}</li>
+                {% endfor %}
+                </ul>
+                </div>
+        
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
+

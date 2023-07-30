@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 from django.shortcuts import render
 from django.core.mail import send_mail
-
+from datetime import date
 from .models import Skill, WorkExperience, Project, Education
 from .forms import ContactForm
 
@@ -15,8 +15,21 @@ from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
 def index(request):
     return render(request, "portfolio_app/intro.html")
 
-def about(request):
-    return render(request, "portfolio_app/about.html")
+def bio(request):
+
+    def sort_by_date(item):
+        return list(item.keys())[0]
+    work_history = WorkExperience.objects.all()
+    education = Education.objects.all()
+    work_by_date = [{item.end_date if item.end_date is not None else date.today(): item} for item in work_history]
+    education_by_date = [{item.end_date if item.end_date is not None else date.today(): item} for item in education]
+    all_by_date = work_by_date + education_by_date
+    all_by_date.sort(key=sort_by_date, reverse=True)
+    context = {
+        "all_by_date": all_by_date
+    }
+    print(context)
+    return render(request, "portfolio_app/bio.html", context)
     
 def skills(request):
     skills = Skill.objects.order_by("skill_type")

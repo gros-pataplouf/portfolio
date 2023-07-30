@@ -23,3 +23,9 @@ def parse_items(args):
     arg_list = args.split("#")
     clean_args = [arg.strip(" ") for arg in arg_list]
     return (clean_args)
+
+
+@register.filter()
+def addstring(arg1, arg2):
+    """concatenate arg1 & arg2"""
+    return str(arg1) + str(arg2)
