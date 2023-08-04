@@ -6,6 +6,8 @@ from django.core.mail import send_mail
 from datetime import date
 from .models import Skill, WorkExperience, Project, Education
 from .forms import ContactForm
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 
 from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
@@ -28,7 +30,6 @@ def bio(request):
     context = {
         "all_by_date": all_by_date
     }
-    print(context)
     return render(request, "portfolio_app/bio.html", context)
     
 def skills(request):
@@ -68,17 +69,21 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-                send_mail(
+            send_mail(
                 f"A new message from {request.POST['email']}",
                 f"{request.POST['message']}",                                
                 EMAIL_HOST_USER,
                 [EMAIL_DEST],
                 fail_silently=True,
                 )
-        return HttpResponseRedirect("/thanks/")
+            return HttpResponseRedirect("/thanks/")
+      
+        else:
+            return render(request, "portfolio_app/contact.html", {"form": form})
 
     else:
-        form = ContactForm()
+        form = ContactForm(empty_permitted=False)
+
 
     return render(request, "portfolio_app/contact.html", {"form": form})
 

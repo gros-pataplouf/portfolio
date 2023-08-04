@@ -288,3 +288,11 @@ body {
   direction: rtl;
 }
 
+.captcha, #id_captcha_1 {
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+
+#div_id_captcha {
+  display: none;
+}
