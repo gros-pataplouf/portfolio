@@ -3,8 +3,8 @@ from django.contrib import admin
 
 class Skill(models.Model):
     name = models.CharField(max_length=250)
-    skill_type = models.CharField(max_length=250)
-    proficiency = models.CharField(max_length=250, null=True, blank=True)
+    skill_type = models.CharField(max_length=50, choices=[("Coding", "Coding"), ("Tooling", "Tooling"), ("Databases", "Databases"), ("Others", "Others"), ("Languages", "Languages"), ("Soft Skills", "Soft Skills")])
+    proficiency = models.CharField(max_length=500, null=True, blank=True)
     rating = models.IntegerField(null=True, blank=True)
     def __str__(self):
         return self.name
@@ -16,7 +16,7 @@ class WorkExperience(models.Model):
     start_date = models.DateField("start date")
     end_date = models.DateField("end date", null=True, blank=True)
     skills = models.ManyToManyField(Skill)
-    description = models.CharField(max_length=250, null=True, blank=True)
+    description = models.CharField(max_length=500, null=True, blank=True)
     def __str__(self):
         return self.job_title
 

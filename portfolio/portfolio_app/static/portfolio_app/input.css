@@ -15,10 +15,10 @@
         --lightaccent: 355deg 78% 80%;
         --background: 105deg 55% 96%;
         --text: 216deg 34% 15%;
-        --action: 0deg 68% 48%;
+        --action: 0deg 100% 48%;
         --shade: 182deg 43% 76%;
-        --violet: 228deg 82% 61%;
-        --green: 139deg 67% 54%;
+        --violet: 228deg 100% 61%;
+        --green: 139deg 100% 54%;
         --linkedinblue: 210deg 90% 40%;
     }
 
@@ -286,13 +286,21 @@ body {
 
 .rtl {
   direction: rtl;
+  /* text-align: left; */
+  list-style-position: outside;
+  margin-right: 1rem;
 }
 
 .captcha, #id_captcha_1 {
   border-radius: .5rem;
   margin-bottom: 1rem;
 }
+img.captcha {
+  width: 25rem;
+}
+
 
 #div_id_captcha {
   display: none;
+
 }

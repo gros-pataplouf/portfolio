@@ -145,3 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'
 CRISPY_TEMPLATE_PACK = 'tailwind'
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+CAPTCHA_BACKGROUND_COLOR = 'purple'
+CAPTCHA_NOISE_FUNCTIONS = ['captcha.helpers.noise_dots']
+CAPTCHA_FLITE_PATH = '/usr/bin/flite'
+
