@@ -1,4 +1,7 @@
 
+//draw a background of hexagonal shapes randomly disposed
+
+export const drawBackground = () => {
 const canvas = document.getElementById("canvas");
 let context = canvas.getContext("2d");
 let radius = 30;
@@ -20,9 +23,6 @@ for (let j = 0; j < numOfRows; j++){
     };
     randomStructure.push(randomRow); 
 }
-
-
-
 
 function drawHexagon(cx, cy, radius, position, row) {
     context.translate(cx, cy);
@@ -82,7 +82,6 @@ function drawRows(cx, cy, radius, numOfHexagons, numOfRows) {
 
 drawRows(0, overlap, radius, numOfHexagons, numOfRows)
 
-
 window.addEventListener("resize", () => {
     const canvas = document.getElementById("canvas");
     canvas.width = visualViewport.width;
@@ -90,6 +89,12 @@ window.addEventListener("resize", () => {
     drawRows(0, overlap, radius, numOfHexagons, numOfRows)
 
 })
+
+}
+
+//show a scroll up button if site has been scrolled down at least 100px;
+
+export const addScrollUpButton = () => {
 
 const scrollUpButton = document.getElementById("js__scroll_up");
 window.addEventListener("scroll", () => {
@@ -104,22 +109,26 @@ window.addEventListener("scroll", () => {
     })
 
 
-
 scrollUpButton.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth'
       });
-})
+})}
 
 
-const skillNodeList = document.querySelectorAll(".js__show_skill_description");
 
-skillNodeList.forEach(skill => {
-    skill.addEventListener("click", () => { 
-        let nextDiv =  skill.childNodes[1];
-        console.log(nextDiv)
-        nextDiv.classList.toggle("hidden");
+export const addMobileNav = () => {
+//make the hamburger button clickable to show mobile nav
+
+const toggleMobileNavIcon = document.querySelector("#toggleMobileNavIcon");
+const navbar =document.querySelector("#navbar");
+toggleMobileNavIcon.addEventListener("click", () => {
+    toggleMobileNavIcon.classList.toggle("fa-bars");
+    toggleMobileNavIcon.classList.toggle("fa-xmark");
+    navbar.classList.toggle("nav-invisible");
+    navbar.classList.toggle("nav-visible");
     })
-})
+
+}

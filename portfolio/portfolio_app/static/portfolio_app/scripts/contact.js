@@ -1,4 +1,4 @@
-const contactSubmitButton = document.querySelector("#contactSubmitButton");
+export const optimizeContactForm = () => {const contactSubmitButton = document.querySelector("#contactSubmitButton");
 const captchaDiv = document.getElementById("div_id_captcha");
 const emailDiv = document.getElementById("div_id_email");
 const emailInput = document.querySelector("#div_id_email>input")
@@ -24,4 +24,4 @@ contactSubmitButton.addEventListener("click", () => {
     emailDiv.setAttribute("style", "display: none");
     messageDiv.setAttribute("style", "display: none");
 }
-})
+})}

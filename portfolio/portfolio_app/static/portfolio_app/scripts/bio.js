@@ -1,3 +1,5 @@
+export const enableFilteringBio = () => {
+
 const toggleEducation = document.getElementById("toggleEducation");
 const toggleWork = document.getElementById("toggleWork");
 
@@ -19,4 +21,4 @@ const toggleWork = document.getElementById("toggleWork");
 
         }
     })
-})
+})}

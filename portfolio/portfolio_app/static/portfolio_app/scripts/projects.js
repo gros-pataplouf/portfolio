@@ -1,4 +1,4 @@
-function applySkills() {
+export const filterProjectsBySkills = () => {
     const skillItems = document.querySelectorAll(".js__skill");
     const projects = document.querySelectorAll(".js__project");
 
@@ -21,13 +21,6 @@ function applySkills() {
                             }            
         })
     })
-    
-    // console.log(activeSkills);
-
-
-
 
 }))
 }
-
-applySkills();
