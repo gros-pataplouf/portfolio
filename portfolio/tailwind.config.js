@@ -4,20 +4,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary": "hsl(var(--primary))",
+        "primary": {
+          200: "hsl(var(--primarylight))",
+          DEFAULT: "hsl(var(--primary))",
+          500: "hsl(var(--primary))",
+          600: "hsl(var(--primarydarker))",
+          700: "hsl(var(--primarydark))",
+          800: "hsl(var(--primarydark))",
+        },
         "primarydark": "hsl(var(--primarydark))",
         "primarydarker": "hsl(var(--primarydarker))",
         "primarydarkest": "hsl(var(--primarydarkest))",
         "primarylight": "hsl(var(--primarylight))",   
         "accent": "hsl(var(--accent))",
-        "lightaccent": "hsl(var(--lightaccent))",
-        "background": "hsl(var(--background))",
-        "text": "hsl(var(--text))", 
         "action": "hsl(var(--action))",
         "shade": "hsl(var(--shade))",
         "violet": "hsl(var(--violet))",
         "green": "hsl(var(--green))",
-        "linkedinblue": "hsl(var(--linkedinblue))"
       },
     },
   },
