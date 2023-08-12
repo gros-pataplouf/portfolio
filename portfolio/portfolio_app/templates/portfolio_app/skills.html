@@ -5,11 +5,8 @@
 
 <div class="container justify-start">
     <h1 class="title lg:mb-0 lg:pb-0">Skills</h1>
-    <p class="self-center space-y-2 text-center lg:mb-16 ">Click on a skill to learn more</p>
-
+    <p class="mb-6 text-xl font-bold text-center lg:mb-16 ">Click on a skill to learn more</p>
     {% regroup skills by skill_type as skill_list %}
-    
-
     <div class="flex flex-col items-center carousel_container">
         <div class="carousel">
             {% for skill_type in  skill_list%}

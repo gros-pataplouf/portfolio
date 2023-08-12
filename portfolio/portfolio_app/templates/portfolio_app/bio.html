@@ -18,7 +18,7 @@
         {% for date, entry in entry.items %}
         <!-- put work items on the left and education items on the right. Work item = entry has company attribute  -->
         {% if entry.company %}
-        <div class="relative space-y-2 lg:text-right pl-8 lg:-left-[24.75rem] work-item w-96 pb-6">
+        <div class="relative space-y-2 lg:text-right px-8 lg:-left-[24.75rem] js__work-item lg:w-96 pb-6">
         <div class="absolute w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
         <p class="pl-2 text-primary-200 lg:pl-0 text-md">{{entry.start_date.month}}/{{entry.start_date.year}} -
             {% if entry.end_date%}
@@ -27,7 +27,7 @@
             currently
             {% endif %}
         </p>        
-        <div class=" lg:text-right">
+        <div class="lg:text-right">
         <h2 class="text-2xl font-bold caps">{{ entry.job_title }}</h2>
         <h3 class="italic">{{ entry.company }}</h3>
         <p class="italic">{{ entry.place }}</p>
@@ -48,7 +48,7 @@
         <!-- education -->
 
         {% else %}
-        <div class="relative w-full pb-6 pl-8 space-y-2 edu-item lg:left-4 lg:w-96">
+        <div class="relative px-8 pb-6 space-y-2 js__edu-item lg:left-4 lg:w-96">
             <div class="absolute w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
             <p class="pl-2 text-primary-200 lg:pl-0">
                 <!-- if there is no start date don't try to display it because it is a diploma obtention date -->
@@ -72,7 +72,6 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-             
                 <ul class="mt-2">
                 <div>
                 <ul class="flex flex-wrap mt-2">
@@ -81,7 +80,6 @@
                 {% endfor %}
                 </ul>
                 </div>
-        
                 </div>
             </div>
         {% endif %}

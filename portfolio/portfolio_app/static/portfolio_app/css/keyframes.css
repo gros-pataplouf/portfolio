@@ -1,4 +1,10 @@
 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100%;
+   }
+}
+
 @keyframes higher {
     50% {
       padding-top: 2rem;
@@ -6,49 +12,39 @@
   
   }
   
-  @keyframes trembling {
-    0% {
-      transform: scale(4) translateX(37.5%) translateY(37.5%);
-  
-    }
-    100% {
-      transform: scale(4) translateX(37.51%) translateY(37.5%);
-  
-    }}
-  
-  @keyframes scrolling {
-    0% {
-      transform: scale(4) translateX(37.5%) translateY(37.5%);
-  
-    }
-    10% {
-      transform: scale(4) translateX(37.5%) translateY(37.5%);
-    }
-    35% {
-      transform: scale(4) translateX(12.5%) translateY(37.5%);
-    }
-    45% {
-      transform: scale(4) translateX(12.5%) translateY(37.5%);
-    }
-  
-    65% {
-      transform: scale(4) translateX(-12.5%) translateY(37.5%);
-    }
-  
-    75% {
-      transform: scale(4) translateX(-12.5%) translateY(37.5%);
-    }
-  
-    90% {
-      transform: scale(4) translateX(-37.5%) translateY(37.5%);
-  
-    }
-  
-  
-    100% {
-      transform: scale(4) translateX(-37.5%) translateY(37.5%);
-  
-    }
-    
+@keyframes trembling {
+  0% {
+    transform: scale(4) translateX(37.5%) translateY(37.5%);
+
   }
-  
+  100% {
+    transform: scale(4) translateX(37.51%) translateY(37.5%);
+
+  }}
+
+@keyframes scrolling {
+  0% {
+    transform: scale(4) translateX(37.5%) translateY(37.5%);
+  }
+  10% {
+    transform: scale(4) translateX(37.5%) translateY(37.5%);
+  }
+  35% {
+    transform: scale(4) translateX(12.5%) translateY(37.5%);
+  }
+  45% {
+    transform: scale(4) translateX(12.5%) translateY(37.5%);
+  }
+  65% {
+    transform: scale(4) translateX(-12.5%) translateY(37.5%);
+  }
+  75% {
+    transform: scale(4) translateX(-12.5%) translateY(37.5%);
+  }
+  90% {
+    transform: scale(4) translateX(-37.5%) translateY(37.5%);
+  }
+  100% {
+    transform: scale(4) translateX(-37.5%) translateY(37.5%);
+  }
+}

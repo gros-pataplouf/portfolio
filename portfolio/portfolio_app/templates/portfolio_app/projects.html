@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="container p-2">
     <h1 class="title">Portfolio</h1>
-    <p >Check out my latest and ongoing web development projects.</p>
+    <p class="mb-6 text-xl font-bold text-center">Check out my latest and ongoing web development projects.</p>
 
-    <ul class="flex flex-wrap">
+    <ul class="flex flex-wrap justify-center">
         {% for skill in skills %}
         <a href="#"><li class="px-2 mt-2 mr-2 rounded-md bg-primary hover:bg-primary-700 active:bg-action hover: /90 js__skill">{{skill.name}}</li></a>
         {% endfor %}
@@ -38,7 +38,7 @@
     
     <ul class="flex flex-wrap mb-2 mr-2">
         {% for skill in entry.skills.all %}
-        <li class="px-2 mt-2 mr-2  rounded-md bg-primary-700 js__project_skill">{{skill}}</li>
+        <li class="px-2 mt-2 mr-2 rounded-md bg-primary-700 js__project_skill">{{skill}}</li>
         {% endfor %}
     </ul>
     
