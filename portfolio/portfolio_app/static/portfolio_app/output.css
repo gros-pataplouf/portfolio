@@ -1255,7 +1255,7 @@ img.captcha {
   border-color: hsl(var(--primary));
 }
 
-.border-primarylight\/20 {
+.border-primary-200\/20 {
   border-color: hsl(var(--primarylight) / 0.2);
 }
 
@@ -1268,12 +1268,8 @@ img.captcha {
   background-color: hsl(var(--primary));
 }
 
-.bg-primarydark {
+.bg-primary-700 {
   background-color: hsl(var(--primarydark));
-}
-
-.bg-primarydarkest {
-  background-color: hsl(var(--primarydarkest));
 }
 
 .bg-transparent {
@@ -1303,15 +1299,15 @@ img.captcha {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-primarydarker {
+.from-primary-600 {
   --tw-gradient-from: hsl(var(--primarydarker)) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--primarydarker) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-primarydarkest {
-  --tw-gradient-from: hsl(var(--primarydarkest)) var(--tw-gradient-from-position);
-  --tw-gradient-to: hsl(var(--primarydarkest) / 0) var(--tw-gradient-to-position);
+.from-primary-700 {
+  --tw-gradient-from: hsl(var(--primarydark)) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(var(--primarydark) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -1321,9 +1317,9 @@ img.captcha {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.via-primarydarkest {
-  --tw-gradient-to: hsl(var(--primarydarkest) / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--primarydarkest)) var(--tw-gradient-via-position), var(--tw-gradient-to);
+.via-primary-700 {
+  --tw-gradient-to: hsl(var(--primarydark) / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--primarydark)) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .to-action {
@@ -1338,12 +1334,12 @@ img.captcha {
   --tw-gradient-to: hsl(var(--green)) var(--tw-gradient-to-position);
 }
 
-.to-primarydarker {
+.to-primary-600 {
   --tw-gradient-to: hsl(var(--primarydarker)) var(--tw-gradient-to-position);
 }
 
-.to-primarydarkest {
-  --tw-gradient-to: hsl(var(--primarydarkest)) var(--tw-gradient-to-position);
+.to-primary-700 {
+  --tw-gradient-to: hsl(var(--primarydark)) var(--tw-gradient-to-position);
 }
 
 .to-violet {
@@ -1445,12 +1441,12 @@ img.captcha {
   color: hsl(var(--action));
 }
 
-.text-primarydark {
-  color: hsl(var(--primarydark));
+.text-primary-200 {
+  color: hsl(var(--primarylight));
 }
 
-.text-primarylight {
-  color: hsl(var(--primarylight));
+.text-primary-700 {
+  color: hsl(var(--primarydark));
 }
 
 .text-sky-300 {
@@ -1511,7 +1507,7 @@ img.captcha {
   cursor: help;
 }
 
-.hover\:bg-primarydark:hover {
+.hover\:bg-primary-700:hover {
   background-color: hsl(var(--primarydark));
 }
 
@@ -1821,16 +1817,16 @@ img.captcha {
   }
 }
 
-.\[\&\>div\>input\]\:bg-primarydarkest>div>input {
-  background-color: hsl(var(--primarydarkest));
+.\[\&\>div\>input\]\:bg-primary-700>div>input {
+  background-color: hsl(var(--primarydark));
 }
 
 .\[\&\>div\>input\]\:p-2>div>input {
   padding: 0.5rem;
 }
 
-.\[\&\>div\>textarea\]\:bg-primarydarkest>div>textarea {
-  background-color: hsl(var(--primarydarkest));
+.\[\&\>div\>textarea\]\:bg-primary-700>div>textarea {
+  background-color: hsl(var(--primarydark));
 }
 
 .\[\&\>div\>textarea\]\:p-2>div>textarea {

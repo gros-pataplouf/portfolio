@@ -9,7 +9,7 @@
 <p class="text-lato md:w-[33rem]">If you want to get in touch, fill in the form below or send an email to 
   cornelia.myokg@passmail.com and let's have a chat.</p>
 
-<form class="flex flex-col items-center justify-center text-white [&>div>*]:w-[92vw] [&>div>*]:md:w-[25rem] [&>div>input]:bg-primarydarkest [&>div>textarea]:bg-primarydarkest [&>div>textarea]:p-2 [&>div>input]:p-2 space-y-4" method="POST" action="/contact/">
+<form class="flex flex-col items-center justify-center text-white [&>div>*]:w-[92vw] [&>div>*]:md:w-[25rem] [&>div>input]:bg-primary-700 [&>div>textarea]:bg-primary-700 [&>div>textarea]:p-2 [&>div>input]:p-2 space-y-4" method="POST" action="/contact/">
   {% csrf_token %}
   {{ form|crispy }}
 
