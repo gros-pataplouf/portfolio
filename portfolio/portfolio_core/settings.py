@@ -160,3 +160,4 @@ CAPTCHA_BACKGROUND_COLOR = 'purple'
 CAPTCHA_NOISE_FUNCTIONS = ['captcha.helpers.noise_dots','captcha.helpers.noise_dots']
 CAPTCHA_FLITE_PATH = '/usr/bin/flite'
 
+
