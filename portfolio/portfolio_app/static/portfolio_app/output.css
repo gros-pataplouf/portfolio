@@ -1,43 +1,3 @@
-@font-face {
-  font-family: 'Sunrise';
-
-  src: url(./fonts/WaitingfortheSunrise-Regular.woff2) format('woff2'),
-    url(./fonts/WaitingfortheSunrise-Regular.woff) format('woff');
-}
-
-@font-face {
-  font-family: "Roboto";
-
-  src: url("./fonts/roboto-regular-webfont.woff2") format("woff2"),
-      url("./fonts/roboto-regular-webfont.woff") format("woff");
-
-  font-weight: 400;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Lato";
-
-  src: url("./fonts/Lato-Regular.woff2") format("woff2"),
-      url("./fonts/Lato-Regular.woff") format("woff");
-
-  font-weight: 400;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "LatoLight";
-
-  src: url("./fonts/Lato-Light.woff") format("woff2"),
-      url("./fonts/Lato-Light.woff") format("woff");
-
-  font-weight: 100;
-
-  font-style: normal;
-}
-
 @keyframes higher {
   50% {
     padding-top: 2rem;
@@ -512,6 +472,123 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: 'Sunrise';
+
+  src: url(./fonts/WaitingfortheSunrise-Regular.woff2) format('woff2'),
+    url(./fonts/WaitingfortheSunrise-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-Black.woff2") format("woff2"),
+      url("./fonts/Lato-Black.woff") format("woff");
+
+  font-weight: 900;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-BlackItalic.woff2") format("woff2"),
+      url("./fonts/Lato-BlackItalic.woff") format("woff");
+
+  font-weight: 900;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-Bold.woff2") format("woff2"),
+      url("./fonts/Lato-Bold.woff") format("woff");
+
+  font-weight: 700;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-BoldItalic.woff2") format("woff2"),
+      url("./fonts/Lato-BoldItalic.woff") format("woff");
+
+  font-weight: 700;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-Regular.woff2") format("woff2"),
+      url("./fonts/Lato-Regular.woff") format("woff");
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-Italic.woff2") format("woff2"),
+      url("./fonts/Lato-Italic.woff") format("woff");
+
+  font-weight: 400;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-Light.woff") format("woff2"),
+      url("./fonts/Lato-Light.woff") format("woff");
+
+  font-weight: 300;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-LightItalic.woff") format("woff2"),
+      url("./fonts/Lato-LightItalic.woff") format("woff");
+
+  font-weight: 300;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-Thin.woff") format("woff2"),
+      url("./fonts/Lato-Thin.woff") format("woff");
+
+  font-weight: 100;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+
+  src: url("./fonts/Lato-ThinItalic.woff") format("woff2"),
+      url("./fonts/Lato-ThinItalic.woff") format("woff");
+
+  font-weight: 100;
+
+  font-style: italic;
+}
+
 :root {
   --primary: 215deg 15% 50%;
   --primarydarker: 215deg 15% 40%;
@@ -525,21 +602,10 @@ video {
   --green: 139deg 100% 54%;
 }
 
-body {
-  font-family: Roboto;
-}
-
-.font-lato-caps {
-  font-family: Lato;
-  font-variant: small-caps;
-}
-
-.font-lato {
-  font-family: Lato;
-}
-
-.font-lato-light {
-  font-family: LatoLight;
+html, dialog {
+  font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .scale-gallery {
@@ -714,8 +780,6 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -736,6 +800,10 @@ body {
 
 .title {
   margin-bottom: 1rem;
+  width: 0px;
+  animation: typing 3s steps(20,end) forwards;
+  overflow: hidden;
+  white-space: nowrap;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: hsl(var(--action)) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--action) / 0) var(--tw-gradient-to-position);
@@ -745,6 +813,7 @@ body {
           background-clip: text;
   padding: 1rem;
   text-align: center;
+  font-family: Sunrise, sans-serif;
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;
@@ -767,25 +836,6 @@ body {
   }
 }
 
-.title {
-  font-family: Sunrise;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) forwards;
-  width: 0;
-}
-
-.text-lato {
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  font-family: Lato;
-}
-
 .container {
   display: flex;
   min-height: 100vh;
@@ -796,39 +846,52 @@ body {
 
 .anchorActive {
   background-color: hsl(var(--primarydark));
-  /* @apply lg:fixed lg:bg-primary lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
+  &>a {
+    cursor: none;
+  }
   &>a {
     font-weight: 700;
   }
-  &>a {
-    cursor:none;
-  }
 }
 
-.anchorInactive {
-  /* @apply lg:fixed lg:bg-primarydark lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
-  &:hover {
-    background-color: hsl(var(--primarydarker));
-  }
+.anchorInactive:hover {
+  background-color: hsl(var(--primarydarker));
 }
 
 .hexagon {
   -webkit-clip-path: polygon(
-          50% 0%,
-          91% 25%,
-          91% 75%,
-          50% 100%,
-          9% 75%,
-          9% 25%
-      );
+        50% 0%,
+        91% 25%,
+        91% 75%,
+        50% 100%,
+        9% 75%,
+        9% 25%
+    );
           clip-path: polygon(
-          50% 0%,
-          91% 25%,
-          91% 75%,
-          50% 100%,
-          9% 75%,
-          9% 25%
-      );
+        50% 0%,
+        91% 25%,
+        91% 75%,
+        50% 100%,
+        9% 75%,
+        9% 25%
+    )
+}
+
+.js__nav-visible {
+  right: 0;
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.js__nav-invisible {
+  right: 100vh;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+.js__skill_active {
+  background-color: hsl(var(--accent))!important;
+  color: whitesmoke;
 }
 
 @keyframes typing {
@@ -844,28 +907,6 @@ body {
 /* ///LAYER BASE/// */
 
 /* LAYER COMPONENTS */
-
-.nav-visible {
-  right: 0;
-  transition-property: all;
-  transition-duration: 1s;
-}
-
-.nav-invisible {
-  right: 100vh;
-  transition-property: all;
-  transition-duration: 2s;
-}
-
-.js__skill_active {
-  background-color: hsl(var(--accent))!important;
-  color: whitesmoke;
-}
-
-.send_button_1 {
-  -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-}
 
 @media (min-width: 1024px) {
   .carousel_container {
@@ -915,13 +956,6 @@ body {
   .carousel_cell:nth-of-type(6) {
     transform: rotateY(-305deg) translateZ(22vw)
   }
-}
-
-.rtl {
-  direction: rtl;
-  /* text-align: left; */
-  list-style-position: outside;
-  margin-right: 1rem;
 }
 
 .captcha, #id_captcha_1 {
@@ -1429,12 +1463,12 @@ img.captcha {
   font-weight: 700;
 }
 
-.italic {
-  font-style: italic;
+.font-light {
+  font-weight: 300;
 }
 
-.text-accent {
-  color: hsl(var(--accent));
+.italic {
+  font-style: italic;
 }
 
 .text-action {
@@ -1452,19 +1486,6 @@ img.captcha {
 .text-sky-300 {
   --tw-text-opacity: 1;
   color: rgb(125 211 252 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-white\/50 {
-  color: rgb(255 255 255 / 0.5);
-}
-
-.text-white\/90 {
-  color: rgb(255 255 255 / 0.9);
 }
 
 .shadow-2xl {
@@ -1487,6 +1508,10 @@ img.captcha {
 .shadow-primary {
   --tw-shadow-color: hsl(var(--primary));
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.caps {
+  font-variant: small-caps;
 }
 
 .first\:rounded-t-md:first-child {
@@ -1515,21 +1540,12 @@ img.captcha {
   padding-top: 2rem;
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
 
 .active\:bg-action:active {
   background-color: hsl(var(--action));
-}
-
-.group:hover .group-hover\:text-white\/80 {
-  color: rgb(255 255 255 / 0.8);
 }
 
 @media (min-width: 768px) {
@@ -1800,6 +1816,10 @@ img.captcha {
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .lg\:rtl {
+    direction: rtl;
   }
 }
 

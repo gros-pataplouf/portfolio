@@ -1,4 +1,3 @@
-@import "./css/fontface.css";
 @import "./css/keyframes.css";
 
 @tailwind base;
@@ -7,6 +6,87 @@
 /* ///LAYER BASE/// */
 
 @layer base {
+  @font-face {
+    font-family: 'Sunrise';
+    src: url(./fonts/WaitingfortheSunrise-Regular.woff2) format('woff2'),
+    url(./fonts/WaitingfortheSunrise-Regular.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Black.woff2") format("woff2"),
+      url("./fonts/Lato-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-BlackItalic.woff2") format("woff2"),
+      url("./fonts/Lato-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Bold.woff2") format("woff2"),
+      url("./fonts/Lato-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-BoldItalic.woff2") format("woff2"),
+      url("./fonts/Lato-BoldItalic.woff") format("woff");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Regular.woff2") format("woff2"),
+      url("./fonts/Lato-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Italic.woff2") format("woff2"),
+      url("./fonts/Lato-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Light.woff") format("woff2"),
+      url("./fonts/Lato-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-LightItalic.woff") format("woff2"),
+      url("./fonts/Lato-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Thin.woff") format("woff2"),
+      url("./fonts/Lato-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-ThinItalic.woff") format("woff2"),
+      url("./fonts/Lato-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+  }
 
     :root {
         --primary: 215deg 15% 50%;
@@ -21,26 +101,11 @@
         --green: 139deg 100% 54%;
     }
     
-body {
-  font-family: Roboto;
-}
+    html, dialog {
+      @apply text-white font-lato;
+    }
 
 
-.font-lato-caps {
-  font-family: Lato;
-  font-variant: small-caps;
-
-}
-
-.font-lato {
-  font-family: Lato;
-
-}
-
-.font-lato-light {
-  font-family: LatoLight;
-
-}
 
 .scale-gallery {
   transform: scale(4) translateX(37.5%) translateY(37.5%);
@@ -78,64 +143,53 @@ body {
 
 @layer components {
   .button {
-    @apply block px-8 py-4 mt-8 font-bold text-white transition-all rounded-lg bg-gradient-to-r from-accent/90 to-action/90 hover:from-accent hover:to-action hover:px-9 active:underline;
+    @apply block px-8 py-4 mt-8 font-bold transition-all rounded-lg bg-gradient-to-r from-accent/90 to-action/90 hover:from-accent hover:to-action hover:px-9 active:underline;
   }
   .title {
-    @apply p-4 mb-4 text-6xl font-bold text-center text-transparent md:text-4xl bg-gradient-to-r from-action to-accent bg-clip-text lg:mt-10 lg:text-6xl md:w-2/3;
-    font-family: Sunrise;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 3s steps(20, end) forwards;
-    width: 0;
+    @apply p-4 mb-4 overflow-hidden whitespace-nowrap animate-[typing_3s_steps(20,end)_forwards] w-0 text-6xl font-bold text-center text-transparent font-sunrise md:text-4xl bg-gradient-to-r from-action to-accent bg-clip-text lg:mt-10 lg:text-6xl md:w-2/3;
   }
-
-  .title-delay {
-    @apply p-0 m-0 text-4xl title bg-gradient-to-r from-violet to-green;
-    animation-delay: 3s;
-  }
-
-  .text-lato {
-    @apply   p-4 text-lg font-bold text-center text-white;
-    font-family: Lato;
-
-  }
-
-
-
   .container {
     @apply flex flex-col items-center justify-center min-h-screen;
 
   }
-
-    .anchorActive {
-      background-color: hsl(var(--primarydark));
-        /* @apply lg:fixed lg:bg-primary lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
+  .anchorActive {
+      @apply bg-primary-700;
         &>a {
-          @apply font-bold;
-          cursor:none;
-        }
-    }
-
-    .anchorInactive {
-
-
-        /* @apply lg:fixed lg:bg-primarydark lg:right-4 lg:bg-contain lg:border-primary/50 lg:h-40 lg:w-40 lg:p-10 bg-primary lg:flex lg:flex-col lg:items-center lg:justify-center hexagon; */
-        &:hover {
-            background-color: hsl(var(--primarydarker));
+          @apply font-bold cursor-none;
         }
       }
+  .anchorInactive {
+    @apply hover:bg-primary-600;
+  }
+  .hexagon {
+    clip-path: polygon(
+        50% 0%,
+        91% 25%,
+        91% 75%,
+        50% 100%,
+        9% 75%,
+        9% 25%
+    )
+  }
 
-    .hexagon {
-      clip-path: polygon(
-          50% 0%,
-          91% 25%,
-          91% 75%,
-          50% 100%,
-          9% 75%,
-          9% 25%
-      );
+.js__nav-visible {
+  right: 0;
+  transition-property: all;
+  transition-duration: 1s;
 
-    }
+}
+
+.js__nav-invisible {
+  right: 100vh;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+.js__skill_active {
+  background-color: hsl(var(--accent))!important;
+  color: whitesmoke;
+}
+
 
 
 
@@ -148,29 +202,7 @@ body {
 
 }
 
-.nav-visible {
-  right: 0;
-  transition-property: all;
-  transition-duration: 1s;
 
-}
-
-.nav-invisible {
-  right: 100vh;
-  transition-property: all;
-  transition-duration: 2s;
-}
-
-.js__skill_active {
-  background-color: hsl(var(--accent))!important;
-  color: whitesmoke;
-}
-
-.send_button_1 {
-  -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-
-}
 
 
 @media (min-width: 1024px) {
@@ -214,12 +246,6 @@ body {
   
 }
 
-.rtl {
-  direction: rtl;
-  /* text-align: left; */
-  list-style-position: outside;
-  margin-right: 1rem;
-}
 
 .captcha, #id_captcha_1 {
   border-radius: .5rem;
@@ -236,3 +262,13 @@ img.captcha {
 }
 
 @tailwind utilities;
+@layer utilities {
+  .caps {
+    font-variant: small-caps;
+ 
+  }
+  .rtl {
+    direction: rtl;
+  }
+  
+}

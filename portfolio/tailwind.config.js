@@ -18,7 +18,20 @@ module.exports = {
         "violet": "hsl(var(--violet))",
         "green": "hsl(var(--green))",
       },
+      fontFamily : {
+        'sunrise': ['Sunrise', 'sans-serif'],
+        'lato': ['Lato', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif']
+      }
     },
   },
   plugins: [],
+  purge: {
+    safelist: [
+      'js__nav-visible',
+      'js__nav-invisible',
+      'js__skill_active',
+
+    ]
+  },
 }
+

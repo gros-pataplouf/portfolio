@@ -127,8 +127,8 @@ const navbar =document.querySelector("#navbar");
 toggleMobileNavIcon.addEventListener("click", () => {
     toggleMobileNavIcon.classList.toggle("fa-bars");
     toggleMobileNavIcon.classList.toggle("fa-xmark");
-    navbar.classList.toggle("nav-invisible");
-    navbar.classList.toggle("nav-visible");
+    navbar.classList.toggle("js__nav-invisible");
+    navbar.classList.toggle("js__nav-visible");
     })
 
 }
