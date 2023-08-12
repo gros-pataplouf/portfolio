@@ -9,6 +9,7 @@ django-crispy-forms = "*"
 crispy-tailwind = "*"
 django-simple-captcha = "*"
 load-dotenv = "*"
+whitenoise = "*"
 
 [dev-packages]
 
