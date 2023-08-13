@@ -142,10 +142,19 @@ if DEBUG == False:
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-# The url where static files will be fond 
-STATIC_URL = 'putzi/'
-# The folder where static files will be collected in production 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# The URL to use when referring to static files (where they will be served from)
+STATIC_URL = '/static/'
+
+# The absolute path to the directory where collectstatic will collect static files for deployment.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
