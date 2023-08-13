@@ -1,4 +1,3 @@
-
 {% extends "portfolio_app/base.html" %}
 {% load static %}
 
@@ -26,11 +25,8 @@
     {% if entry.image %}
     <div class="my-4 bg-white overflow-clip">
         <div class="relative scale-gallery-parent">
-                <img src={{entry.image}} class="absolute block scale-gallery" alt="">
-                <img src="/static/portfolio_app/images/laptop.png" alt="" class="relative block scale-laptop">
-
-
-
+                <img src="{% static entry.image %}" class="absolute block scale-gallery" alt="">
+                <img src="{% static '/portfolio_app/images/laptop.png' %}" alt="" class="relative block scale-laptop">
         </div>
     </div>
     {% endif %}
