@@ -36,8 +36,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['portfolio-production-9db6.up.railway.app', '*']
+DEBUG = False
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -137,7 +137,7 @@ if DEBUG == False:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_PRELOAD = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['cornelia-codes.up.railway.app']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -147,12 +147,9 @@ if DEBUG == False:
 STATIC_URL = 'staticfiles/'
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

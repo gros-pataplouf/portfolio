@@ -864,7 +864,7 @@ html, dialog {
 }
 
 .anchorInactive:hover {
-  background-color: hsl(var(--primarylight))
+  background-color: hsl(var(--primarydarker))
 }
 
 .hexagon {
