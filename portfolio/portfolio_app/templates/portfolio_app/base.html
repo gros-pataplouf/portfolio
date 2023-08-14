@@ -20,20 +20,27 @@
         <i id="toggleMobileNavIcon" class="fixed text-lg text-center align-middle fa-solid fa-bars"></i>
         </div>
     <nav id="navbar" class="fixed top-0 z-40 w-screen h-screen text-3xl shadow-md md:text-lg md:sticky md:w-1/4 bg-primary js__nav-invisible shadow-primary ">
-        <ul class="relative flex flex-col items-center justify-center h-screen space-y-12 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
+        <ul class="relative flex flex-col items-center justify-center h-screen space-y-8 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
 
-            <li class="hidden md:block ">
+            <li class="hidden md:block">
                 <a href="/" title="home">
-            <div class="bg-gradient-to-r from-accent to-action md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 md:flex-col md:items-center md:justify-center hexagon">
+                <div class=" bg-gradient-to-r from-accent to-action md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 md:flex-col md:items-center md:justify-center hexagon">
                 <div class="hidden md:block md:h-16 md:w-16 lg:h-20 lg:w-20 md:border-primary/50 md:border-solid md:border-4 hexagon">
-            <img src={% static 'portfolio_app/images/me.jpeg' %} class="object-contain"></div>
+                    <img src={% static 'portfolio_app/images/me.jpeg' %} class="object-contain">
                 </div>
-            <div>
-                <p class="text-2xl text-right caps">Cornelia Petry</p>
-                <p class="ml-auto text-xl text-right caps">Full-Stack Developer</p>
+                </div>
+                <div>
+                    <p class="text-2xl text-right caps">Cornelia Petry</p>
+                    <p class="ml-auto text-xl text-right caps">Full-Stack Developer</p>
 
-            </div>
-            </a>
+                </div>
+                </a>
+            </li>
+
+            <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}} md:hidden">
+                <a href="/" title="home">
+                    <i class="fa-solid fa-house"></i>
+                </a>
             </li>
             
             <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">

@@ -105,8 +105,6 @@
       @apply text-white font-lato;
     }
 
-
-
 .scale-gallery {
   transform: scale(4) translateX(37.5%) translateY(37.5%);
 
@@ -183,13 +181,14 @@
   color: white;
 }
 
-.carousel_container {
-  @media (min-width: 1024px) {
-  width: 21vw;
-  height: 14vw;
-  position: relative;
-  perspective: 2500px;}
-}
+@media (min-width: 1024px){
+  .carousel_container {
+    
+    width: 21vw;
+    height: 14vw;
+    position: relative;
+    perspective: 2500px;}
+
 
 .carousel {
   width: 21vw;
@@ -222,7 +221,8 @@
 .carousel_cell:nth-of-type(6) { transform: rotateY(-305deg) translateZ(22vw)}
 
 }
-
+}
+  
 
 /*styling elements per id */
 

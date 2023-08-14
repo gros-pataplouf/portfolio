@@ -12,9 +12,8 @@
 
 </div>
     {% for entry in all_by_date %}
-    <hr class="w-1/3 mx-auto first-of-type:hidden lg:hidden">
     <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative flex flex-col w-screen h-full bg-transparent lg:w-1 first:rounded-t-md last:rounded-b-md md:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
-
+        
         {% for date, entry in entry.items %}
         <!-- put work items on the left and education items on the right. Work item = entry has company attribute  -->
         {% if entry.company %}

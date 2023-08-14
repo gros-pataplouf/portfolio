@@ -905,57 +905,54 @@ html, dialog {
   color: white;
 }
 
-.carousel_container {
-  @media (min-width: 1024px) {
+@media (min-width: 1024px){
+  .carousel_container {
     width: 21vw;
-
     height: 14vw;
-
     position: relative;
-
     perspective: 2500px;
   }
-}
 
-.carousel {
-  width: 21vw;
-  height: 14vw;
-  position: absolute;
-  transform-style: preserve-3d;
-  transform: rotateX(-12deg);
-}
+  .carousel {
+    width: 21vw;
+    height: 14vw;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(-12deg);
+  }
 
-.carousel_cell {
-  position: absolute;
-  width: 22vw;
-  height: 18vw;
-  right: 0%;
-  top: 0%;
-  transition: all 1s ease-in-out;
-}
+  .carousel_cell {
+    position: absolute;
+    width: 22vw;
+    height: 18vw;
+    right: 0%;
+    top: 0%;
+    transition: all 1s ease-in-out;
+  }
 
-.carousel_cell:nth-of-type(1) {
-  transform: rotateY(  -5deg) translateZ(22vw);
-}
+  .carousel_cell:nth-of-type(1) {
+    transform: rotateY(  -5deg) translateZ(22vw);
+  }
 
-.carousel_cell:nth-of-type(2) {
-  transform: rotateY( -65deg) translateZ(22vw)
-}
+  .carousel_cell:nth-of-type(2) {
+    transform: rotateY( -65deg) translateZ(22vw)
+  }
 
-.carousel_cell:nth-of-type(3) {
-  transform: rotateY(-125deg) translateZ(22vw)
-}
+  .carousel_cell:nth-of-type(3) {
+    transform: rotateY(-125deg) translateZ(22vw)
+  }
 
-.carousel_cell:nth-of-type(4) {
-  transform: rotateY(-185deg) translateZ(22vw)
-}
+  .carousel_cell:nth-of-type(4) {
+    transform: rotateY(-185deg) translateZ(22vw)
+  }
 
-.carousel_cell:nth-of-type(5) {
-  transform: rotateY(-245deg) translateZ(22vw)
-}
+  .carousel_cell:nth-of-type(5) {
+    transform: rotateY(-245deg) translateZ(22vw)
+  }
 
-.carousel_cell:nth-of-type(6) {
-  transform: rotateY(-305deg) translateZ(22vw)
+  .carousel_cell:nth-of-type(6) {
+    transform: rotateY(-305deg) translateZ(22vw)
+  }
 }
 
 /* ///LAYER BASE/// */
@@ -1196,6 +1193,22 @@ html, dialog {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
+.translate-x-\[37\.5\%\] {
+  --tw-translate-x: 37.5%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.translate-y-\[37\.5\%\] {
+  --tw-translate-y: 37.5%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.scale-\[4\] {
+  --tw-scale-x: 4;
+  --tw-scale-y: 4;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
 .list-outside {
   list-style-position: outside
 }
@@ -1248,6 +1261,12 @@ html, dialog {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse))
 }
 
 .overflow-clip {
