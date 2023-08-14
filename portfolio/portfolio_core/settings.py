@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [ '*' ]
 
 
@@ -130,7 +130,7 @@ USE_L10N = True
 USE_TZ = True
 
 if DEBUG == False:
-    SECURE_HSTS_SECONDS = 3600
+    SECURE_HSTS_SECONDS = 3600000000
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SESSION_COOKIE_SECURE = True
