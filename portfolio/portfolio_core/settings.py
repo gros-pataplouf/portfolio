@@ -37,7 +37,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = [ 'cornelia-codes.up.railway.app' ]
+ALLOWED_HOSTS = [ '*' ]
 
 
 # Application definition
@@ -137,7 +137,6 @@ if DEBUG == False:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_PRELOAD = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    ALLOWED_HOSTS = ['cornelia-codes.up.railway.app']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
