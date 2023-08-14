@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+
 from dotenv import load_dotenv
 #Load environment variables 
 load_dotenv()
@@ -36,7 +37,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['portfolio-production-9db6.up.railway.app']
+ALLOWED_HOSTS = ['portfolio-production-9db6.up.railway.app', '*']
 
 
 # Application definition
@@ -143,7 +144,7 @@ if DEBUG == False:
 
 
 # The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
+STATIC_URL = 'staticfiles/'
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
