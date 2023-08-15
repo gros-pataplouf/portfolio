@@ -10,18 +10,17 @@
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static '/portfolio_app/output.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio_app/output.css' %}">
     <title>Cornelia Petry</title>
 </head>
 <body>
     <div class="relative flex flex-col items-center justify-center w-screen bg-gradient-to-br from-primary-700 to-black md:items-start md:justify-start md:flex-row h-min-screen">
     <canvas class="fixed top-0" id="canvas"></canvas>
-    <div class="fixed z-50 flex flex-col items-center justify-center w-12 h-12 rounded-full bg-primary-700 right-4 top-4 md:hidden">
-        <i id="toggleMobileNavIcon" class="fixed text-lg text-center align-middle fa-solid fa-bars"></i>
+    <div class="fixed z-50 flex flex-col items-center justify-center rounded-full w-14 h-14 bg-primary-700 right-4 top-4 md:hidden">
+        <i id="toggleMobileNavIcon" class="fixed text-4xl text-center align-middle fa-solid fa-bars"></i>
         </div>
-    <nav id="navbar" class="fixed top-0 z-40 w-screen h-screen text-3xl shadow-md md:text-lg md:sticky md:w-1/4 bg-primary js__nav-invisible shadow-primary ">
-        <ul class="relative flex flex-col items-center justify-center h-screen space-y-8 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
-
+    <nav id="navbar" class="fixed top-0 z-40 w-screen h-screen text-3xl shadow-md md:text-lg md:sticky md:w-1/4 bg-primary js__nav-invisible shadow-primary">
+        <ul class="relative flex flex-col items-center justify-center h-screen space-y-6 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
             <li class="hidden md:block">
                 <a href="/" title="home">
                 <div class=" bg-gradient-to-r from-accent to-action md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 md:flex-col md:items-center md:justify-center hexagon">
@@ -36,28 +35,30 @@
                 </div>
                 </a>
             </li>
-
-            <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}} md:hidden">
+            <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}} md:!hidden">
                 <a href="/" title="home">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
-            
             <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">
                 <a href={% url 'bio' %} class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">Bio                <i class="hidden md:inline md:ml-6 fa-regular fa-user"></i>
                 </a> 
             </li>
-        <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
-            <a href={% url 'skills' %} class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">Skills <i class="hidden md:inline md:ml-6 fa-solid fa-book"></i></a>
-            
-        </li>
+            <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
+                <a href={% url 'skills' %} class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">Skills <i class="hidden md:inline md:ml-6 fa-solid fa-book"></i></a>
+            </li>
             <li class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}}">
-                <a href={% url 'projects' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">Projects                 <i class="hidden md:inline md:ml-6 fa-solid fa-th"></i>
+                <a href={% url 'projects' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">Projects
+                    <i class="hidden md:inline md:ml-6 fa-solid fa-th"></i>
                 </a>
             </li>
             <li class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}}">
-                <a href={% url 'contact' %} class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">Contact <i class="hidden md:inline md:ml-6 fa-solid fa-envelope"></i></a>
-                
+                <a href={% url 'contact' %} class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">
+                    <span class="hidden md:inline">Contact</span>
+                    <i 
+                    class="w-12 p-2 mx-2 text-3xl rounded-md md:p-0 md:w-min md:mr-0 hover:pt-8 md:hover:pt-0 bg-action md:bg-transparent md:text-lg md:ml-6 fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/m/in/cpetry/" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl text-center  hover:pt-8 rounded-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/gros-pataplouf" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl rounded-md hover:pt-8 bg-primary-800 fa-brands fa-github"></i></a>
             </li>
         </ul>
     </nav>
@@ -65,15 +66,12 @@
     <div class="relative min-h-screen lg:p-4 md:mt-0 md:flex md:flex-col md:justify-start md:items-start md:bg-transparent md:w-screen md:min-h-screen" id="content">
         {% block content %}{% endblock %}
     </div>
-     
-        <div class="top-0 hidden right-4 md:absolute md:flex animate-social">
-            <a href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 mx-2 text-3xl text-center  hover:pt-8 rounded-b-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
-          <a href="https://github.com/gros-pataplouf"><i class="w-12 p-2 mx-2 text-3xl rounded-b-md bg-primary hover:pt-8 fa-brands fa-github"></i></a>
-        </div>
-
-        
+    
+    <div class="top-0 hidden right-4 md:absolute md:flex animate-social">
+        <a href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 mx-2 text-3xl text-center  hover:pt-8 rounded-b-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/gros-pataplouf"><i class="w-12 p-2 mx-2 text-3xl rounded-b-md bg-primary hover:pt-8 fa-brands fa-github"></i></a>
+    </div>
     <div id="js__scroll_up" class="fixed flex-col items-center justify-center hidden w-12 h-12 rounded-full bottom-6 right-4 bg-gradient-to-br from-violet to-green"><i class="text-2xl fa-solid fa-arrow-up"></i></div>
-        
     </div>
     
 <script src={% static 'portfolio_app/index.js' %} defer type="module"></script>

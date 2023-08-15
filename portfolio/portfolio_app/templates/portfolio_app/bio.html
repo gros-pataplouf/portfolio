@@ -9,40 +9,38 @@
     <div class="flex justify-around w-screen text-xl lg:hidden text-sky-300">
         <p class="text-action"><i id="toggleWork" class="fa-solid fa-toggle-on"></i> <span>Work</span></p>
         <p  class="text-sky-300"><i id="toggleEducation" class="fa-solid fa-toggle-on"></i> <span>Education</span></p>
-
-</div>
+    </div>
     {% for entry in all_by_date %}
     <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative flex flex-col w-screen h-full bg-transparent lg:w-1 first:rounded-t-md last:rounded-b-md md:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
-        
         {% for date, entry in entry.items %}
         <!-- put work items on the left and education items on the right. Work item = entry has company attribute  -->
         {% if entry.company %}
         <div class="relative space-y-2 lg:text-right px-8 lg:-left-[24.75rem] js__work-item lg:w-96 pb-6">
-        <div class="absolute w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
-        <p class="pl-2 text-primary-200 lg:pl-0 text-md">{{entry.start_date.month}}/{{entry.start_date.year}} -
-            {% if entry.end_date%}
-            {{entry.end_date.month}}/{{entry.end_date.year}}
-            {% else %}
-            currently
-            {% endif %}
-        </p>        
-        <div class="lg:text-right">
-        <h2 class="text-2xl font-bold caps">{{ entry.job_title }}</h2>
-        <h3 class="italic">{{ entry.company }}</h3>
-        <p class="italic">{{ entry.place }}</p>
-        <ul class="mt-2 lg:pl-0">
-        {% for task in entry.description|parse_items %}
-        <li class="pl-4 list-disc lg:list-inside lg:-p-2 lg:rtl">{{ task }}</li>
-        {% endfor %}
-        </ul>
-        <div>
-        <ul class="flex flex-wrap mt-2 lg:justify-end">
-        {% for skill in entry.skills.all %}
-        <li class="px-1 block mt-1 bg-gradient-to-b from-primary-700 to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary ">{{skill}}</li>
-        {% endfor %}
-        </ul>
-        </div>
-        </div>
+            <div class="absolute w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
+                <p class="pl-2 text-primary-200 lg:pl-0 text-md">{{entry.start_date.month}}/{{entry.start_date.year}} -
+                    {% if entry.end_date%}
+                    {{entry.end_date.month}}/{{entry.end_date.year}}
+                    {% else %}
+                    currently
+                    {% endif %}
+                </p>        
+                <div class="lg:text-right">
+                    <h2 class="text-2xl font-bold caps">{{ entry.job_title }}</h2>
+                    <h3 class="italic">{{ entry.company }}</h3>
+                    <p class="italic">{{ entry.place }}</p>
+                    <ul class="mt-2 lg:pl-0">
+                    {% for task in entry.description|parse_items %}
+                    <li class="pl-4 list-disc lg:list-inside lg:-p-2 lg:rtl">{{ task }}</li>
+                    {% endfor %}
+                    </ul>
+                <div>
+                    <ul class="flex flex-wrap mt-2 lg:justify-end">
+                    {% for skill in entry.skills.all %}
+                    <li class="px-1 block mt-1 bg-gradient-to-b from-primary-700 to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary ">{{skill}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
         <!-- education -->
 
@@ -61,7 +59,7 @@
                 {% endif %} 
             </p>
 
-            <div >
+            <div>
                 <h2 class="text-2xl font-bold caps">{{ entry.name }}</h2>
                 <h3 class="italic">{{ entry.school }}</h3>
                 {% if entry.description %}
@@ -71,21 +69,16 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-                <ul class="mt-2">
-                <div>
                 <ul class="flex flex-wrap mt-2">
-                {% for skill in entry.skills.all %}
-                <li class="block mt-2 px-1 bg-gradient-to-b from-primary-700 to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary ">{{skill}}</li>
-                {% endfor %}
+                    {% for skill in entry.skills.all %}
+                    <li class="block mt-2 px-1 bg-gradient-to-b from-primary-700 to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary ">{{skill}}</li>
+                    {% endfor %}
                 </ul>
-                </div>
                 </div>
             </div>
         {% endif %}
         {% endfor %}
-       
     </div>
     {% endfor %}
 </div>
 {% endblock %}
-
