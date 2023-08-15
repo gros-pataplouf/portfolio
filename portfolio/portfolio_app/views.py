@@ -11,10 +11,6 @@ from django.core.exceptions import ValidationError
 
 
 from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
-# import the logging library
-
-# Get an instance of a logger
-logger = logging.getLogger(__name__)
 
 
 # Create your views here.
