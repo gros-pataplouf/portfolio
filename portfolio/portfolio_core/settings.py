@@ -168,39 +168,3 @@ CAPTCHA_BACKGROUND_COLOR = 'purple'
 CAPTCHA_NOISE_FUNCTIONS = ['captcha.helpers.noise_dots','captcha.helpers.noise_dots']
 CAPTCHA_FLITE_PATH = '/usr/bin/flite'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-        },
-    },
-    'handlers': {
-        'logfile': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': "portfolio.log",
-            'maxBytes': 100000,
-            'backupCount': 2,
-            'formatter': 'verbose',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['logfile'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'apps': {
-            'handlers': ['logfile'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
