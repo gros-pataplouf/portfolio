@@ -8,9 +8,14 @@ from .models import Skill, WorkExperience, Project, Education
 from .forms import ContactForm
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+import logging
 
 
 from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
+# import the logging library
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
 
 
 # Create your views here.
