@@ -2,44 +2,51 @@
 {% load static %}
 
 {% block content %}
-<div class="container p-2">
-    <h1 class="title">Portfolio</h1>
-    <p class="mb-6 text-xl font-bold text-center">Check out my latest and ongoing web development projects.</p>
-
+<div class="container relative flex flex-col justify-start min-h-screen p-2 mb-auto">
+    <h1 class="pb-0 title">Portfolio</h1>
+    <p class="mb-6 text-xl font-bold text-center">Check out my projects. Filter by skill.</p>
     <ul class="flex flex-wrap justify-center">
         {% for skill in skills %}
         <a href="#"><li class="px-2 mt-2 mr-2 rounded-md bg-primary hover:bg-primary-700 active:bg-action hover: /90 js__skill">{{skill.name}}</li></a>
         {% endfor %}
     </ul>
-    <div class="flex flex-col w-full mt-8 lg:flex-wrap lg:flex-row lg:justify-between lg:items-stretch">
+    <div id="js__skill-spinner" class="hidden w-full p-10 mt-4 mb-auto">
+        <p class="pb-12 text-lg font-bold text-center text-primary-200 animate-flashing">Filtering projects</p>
+        <div class="flex justify-center w-full">
+            <i class="text-6xl fa-solid fa-spinner animate-spinslowly"></i>
+        </div>
+    </div>
+    <div id="js__project-wrapper" class="flex flex-col w-full mt-8 lg:flex-wrap lg:flex-row lg:justify-between lg:space-y-10 lg:items-stretch">
+      
 
     {% for entry in projects %}
 
-    <div class="p-4 my-2 mx-0 space-y-2 border-2 border-primary-200/20 border-solid bg-white rounded-md shadow-2xl js__project lg:w-[48%]">
-    <h2 class="text-xl font-bold md:text-3xl text-primary-700">{{ entry.name }} 
+    <div class="grid grid-cols-1 p-4 mx-0 my-2 space-y-2 bg-white border-2 border-solid rounded-md shadow-2xl lg:p-12 lg:mt-8 lg:grid-cols-2 border-primary-200/20 animate-flyin js__project">
+    <h2 class="text-xl font-bold md:text-3xl lg:col-span-2 text-primary-700">{{ entry.name }} 
     </h2>
     {% if entry.deployment %}
-    <a class="block mb-2 text-lg font-bold text-action hover:underline"href={{ entry.deployment }}>Live Demo</a>
+    <a class="block col-start-1 mb-2 text-lg font-bold text-action hover:underline"href={{ entry.deployment }}>Live Demo</a>
     {% endif %}
-    <a class="block mb-2 text-lg font-bold text-primary-700 hover:underline" href={{entry.github}}>See code</a>
+    <a class="block col-start-1 mb-2 text-lg font-bold text-primary-700 hover:underline" href={{entry.github}}>See code</a>
     {% if entry.image %}
-    <div class="my-4 bg-white overflow-clip">
+    <div class="my-4 bg-white lg:order-last lg:col-start-2 lg:row-start-2 lg:row-span-5 overflow-clip">
         <div class="relative scale-gallery-parent">
                 <img src="{% static entry.image %}" class="absolute block translate-x-[37.5%] translate-y-[37.5%] scale-[4] scale-gallery" alt="">
                 <img src="{% static 'portfolio_app/images/laptop.png' %}" alt="" class="relative block scale-laptop">
         </div>
     </div>
     {% endif %}
-    <p class="block mb-2 text-lg font-bold text-primary-700">{{entry.description}}</p>
+    <p class="block col-start-1 mb-2 text-lg font-bold text-primary-700">{{entry.description}}</p>
     
-    <ul class="flex flex-wrap mb-2 mr-2">
+    <ul class="flex flex-wrap col-start-1 mb-2 mr-2">
         {% for skill in entry.skills.all %}
         <li class="px-2 mt-2 mr-2 rounded-md bg-primary-700 js__project_skill">{{skill}}</li>
         {% endfor %}
     </ul>
-    
-</div>
-    {% endfor %}
+  </div>
+{% endfor %}
+
+    <div id="js__project-placeholder" class="hidden mx-auto text-lg font-bold text-center text-primary-200">Sorry, no matching projects.</div>
 </div>
 </div>
 

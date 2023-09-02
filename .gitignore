@@ -92,6 +92,9 @@ coverage.xml
 # celery 
 celerybeat-schedule.* 
 
+tailwindcss
+Tasks.todo
+
 # SageMath parsed files 
 *.sage.py 
 

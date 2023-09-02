@@ -144,7 +144,7 @@
     @apply block px-8 py-4 mt-8 font-bold transition-all rounded-lg bg-gradient-to-r from-accent/90 to-action/90 hover:from-accent hover:to-action hover:px-9 active:underline;
   }
   .title {
-    @apply p-4 mb-4 overflow-hidden whitespace-nowrap animate-[typing_3s_steps(20,end)_forwards] w-0 text-6xl font-bold text-center text-transparent font-sunrise md:text-4xl bg-gradient-to-r from-action to-accent bg-clip-text lg:mt-10 lg:text-6xl md:w-2/3;
+    @apply p-4 mb-4 overflow-hidden whitespace-nowrap animate-[typing_3s_steps(20,end)_forwards] w-0 text-6xl font-bold text-center text-transparent font-sunrise md:text-4xl bg-gradient-to-r from-action to-accent bg-clip-text lg:mt-2 lg:text-6xl md:w-2/3;
   }
   .container {
     @apply flex flex-col items-center justify-center min-h-screen;

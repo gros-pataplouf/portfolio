@@ -1,7 +1,39 @@
 
+@keyframes spinslowly {
+ 
+  100% {
+    transform: rotate(360deg);
+}
+
+
+}
+.animate-spinslowly {
+  animation: spinslowly 3s linear infinite;
+}
+
+@keyframes flashing {
+
+  from {
+    display: none;
+  }
+  to {
+    display: block;
+  }
+}
+
+
+.animate-flashing {
+  animation: flashing 2s linear;
+}
+
+
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100%;
+  from {
+    width: 0;
+    max-width: fit-content;}
+  to {
+    width: 100%;
+    max-width: fit-content;
    }
 }
 
@@ -47,4 +79,21 @@
   100% {
     transform: scale(4) translateX(-37.5%) translateY(37.5%);
   }
+}
+
+
+@keyframes flyin {
+  0% {
+      transform: translate3d(-100px, 100px, 0);
+      scale: 0;
+      opacity: 0.3;
+  }
+}
+
+
+.animate-flyin {
+  @media screen and (min-width: 1024px) {
+    animation: flyin 1s ease-in-out;
+  }
+
 }

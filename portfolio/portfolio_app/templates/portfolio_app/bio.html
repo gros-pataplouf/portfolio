@@ -7,8 +7,8 @@
 <!-- all_by_date = [{end_date: jobitem}, {end_date: educationitem, ...}] -->
     <h1 class="title">Working <br class="md:hidden"> & Learning</h1>
     <div class="flex justify-around w-screen text-xl lg:hidden text-sky-300">
-        <p class="text-action"><i id="toggleWork" class="fa-solid fa-toggle-on"></i> <span>Work</span></p>
-        <p  class="text-sky-300"><i id="toggleEducation" class="fa-solid fa-toggle-on"></i> <span>Education</span></p>
+        <p class="text-action"><i id="js__toggleWork" class="fa-solid fa-toggle-on"></i> <span>Work</span></p>
+        <p  class="text-sky-300"><i id="js__toggleEducation" class="fa-solid fa-toggle-on"></i> <span>Education</span></p>
     </div>
     {% for entry in all_by_date %}
     <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative flex flex-col w-screen h-full bg-transparent lg:w-1 first:rounded-t-md last:rounded-b-md md:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">

@@ -14,6 +14,7 @@ switch (window.location.pathname.replaceAll("/", "")) {
         break;
     case 'projects':
         filterProjectsBySkills();
+        break;
     case 'skills':
         animateSkillCarousel();
         break;

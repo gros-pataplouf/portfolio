@@ -1,7 +1,7 @@
 export const enableFilteringBio = () => {
 
-const toggleEducation = document.getElementById("toggleEducation");
-const toggleWork = document.getElementById("toggleWork");
+const toggleEducation = document.getElementById("js__toggleEducation");
+const toggleWork = document.getElementById("js__toggleWork");
 
 [toggleEducation, toggleWork].forEach(node => {
     node.addEventListener("click", () => {
