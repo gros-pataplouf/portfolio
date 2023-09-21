@@ -17,9 +17,11 @@ module.exports = {
         "shade": "hsl(var(--shade))",
         "violet": "hsl(var(--violet))",
         "green": "hsl(var(--green))",
+        "terminal": "hsl(var(--terminal))"
       },
       fontFamily : {
         'sunrise': ['Sunrise', 'sans-serif'],
+        'cascadia': ['Cascadia', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif'],
         'lato': ['Lato', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif']
       }
     },

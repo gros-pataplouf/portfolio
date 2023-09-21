@@ -36,6 +36,21 @@
   }
 }
 
+.typing::after {
+  content: "";
+  width: 5px;
+  height: 24px;
+  background: white;
+  display: inline-block;
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @keyframes higher {
   50% {
     width: 100px;
@@ -533,6 +548,12 @@ video {
 }
 
 @font-face {
+  font-family: 'Cascadia';
+
+  src: url(./fonts/CascadiaCode-Light.woff2) format('woff2'), url(./fonts/CascadiaCode-Light.ttf) format('ttf');
+}
+
+@font-face {
   font-family: "Lato";
 
   src: url("./fonts/Lato-Black.woff2") format("woff2"),
@@ -653,6 +674,7 @@ video {
   --shade: 182deg 43% 76%;
   --violet: 228deg 100% 61%;
   --green: 139deg 100% 54%;
+  --terminal: 200deg 100% 60%;
 }
 
 html, dialog {
@@ -856,41 +878,28 @@ html, dialog {
 }
 
 .title {
-  margin-bottom: 1rem;
-  width: 0px;
-  animation: typing 3s steps(20,end) forwards;
-  overflow: hidden;
-  white-space: nowrap;
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: hsl(var(--action)) var(--tw-gradient-from-position);
-  --tw-gradient-to: hsl(var(--action) / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: hsl(var(--accent)) var(--tw-gradient-to-position);
-  -webkit-background-clip: text;
-          background-clip: text;
-  padding: 1rem;
+  max-width: 90vw;
   text-align: center;
-  font-family: Sunrise, sans-serif;
-  font-size: 3.75rem;
-  line-height: 1;
-  font-weight: 700;
-  color: transparent;
+  font-family: Cascadia, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {
   .title {
-    width: 66.666667%;
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    text-align: left;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .title {
-    margin-top: 0.5rem;
-    font-size: 3.75rem;
-    line-height: 1;
-  }
+.typing {
+  max-width: 90vw;
+  animation: typing 3s steps(20,end) forwards;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .container {
@@ -906,7 +915,6 @@ html, dialog {
     margin-left: auto;
     margin-right: auto;
     width: 66.666667%;
-    justify-content: flex-start;
   }
 }
 
@@ -956,6 +964,13 @@ html, dialog {
   transition-duration: 1000ms;
 }
 
+@media (min-width: 768px) {
+  .js__nav-invisible {
+    right: 0px;
+    transition-property: none;
+  }
+}
+
 .js__skill_active {
   background-color: hsl(var(--accent))!important;
   color: white;
@@ -967,6 +982,7 @@ html, dialog {
     height: 14vw;
     position: relative;
     perspective: 2500px;
+    margin-top: 5vw;
   }
 
   .carousel {
@@ -1090,8 +1106,52 @@ html, dialog {
   top: 15rem;
 }
 
-.z-40 {
-  z-index: 40;
+.right-20 {
+  right: 5rem;
+}
+
+.right-40 {
+  right: 10rem;
+}
+
+.left-40 {
+  left: 10rem;
+}
+
+.left-60 {
+  left: 15rem;
+}
+
+.top-2\/3 {
+  top: 66.666667%;
+}
+
+.left-64 {
+  left: 16rem;
+}
+
+.left-72 {
+  left: 18rem;
+}
+
+.right-72 {
+  right: 18rem;
+}
+
+.right-96 {
+  right: 24rem;
+}
+
+.left-96 {
+  left: 24rem;
+}
+
+.left-auto {
+  left: auto;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .z-50 {
@@ -1100,14 +1160,6 @@ html, dialog {
 
 .col-start-1 {
   grid-column-start: 1;
-}
-
-.col-start-2 {
-  grid-column-start: 2;
-}
-
-.m-0 {
-  margin: 0px;
 }
 
 .m-1 {
@@ -1147,8 +1199,16 @@ html, dialog {
   margin-bottom: 1rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-6 {
@@ -1157,10 +1217,6 @@ html, dialog {
 
 .mb-auto {
   margin-bottom: auto;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
 }
 
 .ml-auto {
@@ -1175,8 +1231,16 @@ html, dialog {
   margin-top: 0.25rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
 }
 
 .mt-4 {
@@ -1185,6 +1249,34 @@ html, dialog {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.ml-24 {
+  margin-left: 6rem;
+}
+
+.mr-24 {
+  margin-right: 6rem;
+}
+
+.ml-36 {
+  margin-left: 9rem;
+}
+
+.mr-36 {
+  margin-right: 9rem;
+}
+
+.ml-96 {
+  margin-left: 24rem;
+}
+
+.mr-96 {
+  margin-right: 24rem;
 }
 
 .block {
@@ -1223,10 +1315,6 @@ html, dialog {
   height: 1.25rem;
 }
 
-.h-60 {
-  height: 15rem;
-}
-
 .h-8 {
   height: 2rem;
 }
@@ -1237,6 +1325,15 @@ html, dialog {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-0 {
+  height: 0px;
+}
+
+.max-h-fit {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .min-h-screen {
@@ -1267,21 +1364,12 @@ html, dialog {
   width: 1.25rem;
 }
 
-.w-60 {
-  width: 15rem;
-}
-
 .w-8 {
   width: 2rem;
 }
 
 .w-\[66vw\] {
   width: 66vw;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .w-full {
@@ -1295,6 +1383,15 @@ html, dialog {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-0 {
+  width: 0px;
+}
+
+.min-w-fit {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .-translate-x-6 {
@@ -1384,6 +1481,12 @@ html, dialog {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.space-x-36 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(9rem * var(--tw-space-x-reverse));
+  margin-left: calc(9rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-clip {
   overflow: clip;
 }
@@ -1427,6 +1530,10 @@ html, dialog {
 
 .border-primary-200\/20 {
   border-color: hsl(var(--primarylight) / 0.2);
+}
+
+.border-primary-800 {
+  border-color: hsl(var(--primarydarkest));
 }
 
 .bg-\[\#0077B5\] {
@@ -1530,10 +1637,6 @@ html, dialog {
   --tw-gradient-to: hsl(var(--primarydark)) var(--tw-gradient-to-position);
 }
 
-.to-violet {
-  --tw-gradient-to: hsl(var(--violet)) var(--tw-gradient-to-position);
-}
-
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1572,6 +1675,11 @@ html, dialog {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .pb-12 {
@@ -1661,6 +1769,10 @@ html, dialog {
   color: rgb(125 211 252 / var(--tw-text-opacity));
 }
 
+.text-terminal {
+  color: hsl(var(--terminal));
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1678,8 +1790,8 @@ html, dialog {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
-.shadow-primary {
-  --tw-shadow-color: hsl(var(--primary));
+.shadow-action {
+  --tw-shadow-color: hsl(var(--action));
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -1740,10 +1852,6 @@ html, dialog {
   padding-right: 3rem;
 }
 
-.hover\:pr-8:hover {
-  padding-right: 2rem;
-}
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1757,12 +1865,8 @@ html, dialog {
     position: static;
   }
 
-  .md\:sticky {
-    position: sticky;
-  }
-
-  .md\:top-4 {
-    top: 1rem;
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 
   .md\:mx-auto {
@@ -1773,10 +1877,6 @@ html, dialog {
   .md\:my-auto {
     margin-top: auto;
     margin-bottom: auto;
-  }
-
-  .md\:ml-48 {
-    margin-left: 12rem;
   }
 
   .md\:ml-6 {
@@ -1793,10 +1893,6 @@ html, dialog {
 
   .md\:mr-0 {
     margin-right: 0px;
-  }
-
-  .md\:mr-48 {
-    margin-right: 12rem;
   }
 
   .md\:mr-8 {
@@ -1844,10 +1940,6 @@ html, dialog {
     width: 66.666667%;
   }
 
-  .md\:w-\[33rem\] {
-    width: 33rem;
-  }
-
   .md\:w-min {
     width: -moz-min-content;
     width: min-content;
@@ -1867,6 +1959,10 @@ html, dialog {
 
   .md\:items-start {
     align-items: flex-start;
+  }
+
+  .md\:items-center {
+    align-items: center;
   }
 
   .md\:justify-start {
@@ -1889,10 +1985,6 @@ html, dialog {
 
   .md\:rounded-lg {
     border-radius: 0.5rem;
-  }
-
-  .md\:rounded-xl {
-    border-radius: 0.75rem;
   }
 
   .md\:border-primary\/50 {
@@ -1920,6 +2012,14 @@ html, dialog {
     padding: 0px;
   }
 
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1936,12 +2036,6 @@ html, dialog {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .md\:shadow-none {
-    --tw-shadow: 0 0 #0000;
-    --tw-shadow-colored: 0 0 #0000;
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
-
   .md\:shadow-primary {
     --tw-shadow-color: hsl(var(--primary));
     --tw-shadow: var(--tw-shadow-colored);
@@ -1951,6 +2045,10 @@ html, dialog {
 @media (min-width: 1024px) {
   .lg\:fixed {
     position: fixed;
+  }
+
+  .lg\:relative {
+    position: relative;
   }
 
   .lg\:-left-6 {
@@ -1967,6 +2065,10 @@ html, dialog {
 
   .lg\:left-4 {
     left: 1rem;
+  }
+
+  .lg\:-top-10 {
+    top: -2.5rem;
   }
 
   .lg\:order-5 {
@@ -1991,14 +2093,6 @@ html, dialog {
 
   .lg\:row-start-2 {
     grid-row-start: 2;
-  }
-
-  .lg\:mb-0 {
-    margin-bottom: 0px;
-  }
-
-  .lg\:mb-16 {
-    margin-bottom: 4rem;
   }
 
   .lg\:ml-4 {
@@ -2086,6 +2180,10 @@ html, dialog {
     justify-content: flex-end;
   }
 
+  .lg\:justify-center {
+    justify-content: center;
+  }
+
   .lg\:justify-between {
     justify-content: space-between;
   }
@@ -2100,16 +2198,12 @@ html, dialog {
     padding: 3rem;
   }
 
-  .lg\:p-4 {
-    padding: 1rem;
-  }
-
-  .lg\:pb-0 {
-    padding-bottom: 0px;
-  }
-
   .lg\:pl-0 {
     padding-left: 0px;
+  }
+
+  .lg\:pt-8 {
+    padding-top: 2rem;
   }
 
   .lg\:text-right {

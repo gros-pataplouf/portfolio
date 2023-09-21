@@ -37,6 +37,23 @@
    }
 }
 
+
+.typing::after {
+  content: "";
+  width: 5px;
+  height: 24px;
+  background: white;
+  display: inline-block;
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink {
+  50% {
+      opacity: 0;
+      
+  }
+}
+
+
 @keyframes higher {
     50% {
       width: 100px;
@@ -44,6 +61,7 @@
     }
   
   }
+
   
 @keyframes trembling {
   0% {

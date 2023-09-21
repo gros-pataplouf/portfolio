@@ -22,9 +22,7 @@
         </div>
     <nav 
     id="navbar"
-    class="js__nav-invisible
-    fixed bg-primary-500 top-0 md:top-4 z-40 w-screen h-screen text-3xl shadow-md shadow-primary
-    md:bg-transparent md:sticky md:rounded-xl md:h-16 md:text-lg md:shadow-none">
+    class="js__nav-invisible fixed bg-primary-500 top-0 z-30 w-screen h-screen md:h-16 text-3xl md:bg-transparent md:text-lg">
         <ul class="relative flex flex-col border-2 justify-center text-center items-center h-screen space-y-6 
         [&>li]:navbar-item
         md:bg-primary-500 md:shadow-primary md:border-white md:mx-auto md:my-auto md:h-fit md:flex-row md:shadow-md md:justify-around md:w-2/3 md:space-y-0 md:rounded-lg ">
@@ -60,7 +58,7 @@
         </ul>
     </nav>
 
-    <div class="relative min-h-screen lg:p-4 md:mt-0 md:flex md:flex-col md:items-start md:bg-transparent md:w-screen md:min-h-screen" id="content">
+    <div class="relative min-h-screen md:p-4 lg:pt-8 md:flex md:flex-col md:items-center md:bg-transparent md:w-screen md:min-h-screen" id="content">
         {% block content %}{% endblock %}
     </div>
     

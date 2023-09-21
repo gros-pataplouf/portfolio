@@ -5,8 +5,15 @@
 {% block content %}
 <div class="container">
 <!-- all_by_date = [{end_date: jobitem}, {end_date: educationitem, ...}] -->
-    <h1 class="title">Working <br class="md:hidden"> & Learning</h1>
-    <div class="flex justify-around w-screen text-xl lg:hidden text-sky-300">
+
+
+<div class="flex flex-col md:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
+    <h1 class="text-terminal md:block title">~/bio:$&nbsp;</h1>
+    <h1 class="title typing" >Here's what I've been <br class="md:hidden"/>  up to lately. </h1>
+</div>
+
+
+<div class="flex justify-around w-screen text-xl lg:hidden text-sky-300">
         <p class="text-action"><i id="js__toggleWork" class="fa-solid fa-toggle-on"></i> <span>Work</span></p>
         <p  class="text-sky-300"><i id="js__toggleEducation" class="fa-solid fa-toggle-on"></i> <span>Education</span></p>
     </div>
