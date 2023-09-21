@@ -11,10 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 
 COPY . /app/
-ENV ADMIN_AREA admin
+ENV ADMIN_AREA Sunshine-Fell-Softly-Hazard-Abolira
 
-RUN python manage.py migrate
-RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 CMD ["gunicorn core.wsgi"]

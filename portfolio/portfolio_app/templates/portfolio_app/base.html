@@ -15,62 +15,61 @@
     <title>Cornelia Petry</title>
 </head>
 <body>
-    <div class="relative flex flex-col items-center justify-center w-screen bg-gradient-to-br from-primary-800 to-black md:items-start md:justify-start md:flex-row h-min-screen">
+    <div class="relative flex flex-col md:block items-center justify-center w-screen bg-gradient-to-br from-primary-800 to-black md:items-start md:justify-start md:flex-row h-min-screen">
     <canvas class="fixed top-0" id="canvas"></canvas>
     <div class="fixed z-50 flex flex-col items-center justify-center rounded-full w-14 h-14 bg-primary-700 right-4 top-4 md:hidden">
         <i id="toggleMobileNavIcon" class="fixed text-4xl text-center align-middle fa-solid fa-bars"></i>
         </div>
-    <nav id="navbar" class="fixed top-0 z-40 w-screen h-screen text-3xl shadow-md md:text-lg md:sticky md:w-1/4 bg-primary js__nav-invisible shadow-primary">
-        <ul class="relative flex flex-col items-center justify-center h-screen space-y-6 md:space-y-0 text-center [&>li]:py-6 [&>li]:w-4/5 [&>li]:rounded-lg [&>li]:md:rounded-none [&>li]:md:w-full [&>li:not(:first-child)]:md:flex [&>li]:md:items-center md:justify-start md:items-start [&>li]:md:pr-4">
-            <li class="hidden md:block">
-                <a href="/" title="home">
-                <div class=" bg-gradient-to-r from-accent to-action md:flex md:h-20 md:ml-auto md:w-20 lg:h-24 lg:w-24 md:flex-col md:items-center md:justify-center hexagon">
-                <div class="hidden md:block md:h-16 md:w-16 lg:h-20 lg:w-20 md:border-primary/50 md:border-solid md:border-4 hexagon">
-                    <img src={% static 'portfolio_app/images/me.jpeg' %} class="object-contain">
-                </div>
-                </div>
-                <div>
-                    <p class="text-2xl text-right caps">Cornelia Petry</p>
-                    <p class="ml-auto text-xl text-right caps">Full-Stack Developer</p>
+    <nav 
+    id="navbar"
+    class="js__nav-invisible
+    fixed bg-primary-500 top-0 md:top-4 z-40 w-screen h-screen text-3xl shadow-md shadow-primary
+    md:bg-transparent md:sticky md:rounded-xl md:h-16 md:text-lg md:shadow-none">
+        <ul class="relative flex flex-col border-2 justify-center text-center items-center h-screen space-y-6 
+        [&>li]:navbar-item
+        md:bg-primary-500 md:shadow-primary md:border-white md:mx-auto md:my-auto md:h-fit md:flex-row md:shadow-md md:justify-around md:w-2/3 md:space-y-0 md:rounded-lg ">
 
-                </div>
-                </a>
-            </li>
-            <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}} md:!hidden">
+            <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}}">
                 <a href="/" title="home">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
+
             <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">
-                <a href={% url 'bio' %} class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">Bio                <i class="hidden md:inline md:ml-6 fa-regular fa-user"></i>
+                <a href={% url 'bio' %} class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">Bio
                 </a> 
             </li>
             <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
-                <a href={% url 'skills' %} class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">Skills <i class="hidden md:inline md:ml-6 fa-solid fa-book"></i></a>
+                <a href={% url 'skills' %} class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">Skills 
+
+                </a>
             </li>
             <li class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}}">
                 <a href={% url 'projects' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">Projects
-                    <i class="hidden md:inline md:ml-6 fa-solid fa-th"></i>
                 </a>
             </li>
             <li class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}}">
                 <a href={% url 'contact' %} class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">
                     <span class="hidden md:inline">Contact</span>
                     <i 
-                    class="w-12 p-2 mx-2 text-3xl rounded-md md:p-0 md:w-min md:mr-0 bg-action md:bg-transparent md:text-lg md:ml-6 fa-solid fa-envelope"></i></a>
+                    class="w-12 p-2 mx-2 text-3xl rounded-md md:p-0 md:w-min md:mr-0 bg-action md:hidden md:bg-transparent md:text-lg md:ml-6 fa-solid fa-envelope"></i>
+                </a>
                 <a href="https://www.linkedin.com/m/in/cpetry/" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl text-center rounded-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
                 <a href="https://github.com/gros-pataplouf" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl rounded-md bg-primary-800 fa-brands fa-github"></i></a>
             </li>
         </ul>
     </nav>
 
-    <div class="relative min-h-screen lg:p-4 md:mt-0 md:flex md:flex-col md:justify-start md:items-start md:bg-transparent md:w-screen md:min-h-screen" id="content">
+    <div class="relative min-h-screen lg:p-4 md:mt-0 md:flex md:flex-col md:items-start md:bg-transparent md:w-screen md:min-h-screen" id="content">
         {% block content %}{% endblock %}
     </div>
     
-    <div class="top-0 hidden right-4 md:absolute md:flex animate-social">
-        <a href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 mx-2 text-3xl text-center  hover:pt-8 rounded-b-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/gros-pataplouf"><i class="w-12 p-2 mx-2 text-3xl rounded-b-md bg-primary hover:pt-8 fa-brands fa-github"></i></a>
+    <div class="right-0 hidden top-60 md:flex fixed flex-col ml-auto justify-end items-end space-y-4 w-min animate-social">
+        <a title="Linkedin" href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 text-3xl text-center hover:pr-12 hover:w-16 rounded-l-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
+        <a title="Github" href="https://github.com/gros-pataplouf"><i class="w-12 p-2 text-3xl rounded-l-md bg-primary hover:pr-12 hover:w-16 fa-brands fa-github"></i></a>
+        <a title="Send me an email" href="mailto:copedev@pm.me"><i 
+            class="w-12 p-2 text-3xl rounded-l-md hover:pr-12 hover:w-16 bg-action  fa-solid fa-envelope"></i>
+    </a>
     </div>
     <div id="js__scroll_up" class="fixed flex-col items-center justify-center hidden w-12 h-12 rounded-full bottom-6 right-4 bg-gradient-to-br from-violet to-green"><i class="text-2xl fa-solid fa-arrow-up"></i></div>
     </div>

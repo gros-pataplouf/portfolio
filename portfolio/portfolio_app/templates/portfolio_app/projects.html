@@ -3,7 +3,6 @@
 
 {% block content %}
 <div class="container relative flex flex-col justify-start min-h-screen p-2 mb-auto">
-    <h1 class="pb-0 title">Portfolio</h1>
     <p class="mb-6 text-xl font-bold text-center">Check out my projects. Filter by skill.</p>
     <ul class="flex flex-wrap justify-center">
         {% for skill in skills %}
@@ -16,12 +15,9 @@
             <i class="text-6xl fa-solid fa-spinner animate-spinslowly"></i>
         </div>
     </div>
-    <div id="js__project-wrapper" class="flex flex-col w-full mt-8 lg:flex-wrap lg:flex-row lg:justify-between lg:space-y-10 lg:items-stretch">
-      
-
+    <div id="js__project-wrapper" class="flex flex-col w-full mt-8 md:mx-auto lg:flex-wrap lg:flex-row lg:justify-between lg:space-y-10 lg:items-stretch">
     {% for entry in projects %}
-
-    <div class="grid grid-cols-1 p-4 mx-0 my-2 space-y-2 bg-white border-2 border-solid rounded-md shadow-2xl lg:p-12 lg:mt-8 lg:grid-cols-2 border-primary-200/20 animate-flyin js__project">
+    <div class="grid grid-cols-1 p-4 mx-0 my-2 space-y-2 md:w-2/3 md:mx-auto bg-white border-2 border-solid rounded-md shadow-2xl lg:p-12 lg:mt-8 lg:grid-cols-2 border-primary-200/20 animate-flyin js__project">
     <h2 class="text-xl font-bold md:text-3xl lg:col-span-2 text-primary-700">{{ entry.name }} 
     </h2>
     {% if entry.deployment %}
@@ -29,16 +25,16 @@
     {% endif %}
     <a class="block col-start-1 mb-2 text-lg font-bold text-primary-700 hover:underline" href={{entry.github}}>See code</a>
     {% if entry.image %}
-    <div class="my-4 bg-white lg:order-last lg:col-start-2 lg:row-start-2 lg:row-span-5 overflow-clip">
+    <div class="my-4 bg-white lg:order-last lg:col-start-2 lg:row-start-2 lg:row-span-3 overflow-clip">
         <div class="relative scale-gallery-parent">
-                <img src="{% static entry.image %}" class="absolute block translate-x-[37.5%] translate-y-[37.5%] scale-[4] scale-gallery" alt="">
-                <img src="{% static 'portfolio_app/images/laptop.png' %}" alt="" class="relative block scale-laptop">
+                <img src="{% static entry.image %}" loading="lazy" class="absolute block translate-x-[37.5%] translate-y-[37.5%] scale-[4] scale-gallery" alt="">
+                <img src="{% static 'portfolio_app/images/laptop.png' %}" loading="eager" alt="" class="relative block scale-laptop">
         </div>
     </div>
     {% endif %}
     <p class="block col-start-1 mb-2 text-lg font-bold text-primary-700">{{entry.description}}</p>
     
-    <ul class="flex flex-wrap col-start-1 mb-2 mr-2">
+    <ul class="flex flex-wrap col-start-2 mb-2 mr-2 lg:order-5">
         {% for skill in entry.skills.all %}
         <li class="px-2 mt-2 mr-2 rounded-md bg-primary-700 js__project_skill">{{skill}}</li>
         {% endfor %}

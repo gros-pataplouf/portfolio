@@ -16,6 +16,7 @@ function isShown(numOfHex, index) {
     return Math.floor(Math.random()*numOfHex/3) < Math.floor(numOfHex/10);
 }
 
+
 for (let j = 0; j < numOfRows; j++){
     let randomRow = [];
     for (let i = 0; i < numOfHexagons; i++) {
@@ -37,16 +38,16 @@ function drawHexagon(cx, cy, radius, position, row) {
         region.lineTo(radius * Math.cos(rotation), radius * Math.sin(rotation));
     }
 };
-if (randomStructure[row][position]) {
-    //comment in to fill with random color:
-    // const hue = Math.floor(360*Math.random()); 
-    // context.fillStyle = `hsla(${hue}, 50%, 70%, 0.6)`;
-    // context.fill(region);
-    region.closePath();
-    context.strokeStyle= "hsla(215, 30%, 50%, 0.2)";
-    context.stroke(region);
-    }
-    
+    if (randomStructure[row][position]) {
+        //comment in to fill with random color:
+        // const hue = Math.floor(360*Math.random()); 
+        // context.fillStyle = `hsla(${hue}, 50%, 70%, 0.6)`;
+        // context.fill(region);
+        region.closePath();
+        context.strokeStyle= "hsla(215, 30%, 50%, 0.2)";
+        context.stroke(region);
+        }
+        console.log(region)
 }
 
 
@@ -123,12 +124,11 @@ export const addMobileNav = () => {
 //make the hamburger button clickable to show mobile nav
 
 const toggleMobileNavIcon = document.querySelector("#toggleMobileNavIcon");
-const navbar =document.querySelector("#navbar");
+const navbar = document.querySelector("#navbar");
 toggleMobileNavIcon.addEventListener("click", () => {
     toggleMobileNavIcon.classList.toggle("fa-bars");
     toggleMobileNavIcon.classList.toggle("fa-xmark");
     navbar.classList.toggle("js__nav-invisible");
     navbar.classList.toggle("js__nav-visible");
     })
-
 }

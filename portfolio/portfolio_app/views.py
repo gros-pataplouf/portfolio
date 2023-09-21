@@ -23,6 +23,15 @@ logger = logging.getLogger(__name__)
 def index(request):
     return render(request, "portfolio_app/intro.html")
 
+def recruiters(request):
+    return render(request, "portfolio_app/recruiters.html")
+
+
+def cv(request):
+    print("rendering cv")
+    return render(request, "portfolio_app/cv.html")
+
+
 def bio(request):
 
     def sort_by_date(item):

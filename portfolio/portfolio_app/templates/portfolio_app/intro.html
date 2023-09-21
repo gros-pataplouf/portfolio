@@ -1,12 +1,29 @@
 
 {% extends "portfolio_app/base.html" %}
-
+{% load static %}
 {% block content %}
-<div class="container">
-<h1 class="m-0 title">Welcome!</h1>
-<p class="w-4/5 text-lg font-light text-center md:text-2xl ">
-Cornelia discovered her passion for coding during the French Covid lockdown and has never stopped learning since. The learning journey took her from the first Python loops to frontend web development and the Django framework. 
-She is looking for a <span class="font-bold">remote or hybrid position</span> as a <span class="font-bold" >Backend or Full-Stack Webdeveloper</span>. Currently based near Hamburg, Germany, she is <span class="font-bold">happy to relocate</span> within the European Union, UK, Switzerland and Canada.  
-<a class="mx-auto button w-fit" href="/projects">See projects</a>
+<div class="container space-y-6">
+<div class="flex flex-col md:flex-row md:flex-start justify-between items-center">
+    <div class="bg-gradient-to-r top-4 left-4 md:mt-0 fixed md:static    md:mr-auto from-accent to-action flex h-20 w-20 lg:h-24 lg:w-24 flex-col items-center justify-center hexagon">
+        <div class="block h-16 w-16 lg:h-20 lg:w-20 md:border-primary/50 border-solid border-4 hexagon">
+            <img src={% static 'portfolio_app/images/me.jpeg' %} class="object-contain">
+        </div>
+        </div>
+
+<h1 class="ml-10 title">
+    Hi, I'm Cornelia!</h1>
+</div>
+
+<p class="w-4/5 text-lg font-light text-justify">
+I'm a self-taught <span class="font-bold">Full-Stack Developer</span> with a strong focus on <span class="font-bold">Django</span> and <span class="font-bold">React.js</span>. </p> 
+<ul class="fa-ul text-lg space-y-6 w-4/5">
+    <li><span class="fa-li"><i class="fa-solid fa-magnifying-glass"></i></span>Searching an <span class="font-bold">entry-level position</span> as a <span class="font-bold" >Backend or Full-Stack Webdeveloper</span>.</li>
+    <li><span class="fa-li"><i class="fa-regular fa-calendar-check"></i></span>Immediately available part-time, full-time within a 3 months' notice. </li>
+    <li><span class="fa-li"><i class="fa-solid fa-location-dot"></i></span>Based near Hamburg, happy to relocate, remote or hybrid preferred.</li>
+    <li><span class="fa-li"><i class="fa-solid fa-people-group"></i></span> Looking for <span class="font-bold">open-source collaborations and volunteer opportunities </span> (causes: human rights, zero waste, biodiversity).</li>
+  </ul>
+<div class="w-full flex flex-col md:flex-row justify-center items-center md:justify-between relative">
+<a title="Projects" class="block button w-fit md:ml-48 md:mr-8" href="/projects">See projects</a>
+<a class="block button w-fit md:mr-48 md:ml-8" title="Download CV" href="{% static 'portfolio_app/cpetry_cv.pdf' %}">CV <i class="fa-solid fa-download"></i></a>
 </div>
 {% endblock %}

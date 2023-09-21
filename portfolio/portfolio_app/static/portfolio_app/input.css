@@ -113,12 +113,17 @@
   transform: scale(1.02);
 }
 
+
 .animate-social > a:first-child > i{
   animation: higher .5s .5s;  
 }
 
-.animate-social > a:last-child > i{
+.animate-social > a:nth-child(2) > i{
   animation: higher .5s 1s;  
+}
+
+.animate-social > a:last-child > i{
+  animation: higher .5s 2s;  
 }
 
 .scale-gallery-parent:hover > .scale-gallery {
@@ -146,8 +151,11 @@
   .title {
     @apply p-4 mb-4 overflow-hidden whitespace-nowrap animate-[typing_3s_steps(20,end)_forwards] w-0 text-6xl font-bold text-center text-transparent font-sunrise md:text-4xl bg-gradient-to-r from-action to-accent bg-clip-text lg:mt-2 lg:text-6xl md:w-2/3;
   }
+  .navbar-item {
+    @apply py-6 w-4/5 rounded-lg md:rounded-none md:py-2 md:shadow-primary-500 first:md:rounded-l-md last:md:rounded-r-md
+  }
   .container {
-    @apply flex flex-col items-center justify-center min-h-screen;
+    @apply flex flex-col items-center justify-center min-h-screen md:justify-start md:w-2/3 md:mx-auto;
 
   }
   .anchorActive {

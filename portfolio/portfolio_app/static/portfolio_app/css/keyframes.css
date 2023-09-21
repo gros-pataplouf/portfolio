@@ -39,7 +39,8 @@
 
 @keyframes higher {
     50% {
-      padding-top: 2rem;
+      width: 100px;
+      padding-right: 50px;
     }
   
   }
