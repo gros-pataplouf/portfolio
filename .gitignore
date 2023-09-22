@@ -9,7 +9,8 @@ tailwindcss
 *.bak 
 #Personal files 
 *.pdf
-
+*.key
+*.crt
 
 # If you are using PyCharm # 
 # User-specific stuff

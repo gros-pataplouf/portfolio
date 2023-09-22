@@ -10,9 +10,10 @@ load_dotenv()
 
 urlpatterns = [
     path("", include("portfolio_app.urls")),
-    path(os.getenv("ADMIN_AREA"), admin.site.urls),
+    path('admin/', admin.site.urls),
    
 ]
+
 
 urlpatterns += static(settings.STATIC_URL, serve, document_root=settings.STATIC_ROOT)
 

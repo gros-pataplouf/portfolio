@@ -1,5 +1,5 @@
 # Use a suitable base image
-FROM --platform=$BUILDPLATFORM python:3.10-slim-bookworm AS builder
+FROM python:3.10-slim-bookworm AS builder
 
 WORKDIR /app
 
@@ -7,12 +7,11 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y flite
 
 COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-
+RUN mkdir -p /app/staticfiles
 COPY . /app/
-ENV ADMIN_AREA Sunshine-Fell-Softly-Hazard-Abolira
+RUN python manage.py migrate
+RUN python manage.py collectstatic --noinput
 
-
-EXPOSE 8000
-CMD ["gunicorn core.wsgi"]
+ENTRYPOINT ["gunicorn", "portfolio_core.wsgi"]
