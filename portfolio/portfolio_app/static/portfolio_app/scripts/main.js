@@ -47,7 +47,6 @@ function drawHexagon(cx, cy, radius, position, row) {
         context.strokeStyle= "hsla(215, 30%, 50%, 0.2)";
         context.stroke(region);
         }
-        console.log(region)
 }
 
 
@@ -99,7 +98,6 @@ export const addScrollUpButton = () => {
 
 const scrollUpButton = document.getElementById("js__scroll_up");
 window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
     if (window.scrollY > 100 && scrollUpButton.classList.contains("hidden")) {
         scrollUpButton.classList.remove("hidden");
         scrollUpButton.classList.add("flex");}

@@ -5,6 +5,7 @@ export const animateSkillCarousel = () => {
     const jsCarouselCells = document.getElementsByClassName("carousel_cell");
     let counter = 0;
     jsSpinCarouselBack.addEventListener("click", () => {
+    console.log("click")
     counter ++;
     for (let i = 0; i < jsCarouselCells.length; i++) {
         let cell = jsCarouselCells.item(i);

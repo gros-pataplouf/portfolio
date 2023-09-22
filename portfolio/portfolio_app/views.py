@@ -10,6 +10,8 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 import logging
 
+from parler.utils import get_active_language_choices
+
 
 from portfolio_core.settings import EMAIL_HOST_USER, EMAIL_DEST
 # import the logging library
@@ -25,11 +27,6 @@ def index(request):
 
 def recruiters(request):
     return render(request, "portfolio_app/recruiters.html")
-
-
-def cv(request):
-    print("rendering cv")
-    return render(request, "portfolio_app/cv.html")
 
 
 def bio(request):
@@ -48,14 +45,15 @@ def bio(request):
     return render(request, "portfolio_app/bio.html", context)
     
 def skills(request):
-    skills = Skill.objects.order_by("skill_type")
+    # preferred_language = request.META['HTTP_ACCEPT_LANGUAGE'].split(",")[0]
+    skills = Skill.objects.all().order_by("translations__skill_type").distinct()
     context = {
         "skills": skills,
     }
     return render(request, "portfolio_app/skills.html", context)
 
 def projects(request):
-    skills = Skill.objects.filter(skill_type="Coding")
+    skills = Skill.objects.filter(translations__skill_type="Coding").distinct()
     projects = Project.objects.all()
     context = {
         "projects": projects,
