@@ -1,5 +1,6 @@
 {% load static %}
 {% load portfolio_extras %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,32 +29,35 @@
         md:bg-primary-500 md:shadow-primary md:border-white md:mx-auto md:my-auto md:h-fit md:flex-row md:shadow-md md:justify-around md:w-2/3 md:space-y-0 md:rounded-lg ">
 
             <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}}">
-                <a href="/" title="home">
+                <a href="/" title="{% trans 'Home' %}">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
 
             <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">
-                <a href={% url 'bio' %} class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">Bio
+                <a href={% url 'bio' %} title="{% trans 'Bio' %}" class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">{% trans "Bio" %}
                 </a> 
             </li>
             <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
-                <a href={% url 'skills' %} class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">Skills 
+                <a href={% url 'skills' %} title="{% trans 'Skills' %}" class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">{% trans "Skills" %} 
 
                 </a>
             </li>
             <li class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}}">
-                <a href={% url 'projects' %} class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">Projects
+                <a href={% url 'projects' %} title="{% trans 'Projects' %}" class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">{% trans "Projects" %}
                 </a>
             </li>
             <li class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}}">
-                <a href={% url 'contact' %} class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">
-                    <span class="hidden md:inline">Contact</span>
+                <a href={% url 'contact' %} title="{% trans 'Contact' %}" class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">
+                    <span class="hidden md:inline">{% trans "Contact" %}</span>
                     <i 
                     class="w-12 p-2 mx-2 text-3xl rounded-md md:p-0 md:w-min md:mr-0 bg-action md:hidden md:bg-transparent md:text-lg md:ml-6 fa-solid fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/m/in/cpetry/" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl text-center rounded-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/gros-pataplouf" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl rounded-md bg-primary-800 fa-brands fa-github"></i></a>
+                <a title="Linkedin" href="https://www.linkedin.com/m/in/cpetry/" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl text-center rounded-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
+                <a title="Github" href="https://github.com/gros-pataplouf" class="md:hidden"><i class="w-12 p-2 mx-2 text-3xl rounded-md bg-primary-800 fa-brands fa-github"></i></a>
+                <a title="{% trans 'Call me' %}" href="tel:***REMOVED***" class="md:hidden"><i 
+                    class="w-12 p-2 mx-2 text-3xl rounded-md bg-[#04F404] fa-solid fa-phone"></i>
+            </a>
             </li>
         </ul>
     </nav>
@@ -65,9 +69,12 @@
     <div class="right-0 hidden top-60 md:flex fixed flex-col ml-auto justify-end items-end space-y-4 w-min animate-social">
         <a title="Linkedin" href="https://www.linkedin.com/m/in/cpetry/"><i class="w-12 p-2 text-3xl text-center hover:pr-12 hover:w-16 rounded-l-md bg-[#0077B5] fa-brands fa-linkedin-in"></i></a>
         <a title="Github" href="https://github.com/gros-pataplouf"><i class="w-12 p-2 text-3xl rounded-l-md bg-primary hover:pr-12 hover:w-16 fa-brands fa-github"></i></a>
-        <a title="Send me an email" href="mailto:copedev@pm.me"><i 
+        <a title="{% trans 'Send me an email' %}" href="mailto:copedev@pm.me"><i 
             class="w-12 p-2 text-3xl rounded-l-md hover:pr-12 hover:w-16 bg-action  fa-solid fa-envelope"></i>
     </a>
+    <a title="{% trans 'Call me' %}" href="tel:***REMOVED***"><i 
+        class="w-12 p-2 text-3xl rounded-l-md hover:pr-12 hover:w-16 bg-[#04F404] fa-solid fa-phone"></i>
+</a>
     </div>
     <div id="js__scroll_up" class="fixed flex-col items-center justify-center hidden w-12 h-12 rounded-full bottom-6 right-4 bg-gradient-to-br from-violet to-green"><i class="text-2xl fa-solid fa-arrow-up"></i></div>
     </div>

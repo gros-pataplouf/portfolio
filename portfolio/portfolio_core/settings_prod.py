@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-#tbc
-from django.utils.translation import gettext_lazy as _
-
 
 from dotenv import load_dotenv
 #Load environment variables 
@@ -38,13 +35,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ["*"]
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+SESSION_COOKIE_SECURE = True
+
+SECURE_HSTS_SECONDS = 360000
+SECURE_SSL_REDIRECT = False
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
 
 # Application definition
-
-CRSF_TRUSTED_ORIGINS = ["https://*.railway.app"]
-CSRF_COOKIE_SECURE = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -53,21 +58,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',    
     'portfolio_app',
     'fontawesomefree',
     'crispy_forms',
     'crispy_tailwind',
     'captcha',
-    'rosetta',
-    'parler',
+
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # tbc
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -95,8 +98,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio_core.wsgi.application'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -127,73 +128,36 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en' #tbc
+LANGUAGE_CODE = 'en-us'
+
 TIME_ZONE = 'UTC'
+
 USE_I18N = True
+
 USE_L10N = True
+
 USE_TZ = True
 
-#tbc
-LANGUAGES = (
-    ('en', _('English')),
-    ('de', _('German')),
-    ('fr', _('French')),
-)
 
-
-#tbc
-LOCALE_PATHS = [
-    BASE_DIR / 'locale/',
-]
-
-#tbc
-PARLER_LANGUAGES = {
-    None: (
-        {'code': 'en',}, # English
-        {'code': 'de',}, # German
-        {'code': 'fr',}, # French
-    ),
-    'default': {
-        'fallbacks': ['en'],
-        'hide_untranslated': False,
-    }
-}
-
-
-
-if not DEBUG: 
-    SECURE_HSTS_SECONDS = 360000
-    SECURE_SSL_REDIRECT = True
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_PRELOAD = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
+# SECURE_HSTS_SECONDS = 3600
+# SECURE_SSL_REDIRECT = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_URL = '/static/'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# The URL to use when referring to static files (where they will be served from)
-STATIC_URL = 'static/'
 
-# The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Extra places for collectstatic to find static files.
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-
+CSRF_TRUSTED_ORIGINS = ["https://*.up.railway.app"]
+CSRF_COOKIE_SECURE = True
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'tailwind'
@@ -203,39 +167,4 @@ CAPTCHA_BACKGROUND_COLOR = 'purple'
 CAPTCHA_NOISE_FUNCTIONS = ['captcha.helpers.noise_dots','captcha.helpers.noise_dots']
 CAPTCHA_FLITE_PATH = '/usr/bin/flite'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-        },
-    },
-    'handlers': {
-        'logfile': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': "portfolio.log",
-            'maxBytes': 100000,
-            'backupCount': 2,
-            'formatter': 'verbose',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['logfile'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'apps': {
-            'handlers': ['logfile'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+STATIC_ROOT = BASE_DIR / "staticfiles"

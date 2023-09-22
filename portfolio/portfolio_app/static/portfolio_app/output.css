@@ -1090,10 +1090,6 @@ html, dialog {
   top: 0px;
 }
 
-.top-1\/2 {
-  top: 50%;
-}
-
 .top-2 {
   top: 0.5rem;
 }
@@ -1104,50 +1100,6 @@ html, dialog {
 
 .top-60 {
   top: 15rem;
-}
-
-.right-20 {
-  right: 5rem;
-}
-
-.right-40 {
-  right: 10rem;
-}
-
-.left-40 {
-  left: 10rem;
-}
-
-.left-60 {
-  left: 15rem;
-}
-
-.top-2\/3 {
-  top: 66.666667%;
-}
-
-.left-64 {
-  left: 16rem;
-}
-
-.left-72 {
-  left: 18rem;
-}
-
-.right-72 {
-  right: 18rem;
-}
-
-.right-96 {
-  right: 24rem;
-}
-
-.left-96 {
-  left: 24rem;
-}
-
-.left-auto {
-  left: auto;
 }
 
 .z-30 {
@@ -1219,12 +1171,20 @@ html, dialog {
   margin-bottom: auto;
 }
 
+.ml-96 {
+  margin-left: 24rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-96 {
+  margin-right: 24rem;
 }
 
 .mt-1 {
@@ -1251,34 +1211,6 @@ html, dialog {
   margin-top: 2rem;
 }
 
-.mr-10 {
-  margin-right: 2.5rem;
-}
-
-.ml-24 {
-  margin-left: 6rem;
-}
-
-.mr-24 {
-  margin-right: 6rem;
-}
-
-.ml-36 {
-  margin-left: 9rem;
-}
-
-.mr-36 {
-  margin-right: 9rem;
-}
-
-.ml-96 {
-  margin-left: 24rem;
-}
-
-.mr-96 {
-  margin-right: 24rem;
-}
-
 .block {
   display: block;
 }
@@ -1293,6 +1225,10 @@ html, dialog {
 
 .hidden {
   display: none;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .h-12 {
@@ -1325,10 +1261,6 @@ html, dialog {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-0 {
-  height: 0px;
 }
 
 .max-h-fit {
@@ -1368,10 +1300,6 @@ html, dialog {
   width: 2rem;
 }
 
-.w-\[66vw\] {
-  width: 66vw;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1383,10 +1311,6 @@ html, dialog {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-0 {
-  width: 0px;
 }
 
 .min-w-fit {
@@ -1455,10 +1379,6 @@ html, dialog {
   justify-content: center;
 }
 
-.justify-between {
-  justify-content: space-between;
-}
-
 .justify-around {
   justify-content: space-around;
 }
@@ -1479,12 +1399,6 @@ html, dialog {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
-.space-x-36 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(9rem * var(--tw-space-x-reverse));
-  margin-left: calc(9rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-clip {
@@ -1545,6 +1459,10 @@ html, dialog {
   background-color: hsl(var(--action));
 }
 
+.bg-green {
+  background-color: hsl(var(--green));
+}
+
 .bg-primary {
   background-color: hsl(var(--primary));
 }
@@ -1568,6 +1486,21 @@ html, dialog {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-lime-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
+}
+
+.bg-emerald-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#04F404\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 244 4 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-b {
@@ -1675,11 +1608,6 @@ html, dialog {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 .pb-12 {
@@ -2063,12 +1991,12 @@ html, dialog {
     right: -1.5rem;
   }
 
-  .lg\:left-4 {
-    left: 1rem;
-  }
-
   .lg\:-top-10 {
     top: -2.5rem;
+  }
+
+  .lg\:left-4 {
+    left: 1rem;
   }
 
   .lg\:order-5 {

@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib import admin
+from parler.models import TranslatableModel, TranslatedFields
 
-class Skill(models.Model):
+class Skill(TranslatableModel):
     name = models.CharField(max_length=250)
     skill_type = models.CharField(max_length=50, choices=[("Coding", "Coding"), ("Tooling", "Tooling"), ("Databases", "Databases"), ("Others", "Others"), ("Languages", "Languages"), ("Soft Skills", "Soft Skills")])
     proficiency = models.CharField(max_length=500, null=True, blank=True)
@@ -9,7 +10,7 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
 
-class WorkExperience(models.Model):
+class WorkExperience(TranslatableModel):
     job_title = models.CharField(max_length=250)
     company = models.CharField(max_length=250)
     place = models.CharField(max_length=250)
@@ -20,7 +21,7 @@ class WorkExperience(models.Model):
     def __str__(self):
         return self.job_title
 
-class Education(models.Model):
+class Education(TranslatableModel):
     name = models.CharField(max_length=250)
     edu_type = models.CharField(choices=[("diploma", "diploma"), ("certificate", "certificate"), ("studying", "studying")], max_length=250)
     school = models.CharField(max_length=250)
@@ -32,7 +33,7 @@ class Education(models.Model):
         return self.name
 
    
-class Project(models.Model):
+class Project(TranslatableModel):
     name = models.CharField(max_length=250)
     github = models.URLField()
     deployment = models.URLField(blank=True, null=True)

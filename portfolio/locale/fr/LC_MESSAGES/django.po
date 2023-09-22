@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-22 16:28+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: portfolio_app/forms.py:8
+msgid "I would love to receive a real message ;) Please."
+msgstr "Je serais ravie de recevoir un véritable message. S'il vous plaît."
+
+#: portfolio_app/forms.py:12
+msgid "Your email"
+msgstr "Votre courriel"
+
+#: portfolio_app/forms.py:16
+msgid "Your email address"
+msgstr "Votre courriel"
+
+#: portfolio_app/forms.py:27 portfolio_app/forms.py:32
+msgid "Your message"
+msgstr "Votre message"
+
+#: portfolio_app/templates/portfolio_app/base.html:32
+msgid "Home"
+msgstr "Accueil"
+
+#: portfolio_app/templates/portfolio_app/base.html:38
+msgid "Bio"
+msgstr "A propos"
+
+#: portfolio_app/templates/portfolio_app/base.html:42
+msgid "Skills"
+msgstr "Expertise"
+
+#: portfolio_app/templates/portfolio_app/base.html:47
+msgid "Projects"
+msgstr "Projets"
+
+#: portfolio_app/templates/portfolio_app/base.html:51
+#: portfolio_app/templates/portfolio_app/base.html:52
+msgid "Contact"
+msgstr "Contact"
+
+#: portfolio_app/templates/portfolio_app/base.html:58
+#: portfolio_app/templates/portfolio_app/base.html:75
+msgid "Call me"
+msgstr "Appeler"
+
+#: portfolio_app/templates/portfolio_app/base.html:72
+msgid "Send me an email"
+msgstr "Envoyer un courriel"
+
+#: portfolio_core/settings.py:139
+msgid "English"
+msgstr "Anglais"
+
+#: portfolio_core/settings.py:140
+msgid "German"
+msgstr "Allemand"
+
+#: portfolio_core/settings.py:141
+msgid "French"
+msgstr "Français"
