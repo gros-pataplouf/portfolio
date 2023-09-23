@@ -24,20 +24,20 @@
     <nav 
     id="navbar"
     class="js__nav-invisible fixed bg-primary-500 top-0 z-30 w-screen h-screen md:h-16 text-3xl md:bg-transparent md:text-lg">
-        <ul class="relative flex flex-col border-2 justify-center text-center items-center h-screen space-y-6 
+        <ul class="relative flex flex-col md:border-2 justify-center text-center items-center h-screen space-y-4 
         [&>li]:navbar-item
         md:bg-primary-500 md:shadow-primary md:border-white md:mx-auto md:my-auto md:h-fit md:flex-row md:shadow-md md:justify-around md:w-2/3 md:space-y-0 md:rounded-lg ">
+       
+        <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}}">
+            <a href="/" title="{% trans 'Home' %}">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </li>
 
-            <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}}">
-                <a href="/" title="{% trans 'Home' %}">
-                    <i class="fa-solid fa-house"></i>
-                </a>
-            </li>
-
-            <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">
-                <a href={% url 'bio' %} title="{% trans 'Bio' %}" class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">{% trans "Bio" %}
-                </a> 
-            </li>
+        <li class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}}">
+            <a href={% url 'bio' %} title="{% trans 'Bio' %}" class="{{request.path|anchor_color:'/bio/, anchorActive, anchorInactive'}} md:ml-auto">{% trans "Bio" %}
+            </a> 
+        </li>
             <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
                 <a href={% url 'skills' %} title="{% trans 'Skills' %}" class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">{% trans "Skills" %} 
 
@@ -46,6 +46,17 @@
             <li class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}}">
                 <a href={% url 'projects' %} title="{% trans 'Projects' %}" class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}} md:ml-auto">{% trans "Projects" %}
                 </a>
+            </li>
+            <li class="anchorInactive flex justify-evenly">
+                <button title="{% trans 'Switch to English' %}">
+                    <img data="en" class="js__language-switcher h-10 md:h-6 border-transparent hover:border-white border-2 rounded-md" src={% static "portfolio_app/icons/en.svg" %}></img>
+                </button>
+                <button title="{% trans 'Switch to German' %}">
+                    <img data="de" class="js__language-switcher h-10 md:h-6 border-transparent hover:border-white border-2 rounded-md" src={% static "portfolio_app/icons/de.svg" %}></img>
+                </button>
+                <button title="{% trans 'Switch to French' %}">
+                    <img data="fr" class="js__language-switcher h-10 md:h-6 border-transparent hover:border-white border-2 rounded-md" src={% static "portfolio_app/icons/fr.svg" %}></img>
+                </button>
             </li>
             <li class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}}">
                 <a href={% url 'contact' %} title="{% trans 'Contact' %}" class="{{request.path|anchor_color:'/contact/, anchorActive, anchorInactive'}} md:ml-auto ">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 16:28+0200\n"
+"POT-Creation-Date: 2023-09-23 10:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,34 @@ msgstr "Ihre E-Mail-Adresse"
 #: portfolio_app/forms.py:27 portfolio_app/forms.py:32
 msgid "Your message"
 msgstr "Ihre Nachricht"
+
+#: portfolio_app/models.py:10
+msgid "Languages"
+msgstr "Programmiersprachen"
+
+#: portfolio_app/models.py:10
+msgid "Coding"
+msgstr "Coding"
+
+#: portfolio_app/models.py:10
+msgid "Frontend"
+msgstr "Frontend"
+
+#: portfolio_app/models.py:10
+msgid "Databases"
+msgstr "Datenbanken"
+
+#: portfolio_app/models.py:10
+msgid "Tooling"
+msgstr "Tooling"
+
+#: portfolio_app/models.py:10
+msgid "Providers"
+msgstr "Provider"
+
+#: portfolio_app/models.py:10
+msgid "Other"
+msgstr "Sonstiges"
 
 #: portfolio_app/templates/portfolio_app/base.html:32
 msgid "Home"
@@ -64,14 +92,18 @@ msgstr "Anrufen"
 msgid "Send me an email"
 msgstr "E-Mail senden"
 
-#: portfolio_core/settings.py:139
+#: portfolio_core/settings.py:141
 msgid "English"
 msgstr "Englisch"
 
-#: portfolio_core/settings.py:140
+#: portfolio_core/settings.py:142
 msgid "German"
 msgstr "Deutsch"
 
-#: portfolio_core/settings.py:141
+#: portfolio_core/settings.py:143
 msgid "French"
 msgstr "Französisch"
+
+#: portfolio_core/urls.py:12
+msgid "admin/"
+msgstr ""

@@ -32,6 +32,7 @@ module.exports = {
       'js__nav-visible',
       'js__nav-invisible',
       'js__skill_active',
+      'js__language-switcher'
 
     ]
   },

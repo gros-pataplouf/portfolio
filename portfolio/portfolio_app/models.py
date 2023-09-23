@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib import admin
 from parler.models import TranslatableModel, TranslatedFields
+from django.utils.translation import gettext_lazy as _
+
 
 class Skill(TranslatableModel):
     translations = TranslatedFields(
         name = models.CharField(max_length=250),
-        skill_type = models.CharField(max_length=50, choices=[("Coding", "Coding"), ("Tooling", "Tooling"), ("Databases", "Databases"), ("Others", "Others"), ("Languages", "Languages"), ("Soft Skills", "Soft Skills")]),
+        skill_type = models.CharField(max_length=50, choices=[("Languages", _("Languages")), ("Coding", _("Coding")), ("Frontend", _("Frontend")), ("Databases", _("Databases")), ("Tooling", _("Tooling")), ("Providers", _("Providers")), ("Other", _("Other"))]),
         proficiency = models.CharField(max_length=500, null=True, blank=True),
         rating = models.IntegerField(null=True, blank=True),
         )

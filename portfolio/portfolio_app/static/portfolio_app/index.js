@@ -8,19 +8,25 @@ drawBackground();
 addMobileNav();
 addScrollUpButton();
 
-switch (window.location.pathname.replaceAll("/", "")) {
-    case 'bio':
-        enableFilteringBio();
-        break;
-    case 'projects':
-        filterProjectsBySkills();
-        break;
-    case 'skills':
-        animateSkillCarousel();
-        break;
-    case 'contact':
-        optimizeContactForm();
-        break;
-    default:
-        break;
+if (window.location.pathname.includes('bio')) {
+    enableFilteringBio();
 }
+else if (window.location.pathname.includes('projects')) { 
+    filterProjectsBySkills();
+}
+else if (window.location.pathname.includes('skills')) {
+    animateSkillCarousel();
+}
+else if (window.location.pathname.includes('contact')) {
+    optimizeContactForm();
+}
+
+const languageSwitcherButtons = document.getElementsByClassName("js__language-switcher");
+
+Array.from(languageSwitcherButtons).forEach(element => {
+    element.addEventListener("click", (e) => {
+        const path = window.location.pathname.replaceAll("/", ",/,").split(",");
+        const newPath = path.map(i => i === 'en' || i == 'fr' ||  i == 'de' ? e.target.getAttribute('data') : i ).join("")
+        window.location.pathname = newPath;
+    })
+});

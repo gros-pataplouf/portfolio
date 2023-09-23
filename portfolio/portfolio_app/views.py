@@ -53,7 +53,7 @@ def skills(request):
     return render(request, "portfolio_app/skills.html", context)
 
 def projects(request):
-    skills = Skill.objects.filter(translations__skill_type="Coding").distinct()
+    skills = Skill.objects.all()
     projects = Project.objects.all()
     context = {
         "projects": projects,

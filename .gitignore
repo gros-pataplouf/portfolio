@@ -11,6 +11,8 @@ tailwindcss
 *.pdf
 *.key
 *.crt
+*.csv
+backups/*
 
 # If you are using PyCharm # 
 # User-specific stuff

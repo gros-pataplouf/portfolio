@@ -1231,6 +1231,10 @@ html, dialog {
   height: 0px;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -1383,6 +1387,10 @@ html, dialog {
   justify-content: space-around;
 }
 
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1450,17 +1458,22 @@ html, dialog {
   border-color: hsl(var(--primarydarkest));
 }
 
+.border-transparent {
+  border-color: transparent;
+}
+
 .bg-\[\#0077B5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 119 181 / var(--tw-bg-opacity));
 }
 
-.bg-action {
-  background-color: hsl(var(--action));
+.bg-\[\#04F404\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 244 4 / var(--tw-bg-opacity));
 }
 
-.bg-green {
-  background-color: hsl(var(--green));
+.bg-action {
+  background-color: hsl(var(--action));
 }
 
 .bg-primary {
@@ -1486,21 +1499,6 @@ html, dialog {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-lime-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
-}
-
-.bg-emerald-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#04F404\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(4 244 4 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-b {
@@ -1730,8 +1728,8 @@ html, dialog {
 .\[\&\>li\]\:navbar-item>li {
   width: 80%;
   border-radius: 0.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -1770,6 +1768,11 @@ html, dialog {
 
 .hover\:cursor-help:hover {
   cursor: help;
+}
+
+.hover\:border-white:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .hover\:bg-primary-700:hover {
@@ -1855,6 +1858,10 @@ html, dialog {
     height: 4rem;
   }
 
+  .md\:h-6 {
+    height: 1.5rem;
+  }
+
   .md\:h-fit {
     height: -moz-fit-content;
     height: fit-content;
@@ -1915,6 +1922,10 @@ html, dialog {
     border-radius: 0.5rem;
   }
 
+  .md\:border-2 {
+    border-width: 2px;
+  }
+
   .md\:border-primary\/50 {
     border-color: hsl(var(--primary) / 0.5);
   }
@@ -1946,6 +1957,11 @@ html, dialog {
 
   .md\:pb-0 {
     padding-bottom: 0px;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:text-3xl {
