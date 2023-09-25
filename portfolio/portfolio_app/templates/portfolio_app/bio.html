@@ -17,11 +17,23 @@
         <p class="text-action"><i id="js__toggleWork" class="fa-solid fa-toggle-on"></i> <span>Work</span></p>
         <p  class="text-sky-300"><i id="js__toggleEducation" class="fa-solid fa-toggle-on"></i> <span>Education</span></p>
     </div>
+
+<div class="flex w-screen justify-center">
+    <div class="relative w-[100px] border-2 border-primary-200 h-10 rounded-3xl flex justify-center">
+        <div id="js__skill-toggle-left" class="w-9 h-9 mr-auto"></div>
+        <div id="js__skill-toggle-middle" class="w-9 h-9 mx-auto"></div>
+        <div id="js__skill-toggle-command" class="absolute w-9 transition-all bg-purple-600 h-9 rounded-full flex justify-center"></div>
+        <div id="js__skill-toggle-right"class="w-9 h-9 ml-auto"></div>
+
+
+     </div>
+</div>
+
     {% for entry in all_by_date %}
     <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative flex flex-col w-screen h-full bg-transparent lg:w-1 first:rounded-t-md last:rounded-b-md md:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
         {% for date, entry in entry.items %}
         <!-- put work items on the left and education items on the right. Work item = entry has company attribute  -->
-        {% if entry.company %}
+        {% if entry.place %}
         <div class="relative space-y-2 lg:text-right px-8 lg:-left-[24.75rem] js__work-item lg:w-96 pb-6">
             <div class="absolute w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
                 <p class="pl-2 text-primary-200 lg:pl-0 text-md">{{entry.start_date.month}}/{{entry.start_date.year}} -

@@ -9,7 +9,7 @@ from django.urls import re_path #tbc
 from django.utils.translation import gettext_lazy as _
 
 urlpatterns = i18n_patterns(
-    path(_('admin/'), admin.site.urls),
+    path('admin/', admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
     path('', include('portfolio_app.urls')),
 )
