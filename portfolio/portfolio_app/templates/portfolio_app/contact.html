@@ -9,7 +9,7 @@
       <h1 class="title typing" >Get in touch</h1>
   </div>
 
-<form class="flex flex-col items-center justify-center  [&>div>*]:w-[92vw] [&>div>*]:md:w-[25rem] [&>div>input]:bg-primary-700 [&>div>textarea]:bg-primary-700 [&>div>textarea]:p-2 [&>div>input]:p-2 space-y-4" method="POST" action="/contact/">
+<form class="flex flex-col items-center justify-center  [&>div>*]:w-[92vw] [&>div>*]:md:w-[25rem] [&>div>input]:bg-primary-700 [&>div>textarea]:bg-primary-700 [&>div>textarea]:p-2 [&>div>input]:p-2 space-y-4" method="POST">
   {% csrf_token %}
   {{ form|crispy }}
 

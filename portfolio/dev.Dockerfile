@@ -1,6 +1,6 @@
 # Use a suitable base image
 
-FROM --platform=$BUILDPLATFORM python:3.10-slim-bookworm AS builder
+FROM python:3.10-slim-bookworm AS builder
 
 WORKDIR /app
 

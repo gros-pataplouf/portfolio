@@ -137,7 +137,8 @@ const languageSwitcherButtons = document.getElementsByClassName("js__language-sw
 export const languageSwitcher = () => Array.from(languageSwitcherButtons).forEach(element => {
     element.addEventListener("click", (e) => {
         const path = window.location.pathname.replaceAll("/", ",/,").split(",");
-        const newPath = path.map(i => i === 'en' || i == 'fr' ||  i == 'de' ? e.target.getAttribute('data') : i ).join("")
+        const newPath = path.map(i => i === 'en' || i == 'fr' ||  i == 'de' ? e.target.getAttribute('data') : i ).join("");
+        console.log(e.target.getAttribute("data"));
         window.location.pathname = newPath;
     })
 });

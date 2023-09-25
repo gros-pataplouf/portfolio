@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
@@ -10,4 +10,6 @@ urlpatterns = [
     path("education/", views.education, name="education"),
     path("contact/", views.contact, name="contact"),
     path("thanks/", views.thanks, name="thanks"),
+    re_path(r".*", views.not_found, name="not_found"),
+  
 ]

@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
+
 #Load environment variables 
 load_dotenv()
 
@@ -71,6 +73,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -132,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -142,6 +145,32 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+#tbc
+LANGUAGES = (
+    ('en', _('English')),
+    ('de', _('German')),
+    ('fr', _('French')),
+)
+
+
+#tbc
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
+
+#tbc
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',}, # English
+        {'code': 'de',}, # German
+        {'code': 'fr',}, # French
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
 
 # SECURE_HSTS_SECONDS = 3600
 # SECURE_SSL_REDIRECT = True

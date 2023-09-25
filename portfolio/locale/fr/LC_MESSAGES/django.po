@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-23 22:18+0200\n"
+"POT-Creation-Date: 2023-09-25 15:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,10 @@ msgid "Frontend"
 msgstr "Frontend"
 
 #: portfolio_app/models.py:10
+msgid "Backend"
+msgstr "Backend"
+
+#: portfolio_app/models.py:10
 msgid "Databases"
 msgstr "Bases de données"
 
@@ -81,15 +85,15 @@ msgstr "Projets"
 
 #: portfolio_app/templates/portfolio_app/base.html:51
 msgid "Switch to English"
-msgstr ""
+msgstr "Afficher en anglais"
 
 #: portfolio_app/templates/portfolio_app/base.html:54
 msgid "Switch to German"
-msgstr ""
+msgstr "Afficher en allemand"
 
 #: portfolio_app/templates/portfolio_app/base.html:57
 msgid "Switch to French"
-msgstr ""
+msgstr "Afficher en français"
 
 #: portfolio_app/templates/portfolio_app/base.html:62
 #: portfolio_app/templates/portfolio_app/base.html:63
@@ -107,19 +111,19 @@ msgstr "Envoyer un courriel"
 
 #: portfolio_app/templates/portfolio_app/intro.html:17
 msgid "Hi, I'm Cornelia!"
-msgstr ""
+msgstr "Bienvenue !"
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "I'm a"
-msgstr ""
+msgstr " "
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "Full-Stack Developer"
-msgstr ""
+msgstr "Développeuse Full-Stack"
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "with a strong focus on"
-msgstr ""
+msgstr ", je me suis spécialisée sur"
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "Django"
@@ -127,7 +131,7 @@ msgstr ""
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "and"
-msgstr ""
+msgstr "et"
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "React.js"
@@ -135,39 +139,41 @@ msgstr ""
 
 #: portfolio_app/templates/portfolio_app/intro.html:24
 msgid "Searching an"
-msgstr ""
+msgstr "Je suis à la recherche d'un"
 
 #: portfolio_app/templates/portfolio_app/intro.html:24
 msgid "entry-level position"
-msgstr ""
+msgstr "premier poste"
 
 #: portfolio_app/templates/portfolio_app/intro.html:24
 msgid "as a"
-msgstr ""
+msgstr "en tant que"
 
 #: portfolio_app/templates/portfolio_app/intro.html:24
 msgid "Backend or Full-Stack Webdeveloper"
-msgstr ""
+msgstr "développeuse back-end ou fullstack"
 
 #: portfolio_app/templates/portfolio_app/intro.html:25
 msgid "Immediately available part-time, full-time within a 3 months' notice."
-msgstr ""
+msgstr "Disponible immédiatement à temps partiel, à temps plein avec un préavis de 3 "
+"mois."
 
 #: portfolio_app/templates/portfolio_app/intro.html:26
 msgid "Based near Hamburg, happy to relocate, remote or hybrid preferred."
-msgstr ""
+msgstr "Basée près de Hambourg, géographiquement mobile, préférence pour le "
+"télétravail."
 
 #: portfolio_app/templates/portfolio_app/intro.html:27
 msgid "Looking for"
-msgstr ""
+msgstr "A la recherche de"
 
 #: portfolio_app/templates/portfolio_app/intro.html:27
 msgid " open-source collaborations and volunteer opportunities"
-msgstr ""
+msgstr " collaborations open-source et d'opportunités de volontariat"
 
 #: portfolio_app/templates/portfolio_app/intro.html:27
 msgid "causes: human rights, zero waste, biodiversity"
-msgstr ""
+msgstr "causes: droits de l'homme, zéro déchet, biodiversité"
 
 #: portfolio_app/templates/portfolio_app/intro.html:30
 #, fuzzy
@@ -177,11 +183,11 @@ msgstr "Projets"
 
 #: portfolio_app/templates/portfolio_app/intro.html:31
 msgid "Download CV"
-msgstr ""
+msgstr "Télécharger CV"
 
 #: portfolio_app/templates/portfolio_app/intro.html:31
 msgid "CV"
-msgstr ""
+msgstr "CV"
 
 #: portfolio_core/settings.py:141
 msgid "English"

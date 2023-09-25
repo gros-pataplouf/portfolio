@@ -87,11 +87,12 @@ def contact(request):
                 f"{request.POST['message']}",                                
                 EMAIL_HOST_USER,
                 [EMAIL_DEST],
-                fail_silently=True,
+                fail_silently=False,
                 )
             return HttpResponseRedirect("/thanks/")
       
         else:
+            print(form.errors)
             return render(request, "portfolio_app/contact.html", {"form": form})
 
     else:
@@ -103,3 +104,6 @@ def contact(request):
 
 def thanks(request):
     return render(request, "portfolio_app/thanks.html")
+
+def not_found(request):
+    return render(request, "portfolio_app/not_found.html")

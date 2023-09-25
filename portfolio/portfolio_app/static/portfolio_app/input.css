@@ -111,9 +111,6 @@
       @apply text-white font-lato;
     }
 
-
-
-
 }
 
 
@@ -196,13 +193,13 @@
 }
 
 
-  .js__nav-invisible {
-      @apply right-[101vw] md:right-0  transition-all md:transition-none duration-1000;
-      
-    }
+.js__nav-invisible {
+    @apply right-[101vw] md:right-0  transition-all md:transition-none duration-1000;
+    
+  }
 
-  
-  
+
+
 
 .js__skill_active {
   background-color: hsl(var(--accent))!important;

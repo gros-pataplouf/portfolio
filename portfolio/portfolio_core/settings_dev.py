@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+#tbc
+from django.utils.translation import gettext_lazy as _
 
 
 from dotenv import load_dotenv
@@ -56,13 +58,16 @@ INSTALLED_APPS = [
     'fontawesomefree',
     'crispy_forms',
     'crispy_tailwind',
-    'captcha'
+    'captcha',
+    'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # tbc
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -125,11 +130,38 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en' #tbc
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+#tbc
+LANGUAGES = (
+    ('en', _('English')),
+    ('de', _('German')),
+    ('fr', _('French')),
+)
+
+
+#tbc
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
+
+#tbc
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',}, # English
+        {'code': 'de',}, # German
+        {'code': 'fr',}, # French
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
+
 
 
 if not DEBUG: 
