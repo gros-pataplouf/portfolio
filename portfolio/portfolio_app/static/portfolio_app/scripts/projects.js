@@ -6,10 +6,10 @@ export async function filterProjectsBySkills () {
     const projectPlaceholder = document.getElementById("js__project-placeholder");
 
     skillItems.forEach(item => item.addEventListener('click', (e) => {
-        projects.forEach(project => {
-        project.setAttribute("style", "display: grid");
         spinner.classList.toggle("hidden");
         projectWrapper.classList.toggle("hidden");
+        projects.forEach(project => {
+        project.setAttribute("style", "display: grid");
     })
 
     setTimeout(() => {

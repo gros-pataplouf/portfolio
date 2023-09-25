@@ -58,47 +58,33 @@
   }
 }
 
-@keyframes trembling {
-  0% {
-    transform: scale(4) translateX(37.5%) translateY(37.5%);
-  }
-
-  100% {
-    transform: scale(4) translateX(37.51%) translateY(37.5%);
-  }
-}
-
 @keyframes scrolling {
-  0% {
-    transform: scale(4) translateX(37.5%) translateY(37.5%);
-  }
-
   10% {
-    transform: scale(4) translateX(37.5%) translateY(37.5%);
+    transform: translateX(37.5%) translateY(37.5%);
   }
 
   35% {
-    transform: scale(4) translateX(12.5%) translateY(37.5%);
+    transform: translateX(12.5%) translateY(37.5%);
   }
 
   45% {
-    transform: scale(4) translateX(12.5%) translateY(37.5%);
+    transform: translateX(12.5%) translateY(37.5%);
   }
 
   65% {
-    transform: scale(4) translateX(-12.5%) translateY(37.5%);
+    transform: translateX(-12.5%) translateY(37.5%);
   }
 
   75% {
-    transform: scale(4) translateX(-12.5%) translateY(37.5%);
+    transform: translateX(-12.5%) translateY(37.5%);
   }
 
   90% {
-    transform: scale(4) translateX(-37.5%) translateY(37.5%);
+    transform: translateX(-37.5%) translateY(37.5%);
   }
 
   100% {
-    transform: scale(4) translateX(-37.5%) translateY(37.5%);
+    transform: translateX(-37.5%) translateY(37.5%);
   }
 }
 
@@ -683,34 +669,6 @@ html, dialog {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.scale-gallery {
-  transform: scale(4) translateX(37.5%) translateY(37.5%);
-}
-
-.scale-laptop {
-  transform: scale(1.02);
-}
-
-.animate-social > a:first-child > i{
-  animation: higher .5s .5s;
-}
-
-.animate-social > a:nth-child(2) > i{
-  animation: higher .5s 1s;
-}
-
-.animate-social > a:last-child > i{
-  animation: higher .5s 2s;
-}
-
-.scale-gallery-parent:hover > .scale-gallery {
-  animation: scrolling 6s alternate infinite ease-in-out;
-}
-
-.scale-gallery-parent > .scale-gallery {
-  animation: trembling 10s alternate infinite ease-in-out;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -948,6 +906,37 @@ html, dialog {
         9% 75%,
         9% 25%
     )
+}
+
+.animate-social > a:nth-child(2) > i{
+  animation: higher .5s 1s;
+}
+
+.animate-social > a:nth-child(3) > i{
+  animation: higher .5s 1.5s;
+}
+
+.animate-social > a:last-child > i{
+  animation: higher .5s 2s;
+}
+
+.animate-social > a:first-child > i{
+  animation: higher .5s .5s;
+}
+
+/*todo: write some actual tailwind instead of putting it into half-arsed BEM */
+
+.project-visual:hover > .project-visual-img {
+  animation: scrolling 6s alternate infinite ease-in-out;
+}
+
+.project-visual-laptop {
+  transform: scale(1.01);
+}
+
+.project-visual-img {
+  scale: 4;
+  transform: translate3d(37.5%, 37.5%, 0)
 }
 
 .js__nav-visible {
@@ -1327,22 +1316,6 @@ html, dialog {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-x-\[37\.5\%\] {
-  --tw-translate-x: 37.5%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-\[37\.5\%\] {
-  --tw-translate-y: 37.5%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-\[4\] {
-  --tw-scale-x: 4;
-  --tw-scale-y: 4;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .list-outside {
   list-style-position: outside;
 }
@@ -1690,6 +1663,10 @@ html, dialog {
   color: hsl(var(--primarydark));
 }
 
+.text-primary-800 {
+  color: hsl(var(--primarydarkest));
+}
+
 .text-sky-300 {
   --tw-text-opacity: 1;
   color: rgb(125 211 252 / var(--tw-text-opacity));
@@ -1794,10 +1771,6 @@ html, dialog {
 @media (min-width: 768px) {
   .md\:static {
     position: static;
-  }
-
-  .md\:col-start-2 {
-    grid-column-start: 2;
   }
 
   .md\:mx-auto {
@@ -1964,11 +1937,6 @@ html, dialog {
     line-height: 2rem;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -2013,10 +1981,6 @@ html, dialog {
 
   .lg\:left-4 {
     left: 1rem;
-  }
-
-  .lg\:order-5 {
-    order: 5;
   }
 
   .lg\:order-last {
@@ -2136,10 +2100,6 @@ html, dialog {
     --tw-space-y-reverse: 0;
     margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
-  }
-
-  .lg\:p-12 {
-    padding: 3rem;
   }
 
   .lg\:pl-0 {

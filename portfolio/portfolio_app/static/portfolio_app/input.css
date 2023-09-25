@@ -111,39 +111,15 @@
       @apply text-white font-lato;
     }
 
-.scale-gallery {
-  transform: scale(4) translateX(37.5%) translateY(37.5%);
-
-}
-.scale-laptop {
-  transform: scale(1.02);
-}
 
 
-.animate-social > a:first-child > i{
-  animation: higher .5s .5s;  
-}
-
-.animate-social > a:nth-child(2) > i{
-  animation: higher .5s 1s;  
-}
-
-.animate-social > a:last-child > i{
-  animation: higher .5s 2s;  
-}
-
-.scale-gallery-parent:hover > .scale-gallery {
-
-    animation: scrolling 6s alternate infinite ease-in-out;
 
 }
 
-.scale-gallery-parent > .scale-gallery {
 
-  animation: trembling 10s alternate infinite ease-in-out;
-}
-   
-}
+
+
+
 
 /* LAYER COMPONENTS */
 
@@ -181,6 +157,38 @@
         9% 25%
     )
   }
+
+  .animate-social > a:nth-child(2) > i{
+    animation: higher .5s 1s;  
+  }
+  
+  .animate-social > a:nth-child(3) > i{
+    animation: higher .5s 1.5s;  
+  }
+  
+  .animate-social > a:last-child > i{
+    animation: higher .5s 2s;  
+  }
+
+  .animate-social > a:first-child > i{
+    animation: higher .5s .5s;  
+  }
+
+  /*todo: write some actual tailwind instead of putting it into half-arsed BEM */
+.project-visual:hover > .project-visual-img {
+  animation: scrolling 6s alternate infinite ease-in-out;
+}
+
+.project-visual-laptop {
+  transform: scale(1.01);
+}
+
+.project-visual-img {
+  scale: 4;
+  transform: translate3d(37.5%, 37.5%, 0)
+}
+  
+  
 
 .js__nav-visible {
   @apply right-0 transition-all duration-1000;

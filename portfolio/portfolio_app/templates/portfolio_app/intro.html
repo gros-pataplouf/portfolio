@@ -1,6 +1,8 @@
 
 {% extends "portfolio_app/base.html" %}
 {% load static %}
+{% load i18n %}
+
 {% block content %}
 <div class="container space-y-6">
 <div class="flex w-4/5">
@@ -12,20 +14,20 @@
         </div>
         <div class="flex mt-24 md:mt-0 justify-start items-center">
             <h1 class="text-terminal title text-3xl">~:$&nbsp;</h1>
-            <h1 class="title typing text-2xl">Hi, I'm Cornelia!</h1>
+            <h1 class="title typing text-2xl">{%trans "Hi, I'm Cornelia!" %}</h1>
         </div>
 </div>
 
 <p class="w-4/5 text-lg font-light text-justify">
-I'm a self-taught <span class="font-bold">Full-Stack Developer</span> with a strong focus on <span class="font-bold">Django</span> and <span class="font-bold">React.js</span>. </p> 
+{% trans "I'm a" %} <span class="font-bold">{% trans 'Full-Stack Developer' %}</span> {% trans 'with a strong focus on' %} <span class="font-bold">{% trans 'Django' %}</span> {% trans 'and' %} <span class="font-bold">{% trans 'React.js' %}</span>. </p> 
 <ul class="fa-ul text-lg space-y-6 w-4/5">
-    <li><span class="fa-li"><i class="fa-solid fa-magnifying-glass"></i></span>Searching an <span class="font-bold">entry-level position</span> as a <span class="font-bold" >Backend or Full-Stack Webdeveloper</span>.</li>
-    <li><span class="fa-li"><i class="fa-regular fa-calendar-check"></i></span>Immediately available part-time, full-time within a 3 months' notice. </li>
-    <li><span class="fa-li"><i class="fa-solid fa-location-dot"></i></span>Based near Hamburg, happy to relocate, remote or hybrid preferred.</li>
-    <li><span class="fa-li"><i class="fa-solid fa-people-group"></i></span> Looking for <span class="font-bold">open-source collaborations and volunteer opportunities </span> (causes: human rights, zero waste, biodiversity).</li>
+    <li><span class="fa-li"><i class="fa-solid fa-magnifying-glass"></i></span>{% trans 'Searching an' %} <span class="font-bold">{% trans 'entry-level position' %}</span> {% trans 'as a' %} <span class="font-bold" >{% trans 'Backend or Full-Stack Webdeveloper' %}</span>.</li>
+    <li><span class="fa-li"><i class="fa-regular fa-calendar-check"></i></span>{% trans "Immediately available part-time, full-time within a 3 months' notice." %} </li>
+    <li><span class="fa-li"><i class="fa-solid fa-location-dot"></i></span>{% trans 'Based near Hamburg, happy to relocate, remote or hybrid preferred.' %}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-people-group"></i></span>{% trans 'Looking for' %}<span class="font-bold">{% trans ' open-source collaborations and volunteer opportunities' %}</span> ({% trans 'causes: human rights, zero waste, biodiversity' %}).</li>
   </ul>
 <div class="w-full pb-6 md:pb-0 flex flex-col md:flex-row justify-center items-center md:justify-between relative">
-<a title="Projects" class="block button min-w-fit md:ml-auto md:mr-8" href="/projects">See projects</a>
-<a class="block button min-w-fit md:mr-auto md:ml-8" title="Download CV" href="{% static 'portfolio_app/cpetry_cv.pdf' %}">CV <i class="fa-solid fa-download"></i></a>
+<a title="{% trans 'Projects' %}" class="block button min-w-fit md:ml-auto md:mr-8" href="/projects">{% trans 'See projects' %}</a>
+<a class="block button min-w-fit md:mr-auto md:ml-8" title="{% trans 'Download CV' %}" href="{% static 'portfolio_app/cpetry_cv.pdf' %}">{% trans 'CV' %} <i class="fa-solid fa-download"></i></a>
 </div>
 {% endblock %}

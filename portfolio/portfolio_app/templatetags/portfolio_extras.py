@@ -2,10 +2,6 @@ from django import template
 
 register = template.Library()
 
-@register.filter()
-def star_rating(value, str):
-    """takes in a rating as int and returns a int x stars"""
-    return value * str
 
 @register.filter()
 def anchor_color(path, args):
@@ -17,7 +13,6 @@ def anchor_color(path, args):
     path = path[3:] #to do: not so elegant :()
     args_lst = args.split(",")
     clean_args = [arg.strip(" ") for arg in args_lst]
-    print(clean_args, path)
     return (clean_args[1] if clean_args[0] == path else clean_args[2])
 
 @register.filter()

@@ -130,3 +130,14 @@ toggleMobileNavIcon.addEventListener("click", () => {
     navbar.classList.toggle("js__nav-visible");
     })
 }
+
+// enable language switching
+const languageSwitcherButtons = document.getElementsByClassName("js__language-switcher");
+
+export const languageSwitcher = () => Array.from(languageSwitcherButtons).forEach(element => {
+    element.addEventListener("click", (e) => {
+        const path = window.location.pathname.replaceAll("/", ",/,").split(",");
+        const newPath = path.map(i => i === 'en' || i == 'fr' ||  i == 'de' ? e.target.getAttribute('data') : i ).join("")
+        window.location.pathname = newPath;
+    })
+});

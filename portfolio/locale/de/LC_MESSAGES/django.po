@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-23 10:05+0200\n"
+"POT-Creation-Date: 2023-09-23 22:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,22 +75,112 @@ msgid "Skills"
 msgstr "Skills"
 
 #: portfolio_app/templates/portfolio_app/base.html:47
+#: portfolio_app/templates/portfolio_app/intro.html:30
 msgid "Projects"
 msgstr "Projekte"
 
 #: portfolio_app/templates/portfolio_app/base.html:51
-#: portfolio_app/templates/portfolio_app/base.html:52
+msgid "Switch to English"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/base.html:54
+msgid "Switch to German"
+msgstr "Auf Deutsch umstellen"
+
+#: portfolio_app/templates/portfolio_app/base.html:57
+msgid "Switch to French"
+msgstr "Auf Französisch umstellen"
+
+#: portfolio_app/templates/portfolio_app/base.html:62
+#: portfolio_app/templates/portfolio_app/base.html:63
 msgid "Contact"
 msgstr "Kontakt"
 
-#: portfolio_app/templates/portfolio_app/base.html:58
-#: portfolio_app/templates/portfolio_app/base.html:75
+#: portfolio_app/templates/portfolio_app/base.html:69
+#: portfolio_app/templates/portfolio_app/base.html:86
 msgid "Call me"
 msgstr "Anrufen"
 
-#: portfolio_app/templates/portfolio_app/base.html:72
+#: portfolio_app/templates/portfolio_app/base.html:83
 msgid "Send me an email"
 msgstr "E-Mail senden"
+
+#: portfolio_app/templates/portfolio_app/intro.html:17
+msgid "Hi, I'm Cornelia!"
+msgstr "Herzlich willkommen!"
+
+#: portfolio_app/templates/portfolio_app/intro.html:22
+msgid "I'm a"
+msgstr "Ich bin Cornelia Petry,"
+
+#: portfolio_app/templates/portfolio_app/intro.html:22
+msgid "Full-Stack Developer"
+msgstr "Full-Stack Entwicklerin"
+
+#: portfolio_app/templates/portfolio_app/intro.html:22
+msgid "with a strong focus on"
+msgstr "mit Schwerpunkt"
+
+#: portfolio_app/templates/portfolio_app/intro.html:22
+msgid "Django"
+msgstr "Django"
+
+#: portfolio_app/templates/portfolio_app/intro.html:22
+msgid "and"
+msgstr "und"
+
+#: portfolio_app/templates/portfolio_app/intro.html:22
+msgid "React.js"
+msgstr "React.js"
+
+#: portfolio_app/templates/portfolio_app/intro.html:24
+msgid "Searching an"
+msgstr "Ich suche"
+
+#: portfolio_app/templates/portfolio_app/intro.html:24
+msgid "entry-level position"
+msgstr "eine Einstiegsmöglichkeit"
+
+#: portfolio_app/templates/portfolio_app/intro.html:24
+msgid "as a"
+msgstr "als"
+
+#: portfolio_app/templates/portfolio_app/intro.html:24
+msgid "Backend or Full-Stack Webdeveloper"
+msgstr "Backend oder Full-Stack-Entwicklerin"
+
+#: portfolio_app/templates/portfolio_app/intro.html:25
+msgid "Immediately available part-time, full-time within a 3 months' notice."
+msgstr "Teilzeit sofort einsatzbereit, Vollzeit drei Monate Vorlaufzeit."
+
+#: portfolio_app/templates/portfolio_app/intro.html:26
+msgid "Based near Hamburg, happy to relocate, remote or hybrid preferred."
+msgstr "Großraum Hamburg, geografisch mobil mit Präferenz für remotes oder hybrides Arbeiten."
+
+#: portfolio_app/templates/portfolio_app/intro.html:27
+msgid "Looking for"
+msgstr "Immer freue ich mich darüber, mich in"
+
+# msgid "open-source collaborations and volunteer opportunities"
+#: portfolio_app/templates/portfolio_app/intro.html:27
+msgid " open-source collaborations and volunteer opportunities"
+msgstr " Open-Source Projekten und ehrenamtlich einzubringen"
+
+#: portfolio_app/templates/portfolio_app/intro.html:27
+msgid "causes: human rights, zero waste, biodiversity"
+msgstr "gerne rund um die Themen Menschenrechte, Zero Waste, Naturschutz"
+
+#: portfolio_app/templates/portfolio_app/intro.html:30
+msgid "See projects"
+msgstr "Projekte"
+
+#: portfolio_app/templates/portfolio_app/intro.html:31
+msgid "Download CV"
+msgstr "Lebenslauf herunterladen"
+
+#: portfolio_app/templates/portfolio_app/intro.html:31
+msgid "CV"
+msgstr "Lebenslauf"
 
 #: portfolio_core/settings.py:141
 msgid "English"
