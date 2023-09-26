@@ -3,16 +3,17 @@
 {% load i18n %}
 
 {% block content %}
+<div class="container justify-start 2xl:pt-24">
 
 <div class="flex flex-col md:flex-row mt-16 mb-4 max-w-screen justify-center items-center">
-    <h1 class="text-terminal md:block title text-3xl">~/skills:$&nbsp;</h1>
-    <h1 class="title typing" >Click a skill <br class="md:hidden"/> to learn more </h1>
+    <h1 class="text-terminal md:block title">~/skills:$&nbsp;</h1>
+    <h1 class="title typing">Click a skill <br class="md:hidden"/> to learn more </h1>
 </div>
     {% regroup skills by skill_type as skill_list %}
-    <div class="flex flex-col carousel_container">
+    <div class="flex flex-col carousel_container  ">
         <div class="carousel">
             {% for skill_type in  skill_list%}
-            <section class="m-2 rounded-lg max-w-screen lg:w-72 lg:h-72 carousel_cell bg-gradient-to-b border-2 shadow-md shadow-action border-primary-800 from-primary-600 to-primary-700">
+            <section class="m-2 rounded-lg max-w-screen carousel_cell bg-gradient-to-b border-2 shadow-md shadow-action border-primary-800 from-primary-600 to-primary-700">
                 <div class="flex flex-col items-center justify-start p-6">
                     <h2 class="mb-6 text-lg font-bold lg:text-3xl">{{skill_type.grouper|title}}</h2>
                     <div class="relative flex flex-wrap items-center justify-center my-2 text-center">
@@ -34,9 +35,10 @@
         </div>
     </div>
     <div class="hidden lg:flex lg:justify-center lg:relative lg:-top-10 w-screen relative h-0">
-        <button id="js__spin_carousel-back" class="mr-96 w-16 h-16 rounded-full bg-primary-700"><i class="text-3xl font-bold /50 fa-solid fa-chevron-left group-hover:/80"></i></button>
-        <button id="js__spin_carousel-forward" class="ml-96 w-16 h-16 rounded-full bg-primary-700"><i class="text-3xl font-bold fa-solid fa-chevron-right /50 group-hover:/80"></i></button>
+        <button id="js__spin_carousel-back" class="mr-96 2xl:mr-[36rem] w-16 h-16 rounded-full bg-primary-700"><i class="text-3xl font-bold /50 fa-solid fa-chevron-left group-hover:/80"></i></button>
+        <button id="js__spin_carousel-forward" class="ml-96 2xl:ml-[36rem] w-16 h-16 rounded-full bg-primary-700"><i class="text-3xl font-bold fa-solid fa-chevron-right /50 group-hover:/80"></i></button>
     </div>
+</div>
 
 </div>
 {% endblock %}

@@ -4,29 +4,29 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container space-y-6">
+<div class="container space-y-6 2xl:-mt-24">
 <div class="flex w-4/5">
-    <div class="bg-gradient-to-r top-4 left-4 md:mt-0 fixed md:static from-accent to-action flex h-20 w-20 lg:h-24 lg:w-24 flex-col items-center justify-center hexagon">
-        <div class="block h-16 w-16 lg:h-20 lg:w-20 md:border-primary/50 border-solid border-4 hexagon">
-            <img src={% static 'portfolio_app/images/me.jpeg' %} class="object-contain">
+    <div class="z-10 bg-gradient-to-r top-4 left-4 md:mt-0 fixed md:static from-accent to-action flex h-20 w-20 lg:h-24 lg:w-24 2xl:h-36 2xl:w-36 flex-col items-center justify-center hexagon">
+        <div class="block h-16 w-16 lg:h-20 lg:w-20 2xl:w-32 2xl:h-32 md:border-primary/50 border-solid border-4 hexagon">
+            <img src={% static 'portfolio_app/images/me.jpeg' %} class="object-contain scale-110">
         </div>
     
         </div>
         <div class="flex mt-24 md:mt-0 justify-start items-center">
-            <h1 class="text-terminal title text-3xl">~:$&nbsp;</h1>
-            <h1 class="title typing text-2xl">{%trans "Hi, I'm Cornelia!" %}</h1>
+            <h1 class="text-terminal title ">~:$&nbsp;</h1>
+            <h1 class="title typing">{%trans "Hi, I'm Cornelia!" %}</h1>
         </div>
 </div>
 
-<p class="w-4/5 text-lg font-light text-justify">
+<p class="w-4/5 text-lg 2xl:text-2xl font-light text-justify">
 {% trans "I'm a" %} <span class="font-bold">{% trans 'Full-Stack Developer' %}</span> {% trans 'with a strong focus on' %} <span class="font-bold">{% trans 'Django' %}</span> {% trans 'and' %} <span class="font-bold">{% trans 'React.js' %}</span>. </p> 
-<ul class="fa-ul text-lg space-y-6 w-4/5">
+<ul class="fa-ul text-lg space-y-6 2xl:text-2xl w-4/5">
     <li><span class="fa-li"><i class="fa-solid fa-magnifying-glass"></i></span>{% trans 'Searching an' %} <span class="font-bold">{% trans 'entry-level position' %}</span> {% trans 'as a' %} <span class="font-bold" >{% trans 'Backend or Full-Stack Webdeveloper' %}</span>.</li>
     <li><span class="fa-li"><i class="fa-regular fa-calendar-check"></i></span>{% trans "Immediately available part-time, full-time within a 3 months' notice." %} </li>
     <li><span class="fa-li"><i class="fa-solid fa-location-dot"></i></span>{% trans 'Based near Hamburg, happy to relocate, remote or hybrid preferred.' %}</li>
     <li><span class="fa-li"><i class="fa-solid fa-people-group"></i></span>{% trans 'Looking for' %}<span class="font-bold">{% trans ' open-source collaborations and volunteer opportunities' %}</span> ({% trans 'causes: human rights, zero waste, biodiversity' %}).</li>
   </ul>
-<div class="w-full pb-6 md:pb-0 flex flex-col md:flex-row justify-center items-center md:justify-between relative">
+<div class="w-full pb-6 md:pb-0 flex flex-col md:flex-row justify-center items-center 2xl:text-2xl md:justify-between relative">
 <a title="{% trans 'Projects' %}" class="block button min-w-fit md:ml-auto md:mr-8" href="/projects">{% trans 'See projects' %}</a>
 <a class="block button min-w-fit md:mr-auto md:ml-8" title="{% trans 'Download CV' %}" href="{% static 'portfolio_app/cpetry_cv.pdf' %}">{% trans 'CV' %} <i class="fa-solid fa-download"></i></a>
 </div>

@@ -7,49 +7,45 @@
 <!-- all_by_date = [{end_date: jobitem}, {end_date: educationitem, ...}] -->
 
 
-<div class="flex flex-col md:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
-    <h1 class="text-terminal text-3xl md:block title">~/bio:$&nbsp;</h1>
-    <h1 class="title typing" >Here's what I've been <br class="md:hidden"/>  up to lately. </h1>
+<div class="flex flex-col lg:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
+    <h1 class="text-terminal lg:block title">~/bio:$&nbsp;</h1>
+    <h1 class="title typing text-center" >Here's what I've been <br class="lg:hidden"/> up to lately.</h1>
 </div>
 
-
-<div class="flex justify-around w-screen text-xl lg:hidden text-sky-300">
-        <p class="text-action"><i id="js__toggleWork" class="fa-solid fa-toggle-on"></i> <span>Work</span></p>
-        <p  class="text-sky-300"><i id="js__toggleEducation" class="fa-solid fa-toggle-on"></i> <span>Education</span></p>
-    </div>
-
-<div class="flex w-screen justify-center">
-    <div class="relative w-[100px] border-2 border-primary-200 h-10 rounded-3xl flex justify-center">
-        <div id="js__skill-toggle-left" class="w-9 h-9 mr-auto"></div>
-        <div id="js__skill-toggle-middle" class="w-9 h-9 mx-auto"></div>
-        <div id="js__skill-toggle-command" class="absolute w-9 transition-all bg-purple-600 h-9 rounded-full flex justify-center"></div>
-        <div id="js__skill-toggle-right"class="w-9 h-9 ml-auto"></div>
-
-
+<div class="flex w-screen justify-center items-center">
+    <p class="text-action text-lg md:text-3xl p-8">Work</p>
+    <div class="relative w-20 md:w-24 border-2 border-primary-200 bg-black rounded-3xl flex justify-center">
+        <div id="js__skill-toggle-left" class="w-7 h-7 md:w-9 md:h-9 mr-auto"></div>
+        <div id="js__skill-toggle-middle" class="w-7 h-7 md:w-9 md:h-9 mx-auto"></div>
+        <div id="js__skill-toggle-command" class="w-7 h-7 md:w-9 md:h-9 absolute bg-lilac rounded-full flex justify-center"></div>
+        <div id="js__skill-toggle-right"class="w-7 h-7 md:w-9 md:h-9 ml-auto"></div>
      </div>
+     <p  class="text-sky-300 p-8 text-lg md:text-3xl">Study</p>
+
 </div>
 
     {% for entry in all_by_date %}
-    <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative flex flex-col w-screen h-full bg-transparent lg:w-1 first:rounded-t-md last:rounded-b-md md:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
+    <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative p-4 flex flex-col w-screen h-full bg-transparent lg:w-1 lg:p-0 first:rounded-t-md last:rounded-b-md lg:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
         {% for date, entry in entry.items %}
-        <!-- put work items on the left and education items on the right. Work item = entry has company attribute  -->
+        <!-- put work items on the left and education items on the right. Work item = entry has place attribute  -->
         {% if entry.place %}
-        <div class="relative space-y-2 lg:text-right px-8 lg:-left-[24.75rem] js__work-item lg:w-96 pb-6">
-            <div class="absolute w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
-                <p class="pl-2 text-primary-200 lg:pl-0 text-md">{{entry.start_date.month}}/{{entry.start_date.year}} -
+        <div class="relative p-1 w-full lg:-left-[24.75rem] js__work-item lg:w-96 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
+            <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
+            <div class="w-full h-full p-4 bg-black rounded-lg">
+                <p class="text-primary-200 text-md text-right">{{entry.start_date.month}}/{{entry.start_date.year}} -
                     {% if entry.end_date%}
                     {{entry.end_date.month}}/{{entry.end_date.year}}
                     {% else %}
                     currently
                     {% endif %}
                 </p>        
-                <div class="lg:text-right">
-                    <h2 class="text-2xl font-bold caps">{{ entry.job_title }}</h2>
+                <div>
+                    <h2 class="text-xl">{{ entry.job_title }}</h2>
                     <h3 class="italic">{{ entry.company }}</h3>
                     <p class="italic">{{ entry.place }}</p>
-                    <ul class="mt-2 lg:pl-0">
+                    <ul class="mt-2">
                     {% for task in entry.description|parse_items %}
-                    <li class="pl-4 list-disc lg:list-inside lg:-p-2 lg:rtl">{{ task }}</li>
+                    <li class="list-disc list-inside lg:-p-2">{{ task }}</li>
                     {% endfor %}
                     </ul>
                 <div>
@@ -61,11 +57,13 @@
                 </div>
             </div>
         </div>
+        </div>
         <!-- education -->
 
         {% else %}
-        <div class="relative px-8 pb-6 space-y-2 js__edu-item lg:left-4 lg:w-96">
-            <div class="absolute w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
+        <div class="relative p-1 w-full js__edu-item lg:left-4 lg:w-96 rounded-lg bg-gradient-to-br from-accent to-green mr-16">
+            <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
+            <div class="w-full h-full p-4 bg-black rounded-lg">
             <p class="pl-2 text-primary-200 lg:pl-0">
                 <!-- if there is no start date don't try to display it because it is a diploma obtention date -->
                 {% if entry.start_date %}
@@ -79,12 +77,12 @@
             </p>
 
             <div>
-                <h2 class="text-2xl font-bold caps">{{ entry.name }}</h2>
+                <h2 class="text-xl">{{ entry.name }}</h2>
                 <h3 class="italic">{{ entry.school }}</h3>
                 {% if entry.description %}
                 <ul class="mt-2 lg:ml-4">
                     {% for task in entry.description|parse_items %}
-                    <li class="pl-4 list-disc list-outside lg:-p-2">{{ task }}</li>
+                    <li class="list-disc list-inside lg:-p-2">{{ task }}</li>
                     {% endfor %}
                 </ul>
                 {% endif %}
@@ -94,6 +92,7 @@
                     {% endfor %}
                 </ul>
                 </div>
+            </div>
             </div>
         {% endif %}
         {% endfor %}

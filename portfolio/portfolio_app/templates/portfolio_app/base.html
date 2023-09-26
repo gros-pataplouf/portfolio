@@ -20,25 +20,19 @@
     <canvas class="fixed top-0" id="canvas"></canvas>
     <div class="fixed z-50 flex flex-col items-center justify-center rounded-full w-14 h-14 bg-primary-700 right-4 top-4 md:hidden">
         <i id="toggleMobileNavIcon" class="fixed text-4xl text-center align-middle fa-solid fa-bars"></i>
-        </div>
+    </div>
     <nav 
     id="navbar"
-    class="js__nav-invisible fixed bg-primary-500 top-0 z-30 w-screen h-screen md:h-16 text-3xl md:bg-transparent md:text-lg">
+    class="js__nav-invisible fixed bg-primary-500 top-0 z-30 w-screen h-screen md:h-16 text-3xl md:bg-transparent md:text-lg 2xl:text-2xl 2xl:mt-10">
         <ul class="relative flex flex-col md:border-2 justify-center text-center items-center h-screen space-y-4 
         [&>li]:navbar-item
         md:bg-primary-500 md:shadow-primary md:border-white md:mx-auto md:my-auto md:h-fit md:flex-row md:shadow-md md:justify-around md:w-2/3 md:space-y-0 md:rounded-lg ">
-       
         <li class="{{request.path|anchor_color:'/, anchorActive, anchorInactive'}}">
             <a href="/" class="px-2" title="{% trans 'Home' %}">
                 <i class="fa-solid fa-house"></i>
-                
            </a>
-
-           <!-- <span class="md:hidden">|</span> -->
            <span class="js__language-switcher px-2 md:hidden" data="en">en</span>
-           <!-- <span class="md:hidden">|</span> -->
            <span class="js__language-switcher px-2 md:hidden" data="de">de</span>
-           <!-- <span class="md:hidden">|</span> -->
            <span class="js__language-switcher px-2 md:hidden" data="fr">fr</span>
         </li>
 
@@ -48,7 +42,6 @@
         </li>
             <li class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}}">
                 <a href={% url 'skills' %} title="{% trans 'Skills' %}" class="{{request.path|anchor_color:'/skills/, anchorActive, anchorInactive'}} md:ml-auto ">{% trans "Skills" %} 
-
                 </a>
             </li>
             <li class="{{request.path|anchor_color:'/projects/, anchorActive, anchorInactive'}}">

@@ -4,41 +4,30 @@ export const enableFilteringBio = () => {
     const toggleMiddle = document.getElementById("js__skill-toggle-middle");
     const toggleCommand = document.getElementById("js__skill-toggle-command");
     toggleLeft.addEventListener("click", () => {
-        console.log("left")
+        //push toggle command to the left and only show work related experiences
+        toggleCommand.setAttribute("class", "w-7 h-7 md:w-9 md:h-9 absolute transition-colors transition-transform bg-action rounded-full flex justify-center");
+        toggleCommand.setAttribute("style", "transform: translateX(-1.66rem");
+        Array.from(document.getElementsByClassName("js__work-item")).forEach(elt => {
+            elt.classList.remove("hidden")});
+        Array.from(document.getElementsByClassName("js__edu-item")).forEach(elt => {
+            elt.classList.add("hidden")});
 
-    toggleCommand.setAttribute("style", "transform: translateX(-30px)")
-    toggleCommand.style.backgroundColor = "red"})
+    })
     toggleRight.addEventListener("click", () => {
-        console.log("right")
-
-    toggleCommand.setAttribute("style", "transform: translateX(30px)")
-    toggleCommand.style.backgroundColor = "cyan"})
+        //push toggle command to the right and only show study-related experiences
+        toggleCommand.setAttribute("class", "w-7 h-7 md:w-9 md:h-9 absolute transition-colors transition-transform bg-terminal rounded-full flex justify-center");
+        toggleCommand.setAttribute("style", "transform: translateX(1.66rem)");
+        Array.from(document.getElementsByClassName("js__work-item")).forEach(elt => {
+            elt.classList.add("hidden")});
+        Array.from(document.getElementsByClassName("js__edu-item")).forEach(elt => {
+            elt.classList.remove("hidden")});
+        })
     toggleMiddle.addEventListener("click", () => {
-    console.log("middle")
-    toggleCommand.setAttribute("style", "transform: translateX(0px)");
-    toggleCommand.style.backgroundColor = "purple"})
-
-
-// const toggleEducation = document.getElementById("js__toggleEducation");
-// const toggleWork = document.getElementById("js__toggleWork");
-
-// [toggleEducation, toggleWork].forEach(node => {
-//     node.addEventListener("click", () => {
-//         node.classList.toggle("fa-toggle-on");
-//         node.classList.toggle("fa-toggle-off");
-//         if (node.id === "toggleWork") {
-//             Array.from(document.getElementsByClassName("js__work-item")).forEach(elt => {
-//                 elt.classList.toggle("hidden")
-//             })
-//         } else if (node.id === "toggleEducation") {
-        
-
-//             Array.from(document.getElementsByClassName("js__edu-item")).forEach(elt => {
-//                 elt.classList.toggle("hidden")
-                
-//         })
-
-//         }
-//     })
-// })
-}
+        //push toggle command to the middle and only show both work and studies
+        toggleCommand.setAttribute("class", "w-7 h-7 md:w-9 md:h-9 absolute transition-colors transition-transform bg-lilac rounded-full flex justify-center");
+        toggleCommand.setAttribute("style", "transform: translateX(0px");
+        Array.from(document.getElementsByClassName("js__work-item")).forEach(elt => {
+            elt.classList.remove("hidden")});
+        Array.from(document.getElementsByClassName("js__edu-item")).forEach(elt => {
+            elt.classList.remove("hidden")});
+    })}

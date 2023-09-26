@@ -17,7 +17,8 @@ module.exports = {
         "shade": "hsl(var(--shade))",
         "violet": "hsl(var(--violet))",
         "green": "hsl(var(--green))",
-        "terminal": "hsl(var(--terminal))"
+        "terminal": "hsl(var(--terminal))",
+        "lilac": "hsl(var(--lilac))"
       },
       fontFamily : {
         'sunrise': ['Sunrise', 'sans-serif'],
@@ -32,7 +33,10 @@ module.exports = {
       'js__nav-visible',
       'js__nav-invisible',
       'js__skill_active',
-      'js__language-switcher'
+      'js__language-switcher',
+      'bg-lilac', 
+      'bg-terminal',
+      'bg-action'
 
     ]
   },

@@ -105,6 +105,7 @@
         --violet: 228deg 100% 61%;
         --green: 139deg 100% 54%;
         --terminal: 200deg 100% 60%;
+        --lilac: 280deg 100% 60%;
     }
     
     html, dialog {
@@ -125,14 +126,14 @@
     @apply block px-8 py-4 mt-8 font-bold transition-all rounded-lg bg-gradient-to-r from-accent/90 to-action/90 hover:from-accent hover:to-action hover:px-9 active:underline;
   }
   .title {
-    @apply text-lg text-center md:text-left md:text-3xl font-cascadia max-w-[90vw] text-white;
+    @apply text-2xl text-center md:text-left md:text-3xl text-white xl:text-4xl font-cascadia max-w-[90vw];
   }
   .typing {
     @apply overflow-hidden whitespace-nowrap max-w-[90vw] animate-[typing_3s_steps(20,end)_forwards]
   }
-
+ 
   .navbar-item {
-    @apply py-4 w-4/5 rounded-lg md:rounded-none md:py-2 md:shadow-primary-500 first:md:rounded-l-md last:md:rounded-r-md
+    @apply py-6 w-4/5 rounded-lg md:rounded-none md:py-2 md:shadow-primary-500 first:md:rounded-l-md last:md:rounded-r-md
   }
   .container {
     @apply flex flex-col items-center justify-center min-h-screen md:w-2/3 md:mx-auto;
@@ -209,30 +210,44 @@
 @media (min-width: 1024px){
   .carousel_container {
     
-    width: 21vw;
-    height: 14vw;
+    width: 22rem;
+    height: 12rem;
     position: relative;
-    perspective: 2500px;
-    margin-top: 5vw;
+    perspective: 250rem;
+    margin-top: 5rem;
+    left: 3.3rem;
+
   }
+
+  @media (min-width: 1536px){
+    .carousel_container {
+      width: 15rem;
+      height: 12rem;
+      position: relative;
+      perspective: 250rem;
+      margin-top: 10rem;
+      left: 3.3rem;
+    }}
 
 
 .carousel {
-  width: 21vw;
-  height: 14vw;
+  width: 18rem;
+  height: 12rem;
   position: absolute;
   transform-style: preserve-3d;
   transform: rotateX(-12deg);
+
   
 }
 
 .carousel_cell {
   position: absolute;
-  width: 22vw;
-  height: 18vw;
+  width: 22rem;
+  height: 18rem;
   right: 0%;
   top: 0%;
   transition: all 1s ease-in-out;
+  margin-bottom: 1rem;
 
   }
 
