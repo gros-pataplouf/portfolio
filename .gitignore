@@ -14,7 +14,7 @@ tailwindcss
 *.csv
 backups/*
 
-./tailwindcss
+*/tailwindcss
 
 # If you are using PyCharm # 
 # User-specific stuff
