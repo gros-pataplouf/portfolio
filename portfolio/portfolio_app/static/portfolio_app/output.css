@@ -1856,10 +1856,6 @@ html, dialog {
     position: static;
   }
 
-  .md\:top-8 {
-    top: 2rem;
-  }
-
   .md\:top-4 {
     top: 1rem;
   }
@@ -2219,10 +2215,6 @@ html, dialog {
 @media (min-width: 1536px) {
   .\32xl\:-left-\[40\.75rem\] {
     left: -40.75rem;
-  }
-
-  .\32xl\:top-0 {
-    top: 0px;
   }
 
   .\32xl\:-mt-24 {
