@@ -1,6 +1,6 @@
 # Use a suitable base image
 
-FROM python:3.10-slim-bookworm AS builder
+FROM 3.11-slim-bullseye AS builder
 
 WORKDIR /app
 

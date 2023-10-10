@@ -14,6 +14,8 @@ tailwindcss
 *.csv
 backups/*
 
+./tailwindcss
+
 # If you are using PyCharm # 
 # User-specific stuff
 .idea/**/workspace.xml

@@ -1856,6 +1856,14 @@ html, dialog {
     position: static;
   }
 
+  .md\:top-8 {
+    top: 2rem;
+  }
+
+  .md\:top-4 {
+    top: 1rem;
+  }
+
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -2147,10 +2155,6 @@ html, dialog {
     width: 6rem;
   }
 
-  .lg\:w-96 {
-    width: 24rem;
-  }
-
   .lg\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2213,12 +2217,12 @@ html, dialog {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:-left-\[30\.75rem\] {
-    left: -30.75rem;
-  }
-
   .\32xl\:-left-\[40\.75rem\] {
     left: -40.75rem;
+  }
+
+  .\32xl\:top-0 {
+    top: 0px;
   }
 
   .\32xl\:-mt-24 {
@@ -2257,16 +2261,16 @@ html, dialog {
     width: 50%;
   }
 
+  .\32xl\:w-160 {
+    width: 40rem;
+  }
+
   .\32xl\:w-32 {
     width: 8rem;
   }
 
   .\32xl\:w-36 {
     width: 9rem;
-  }
-
-  .\32xl\:w-160 {
-    width: 40rem;
   }
 
   .\32xl\:pt-24 {
