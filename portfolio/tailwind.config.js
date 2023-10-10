@@ -20,6 +20,10 @@ module.exports = {
         "terminal": "hsl(var(--terminal))",
         "lilac": "hsl(var(--lilac))"
       },
+      spacing: {
+        '120': '30rem',
+        '160': '40rem'
+      },
       fontFamily : {
         'sunrise': ['Sunrise', 'sans-serif'],
         'cascadia': ['Cascadia', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif'],

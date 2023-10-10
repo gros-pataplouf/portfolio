@@ -39,11 +39,8 @@
 
 
 .typing::after {
-  content: "";
+  content: "█";
   width: 5px;
-  height: 24px;
-  background: white;
-  display: inline-block;
   animation: blink 1s steps(2) infinite;
 }
 @keyframes blink {

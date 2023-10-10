@@ -29,7 +29,7 @@
         {% for date, entry in entry.items %}
         <!-- put work items on the left and education items on the right. Work item = entry has place attribute  -->
         {% if entry.place %}
-        <div class="relative p-1 w-full lg:-left-[24.75rem] js__work-item lg:w-96 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
+        <div class="relative p-1 w-full lg:-left-[30.75rem] 2xl:-left-[40.75rem] js__work-item lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
             <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
             <div class="w-full h-full p-4 bg-black rounded-lg">
                 <p class="text-primary-200 text-md text-right">{{entry.start_date.month}}/{{entry.start_date.year}} -
@@ -43,9 +43,9 @@
                     <h2 class="text-xl">{{ entry.job_title }}</h2>
                     <h3 class="italic">{{ entry.company }}</h3>
                     <p class="italic">{{ entry.place }}</p>
-                    <ul class="mt-2">
+                    <ul class="mt-2 pl-4">
                     {% for task in entry.description|parse_items %}
-                    <li class="list-disc list-inside lg:-p-2">{{ task }}</li>
+                    <li class="list-disc">{{ task }}</li>
                     {% endfor %}
                     </ul>
                 <div>
@@ -61,7 +61,7 @@
         <!-- education -->
 
         {% else %}
-        <div class="relative p-1 w-full js__edu-item lg:left-4 lg:w-96 rounded-lg bg-gradient-to-br from-accent to-green mr-16">
+        <div class="relative p-1 w-full js__edu-item lg:left-4 lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-accent to-green mr-16">
             <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
             <div class="w-full h-full p-4 bg-black rounded-lg">
             <p class="pl-2 text-primary-200 lg:pl-0">
@@ -82,7 +82,7 @@
                 {% if entry.description %}
                 <ul class="mt-2 lg:ml-4">
                     {% for task in entry.description|parse_items %}
-                    <li class="list-disc list-inside lg:-p-2">{{ task }}</li>
+                    <li class="list-disc">{{ task }}</li>
                     {% endfor %}
                 </ul>
                 {% endif %}
