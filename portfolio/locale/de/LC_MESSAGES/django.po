@@ -111,7 +111,7 @@ msgstr "E-Mail senden"
 
 #: portfolio_app/templates/portfolio_app/intro.html:17
 msgid "Hi, I'm Cornelia!"
-msgstr "Herzlich willkommen!"
+msgstr "Willkommen!"
 
 #: portfolio_app/templates/portfolio_app/intro.html:22
 msgid "I'm a"

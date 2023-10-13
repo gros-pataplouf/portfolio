@@ -2,7 +2,6 @@ from django import template
 
 register = template.Library()
 
-
 @register.filter()
 def anchor_color(path, args):
     """checks whether we are on the route matching the link and adjusts styles
@@ -27,3 +26,8 @@ def parse_items(args):
 def addstring(arg1, arg2):
     """concatenate arg1 & arg2"""
     return str(arg1) + str(arg2)
+
+@register.filter()
+def even(parentloop):
+    """returns False if parentloop number is odd and True if it is even"""
+    return parentloop["counter0"] % 2 == 0

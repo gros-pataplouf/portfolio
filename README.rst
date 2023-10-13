@@ -25,7 +25,7 @@ Make sure you have Python 3.11, pip, and pipenv installed  https://pipenv.pypa.i
 The install the required dependencies::
 :code:`pipenv install`
 
-- db.sqlite can be used as a starter or deleted. If the latter, the initial database migrations need to be created with the usual commands
+- db.sqlite can be used as a starter or deleted. If the latter, the initial database migrations need to be created with the usual commands.
 
 Then run the local development server::
 :code:`python manage.py runserver`

@@ -1,43 +1,51 @@
-
 {% extends "portfolio_app/base.html" %}
 {% load portfolio_extras %}
 
 {% block content %}
-<div class="container">
-<!-- all_by_date = [{end_date: jobitem}, {end_date: educationitem, ...}] -->
+<div class="container flex flex-col justify-start min-h-screen mb-auto 2xl:mt-24 2xl:mb-6 2xl:w-1/2">
+    
+    <!-- subpage title -->
 
+    <div class="flex flex-col lg:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
+        <h1 class="text-terminal lg:block title">~/bio:$&nbsp;</h1>
+        <h1 class="title typing text-center">Learning is my passion.<br class="lg:hidden"/> This is my journey.</h1>
+    </div>
 
-<div class="flex flex-col lg:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
-    <h1 class="text-terminal lg:block title">~/bio:$&nbsp;</h1>
-    <h1 class="title typing text-center" >Here's what I've been <br class="lg:hidden"/> up to lately.</h1>
-</div>
+    <!-- toggle button for filtering of bio -->
 
-<div class="flex w-screen justify-center items-center">
-    <p class="text-action text-lg md:text-3xl p-8">Work</p>
-    <div class="relative w-20 md:w-24 border-2 border-primary-200 bg-black rounded-3xl flex justify-center">
-        <div id="js__skill-toggle-left" class="w-7 h-7 md:w-9 md:h-9 mr-auto"></div>
-        <div id="js__skill-toggle-middle" class="w-7 h-7 md:w-9 md:h-9 mx-auto"></div>
-        <div id="js__skill-toggle-command" class="w-7 h-7 md:w-9 md:h-9 absolute bg-lilac rounded-full flex justify-center"></div>
-        <div id="js__skill-toggle-right"class="w-7 h-7 md:w-9 md:h-9 ml-auto"></div>
-     </div>
-     <p  class="text-sky-300 p-8 text-lg md:text-3xl">Study</p>
+    <div class="flex w-screen justify-center items-center">
+        <p class="text-action text-lg md:text-3xl p-8">Work</p>
+        <div class="relative w-20 md:w-24 border-2 border-primary-200 bg-black rounded-3xl flex justify-center">
+            <div id="js__skill-toggle-left" class="w-7 h-7 md:w-9 md:h-9 mr-auto"></div>
+            <div id="js__skill-toggle-middle" class="w-7 h-7 md:w-9 md:h-9 mx-auto"></div>
+            <div id="js__skill-toggle-command" class="w-7 h-7 md:w-9 md:h-9 absolute bg-lilac rounded-full flex justify-center"></div>
+            <div id="js__skill-toggle-right"class="w-7 h-7 md:w-9 md:h-9 ml-auto"></div>
+        </div>
+        <p class="text-sky-300 p-8 text-lg md:text-3xl">Study</p>
+    </div>
 
-</div>
+    <!-- bio items from database, edu and work merged, sorted by date in descending order -->
 
     {% for entry in all_by_date %}
-    <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative p-4 flex flex-col w-screen h-full bg-transparent lg:w-1 lg:p-0 first:rounded-t-md last:rounded-b-md lg:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
+    <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative p-4 flex flex-col w-screen h-full bg-transparent lg:w-1 lg:p-0 first:rounded-t-3xl last:rounded-b-md lg:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
         {% for date, entry in entry.items %}
-        <!-- put work items on the left and education items on the right. Work item = entry has place attribute  -->
+        <!-- Work item = entry has place attribute  -->
         {% if entry.place %}
-        <div class="relative p-1 w-full lg:-left-[30.75rem] 2xl:-left-[40.75rem] js__work-item lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
+            {% if forloop.parentloop|even %}
+            <!-- odd items will be shown on the right of timeline and even items on the left, opening div tag and decorative hexagon vary accordingly  -->
+            <div class="relative p-1 w-full js__work-item lg:left-4 lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
+            <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-action hexagon"></div>
+            {% else %}
+            <div class="relative p-1 w-full lg:-left-[30.75rem] 2xl:-left-[40.75rem] js__work-item lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
             <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
+            {% endif %}
             <div class="w-full h-full p-4 bg-black rounded-lg">
                 <p class="text-primary-200 text-md text-right">{{entry.start_date.month}}/{{entry.start_date.year}} -
-                    {% if entry.end_date%}
-                    {{entry.end_date.month}}/{{entry.end_date.year}}
-                    {% else %}
-                    currently
-                    {% endif %}
+                        {% if entry.end_date %}
+                        {{entry.end_date.month}}/{{entry.end_date.year}}
+                        {% else %}
+                        currently
+                        {% endif %}
                 </p>        
                 <div>
                     <h2 class="text-xl">{{ entry.job_title }}</h2>
@@ -45,54 +53,44 @@
                     <p class="italic">{{ entry.place }}</p>
                     <ul class="mt-2 pl-4">
                     {% for task in entry.description|parse_items %}
-                    <li class="list-disc">{{ task }}</li>
+                        <li class="list-disc">{{ task }}</li>
                     {% endfor %}
                     </ul>
                 <div>
-                    <ul class="flex flex-wrap mt-2 lg:justify-end">
-                    {% for skill in entry.skills.all %}
-                    <li class="px-1 block mt-1 bg-gradient-to-b from-primary-700 to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary ">{{skill}}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
             </div>
-        </div>
-        </div>
-        <!-- education -->
+            </div>
+            </div>
+            </div>
+
+        <!-- education items -->
 
         {% else %}
         <div class="relative p-1 w-full js__edu-item lg:left-4 lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-accent to-green mr-16">
             <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
-            <div class="w-full h-full p-4 bg-black rounded-lg">
-            <p class="pl-2 text-primary-200 lg:pl-0">
-                <!-- if there is no start date don't try to display it because it is a diploma obtention date -->
-                {% if entry.start_date %}
-                {{entry.start_date.month}}/{{entry.start_date.year}} -
-                {% endif %}
-                {% if entry.end_date%}
-                {{entry.end_date.month}}/{{entry.end_date.year}}
-                {% else %}
-                currently
-                {% endif %} 
-            </p>
-
-            <div>
-                <h2 class="text-xl">{{ entry.name }}</h2>
-                <h3 class="italic">{{ entry.school }}</h3>
-                {% if entry.description %}
-                <ul class="mt-2 lg:ml-4">
-                    {% for task in entry.description|parse_items %}
-                    <li class="list-disc">{{ task }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                <ul class="flex flex-wrap mt-2">
-                    {% for skill in entry.skills.all %}
-                    <li class="block mt-2 px-1 bg-gradient-to-b from-primary-700 to-black border-[0.1px] border-solid rounded-md [&:not(:last-child)]:mr-1 border-primary ">{{skill}}</li>
-                    {% endfor %}
-                </ul>
+                <div class="w-full h-full p-4 bg-black rounded-lg">
+                    <p class="text-primary-200 text-md text-right">
+                        <!-- if there is no start date don't try to display it because it is a diploma obtention date -->
+                        {% if entry.start_date %}
+                        {{entry.start_date.month}}/{{entry.start_date.year}} -
+                        {% endif %}
+                        {% if entry.end_date%}
+                        {{entry.end_date.month}}/{{entry.end_date.year}}
+                        {% else %}
+                        currently
+                        {% endif %} 
+                    </p>
+                    <div>
+                        <h2 class="text-xl">{{ entry.name }}</h2>
+                        <h3 class="italic">{{ entry.school }}</h3>
+                        {% if entry.description %}
+                        <ul class="mt-2 pl-4">
+                            {% for task in entry.description|parse_items %}
+                            <li class="list-disc">{{ task }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
             </div>
         {% endif %}
         {% endfor %}

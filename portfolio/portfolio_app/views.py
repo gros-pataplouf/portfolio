@@ -37,7 +37,7 @@ def bio(request):
     education = Education.objects.all()
     work_by_date = [{item.end_date if item.end_date is not None else date.today(): item} for item in work_history]
     education_by_date = [{item.end_date if item.end_date is not None else date.today(): item} for item in education]
-    all_by_date = work_by_date + education_by_date
+    all_by_date =  education_by_date + work_by_date
     all_by_date.sort(key=sort_by_date, reverse=True)
     context = {
         "all_by_date": all_by_date
