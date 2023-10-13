@@ -23,7 +23,7 @@ export async function filterProjectsBySkills () {
         })
         let relevantProjects = false;
         
-        // fix horrible O(n²) complexity :()
+        // todo: fix double for loop
         projects.forEach(project => {
             skillList.forEach(skill => {
                 const projectSkills =  Array.from(project.querySelectorAll(".js__project_skill")).map(skillItem => {return skillItem.innerText});
