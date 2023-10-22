@@ -7,7 +7,7 @@
 
 <div class="flex flex-col md:flex-row mt-16 mb-4 max-w-screen justify-center items-center">
     <h1 class="text-terminal md:block title">~/skills:$&nbsp;</h1>
-    <h1 class="title typing">Click a skill <br class="md:hidden"/> to learn more</h1>
+    <h1 class="title typing">{% trans "Click a skill "%}<br class="md:hidden"/>{% trans " to learn more" %}</h1>
 </div>
     {% regroup skills by skill_type as skill_list %}
     <div class="flex flex-col carousel_container  ">
@@ -39,7 +39,6 @@
         <button id="js__spin_carousel-forward" class="ml-96 2xl:ml-[36rem] w-16 h-16 rounded-full bg-primary-700"><i class="text-3xl font-bold fa-solid fa-chevron-right /50 group-hover:/80"></i></button>
     </div>
 </div>
-
 </div>
 {% endblock %}
 

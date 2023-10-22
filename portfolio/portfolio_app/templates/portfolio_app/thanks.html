@@ -1,11 +1,12 @@
 
 {% extends "portfolio_app/base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="container">
     <div class="flex justify-start items-center mb-10">
       <h1 class="text-terminal title text-3xl">~/thanks:$&nbsp;</h1>
-      <h1 class="title typing" >Thank you</h1>
+      <h1 class="title typing">{% trans "Thank you" %}</h1>
   </div>
 
 {% endblock %}

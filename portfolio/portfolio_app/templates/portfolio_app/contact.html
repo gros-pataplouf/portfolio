@@ -1,16 +1,18 @@
 {% extends "portfolio_app/base.html" %}
 {% load tailwind_filters %}
+{% load i18n %}
+
 {% block content %}
 
 <div class="container -mt-12">
   <div class="flex flex-col lg:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
     <h1 class="text-terminal lg:block title">~/contact:$&nbsp;</h1>
-    <h1 class="title typing text-center">Let's work together!</h1>
+    <h1 class="title typing text-center">{% trans "Let's work together!" %}</h1>
   </div>
   <form class="flex flex-col items-center justify-center [&>div>*]:w-[92vw] [&>div>*]:md:w-[25rem] 2xl:[&>div>*]:md:w-[30rem] [&>div>input]:bg-primary-700 [&>div>textarea]:bg-primary-700 [&>div>textarea]:p-2 [&>div>input]:p-2 space-y-8" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
-    <button class="button" type="submit" id="contactSubmitButton">Send</button>
+    <button class="button" type="submit" id="contactSubmitButton">{% trans "Send" %}</button>
   </form>
 </div>
 {% endblock %}

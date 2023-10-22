@@ -1,5 +1,9 @@
 from django.contrib import admin
 from parler.admin import TranslatableAdmin #tbc
+from django.forms import TextInput, Textarea
+from django.db import models
+
+admin.site.register(YourModel, YourModelAdmin)
 
 from .models import Skill, WorkExperience, Education, Project
 

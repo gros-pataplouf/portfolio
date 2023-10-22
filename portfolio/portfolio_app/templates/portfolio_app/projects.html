@@ -1,11 +1,12 @@
 {% extends "portfolio_app/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <div class="container flex flex-col justify-start min-h-screen p-2 mb-auto 2xl:mt-24 2xl:mb-6 2xl:w-1/2">
     <div class="flex flex-col lg:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
         <h1 class="text-terminal lg:block title">~/projects:$&nbsp;</h1>
-        <h1 class="title typing text-center" >Check out my projects.<br class="lg:hidden"/>Filter by skill</h1>
+        <h1 class="title typing text-center" >{% trans "Check out my projects." %}<br class="lg:hidden"/>{% trans "Filter by skill"%}</h1>
     </div>
     <ul class="flex flex-wrap justify-center">
         {% for skill in skills %}

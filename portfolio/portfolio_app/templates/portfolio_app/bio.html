@@ -1,5 +1,6 @@
 {% extends "portfolio_app/base.html" %}
 {% load portfolio_extras %}
+{% load i18n %}
 
 {% block content %}
 <div class="container flex flex-col justify-start min-h-screen mb-auto 2xl:mt-24 2xl:mb-6 2xl:w-1/2">
@@ -8,20 +9,23 @@
 
     <div class="flex flex-col lg:flex-row mt-16 mb-4 max-w-screen justify-start items-center">
         <h1 class="text-terminal lg:block title">~/bio:$&nbsp;</h1>
-        <h1 class="title typing text-center">Learning is my passion.<br class="lg:hidden"/> This is my journey.</h1>
+        <h1 class="title typing text-center">{% trans 'My journey' %}
+            <br class="lg:hidden"/> 
+            {% trans "from teaching to tech." %}
+        </h1>
     </div>
 
     <!-- toggle button for filtering of bio -->
 
     <div class="flex w-screen justify-center items-center">
-        <p class="text-action text-lg md:text-3xl p-8">Work</p>
+        <p class="text-action text-lg md:text-3xl p-8">{% trans "Work" %}</p>
         <div class="relative w-20 md:w-24 border-2 border-primary-200 bg-black rounded-3xl flex justify-center">
             <div id="js__skill-toggle-left" class="w-7 h-7 md:w-9 md:h-9 mr-auto"></div>
             <div id="js__skill-toggle-middle" class="w-7 h-7 md:w-9 md:h-9 mx-auto"></div>
             <div id="js__skill-toggle-command" class="w-7 h-7 md:w-9 md:h-9 absolute bg-lilac rounded-full flex justify-center"></div>
             <div id="js__skill-toggle-right"class="w-7 h-7 md:w-9 md:h-9 ml-auto"></div>
         </div>
-        <p class="text-sky-300 p-8 text-lg md:text-3xl">Study</p>
+        <p class="text-sky-300 p-8 text-lg md:text-3xl">{% trans "Study" %}</p>
     </div>
 
     <!-- bio items from database, edu and work merged, sorted by date in descending order -->
@@ -44,7 +48,7 @@
                         {% if entry.end_date %}
                         {{entry.end_date.month}}/{{entry.end_date.year}}
                         {% else %}
-                        currently
+                        {% trans "currently" %}
                         {% endif %}
                 </p>        
                 <div>
@@ -76,7 +80,7 @@
                         {% if entry.end_date%}
                         {{entry.end_date.month}}/{{entry.end_date.year}}
                         {% else %}
-                        currently
+                        {% trans "currently" %}
                         {% endif %} 
                     </p>
                     <div>

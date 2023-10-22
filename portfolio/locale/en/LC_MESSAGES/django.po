@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-25 15:41+0200\n"
+"POT-Creation-Date: 2023-10-14 11:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,47 +66,76 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:32
+#: portfolio_app/templates/portfolio_app/base.html:31
 msgid "Home"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:38
+#: portfolio_app/templates/portfolio_app/base.html:40
 msgid "Bio"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:42
+#: portfolio_app/templates/portfolio_app/base.html:44
 msgid "Skills"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:47
+#: portfolio_app/templates/portfolio_app/base.html:48
 #: portfolio_app/templates/portfolio_app/intro.html:30
 msgid "Projects"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:51
+#: portfolio_app/templates/portfolio_app/base.html:52
 msgid "Switch to English"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:54
+#: portfolio_app/templates/portfolio_app/base.html:55
 msgid "Switch to German"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:57
+#: portfolio_app/templates/portfolio_app/base.html:58
 msgid "Switch to French"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:62
 #: portfolio_app/templates/portfolio_app/base.html:63
+#: portfolio_app/templates/portfolio_app/base.html:64
 msgid "Contact"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:69
-#: portfolio_app/templates/portfolio_app/base.html:86
+#: portfolio_app/templates/portfolio_app/base.html:70
+#: portfolio_app/templates/portfolio_app/base.html:87
 msgid "Call me"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/base.html:83
+#: portfolio_app/templates/portfolio_app/base.html:84
 msgid "Send me an email"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:12
+msgid "My journey"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:14
+msgid "from teaching to tech."
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:21
+msgid "Work"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:28
+msgid "Study"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:51
+#: portfolio_app/templates/portfolio_app/bio.html:83
+msgid "currently"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/contact.html:10
+msgid "Let's work together!"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/contact.html:15
+msgid "Send"
 msgstr ""
 
 #: portfolio_app/templates/portfolio_app/intro.html:17
@@ -185,18 +214,37 @@ msgstr ""
 msgid "CV"
 msgstr ""
 
-#: portfolio_core/settings.py:141
+#: portfolio_app/templates/portfolio_app/projects.html:9
+msgid "Check out my projects."
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/projects.html:9
+msgid "Filter by skill"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/skills.html:10
+msgid "Click a skill "
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/skills.html:10
+msgid " to learn more"
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/thanks.html:9
+msgid "Thank you"
+msgstr ""
+
+#: portfolio_core/settings.py:130 portfolio_core/settings_dev.py:130
+#: portfolio_core/settings_prod.py:151
 msgid "English"
 msgstr ""
 
-#: portfolio_core/settings.py:142
+#: portfolio_core/settings.py:131 portfolio_core/settings_dev.py:131
+#: portfolio_core/settings_prod.py:152
 msgid "German"
 msgstr ""
 
-#: portfolio_core/settings.py:143
+#: portfolio_core/settings.py:132 portfolio_core/settings_dev.py:132
+#: portfolio_core/settings_prod.py:153
 msgid "French"
-msgstr ""
-
-#: portfolio_core/urls.py:12
-msgid "admin/"
 msgstr ""
