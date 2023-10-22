@@ -8,7 +8,7 @@ class Skill(TranslatableModel):
     translations = TranslatedFields(
         name = models.CharField(max_length=250),
         skill_type = models.CharField(max_length=50, choices=[("Languages", _("Languages")), ("Coding", _("Coding")), ("Frontend", _("Frontend")), ("Backend", _("Backend")), ("Databases", _("Databases")), ("Tooling", _("Tooling")), ("Providers", _("Providers")), ("Other", _("Other"))]),
-        proficiency = models.CharField(max_length=500, null=True, blank=True),
+        proficiency = models.TextField(max_length=500, null=True, blank=True),
         rating = models.IntegerField(null=True, blank=True),
         )
     def __str__(self):
@@ -22,7 +22,7 @@ class WorkExperience(TranslatableModel):
         start_date = models.DateField("start date"),
         end_date = models.DateField("end date", null=True, blank=True),
         # skills = models.ManyToManyField(Skill),
-        description = models.CharField(max_length=2000, null=True, blank=True),
+        description = models.TextField(max_length=2000, null=True, blank=True),
         result = models.CharField(max_length=300, blank=True, null=True)
     )
     def __str__(self):
@@ -36,7 +36,7 @@ class Education(TranslatableModel):
         start_date = models.DateField("start date", null=True, blank=True),
         end_date = models.DateField("end date", null=True, blank=True),
         # skills = models.ManyToManyField(Skill),
-        description = models.CharField(max_length=2000, null=True, blank=True),
+        description = models.TextField(max_length=2000, null=True, blank=True),
         result = models.CharField(max_length=300, blank=True, null=True)
 
     )
