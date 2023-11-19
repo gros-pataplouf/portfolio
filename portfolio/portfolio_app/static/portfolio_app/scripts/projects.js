@@ -1,43 +1,29 @@
-export async function filterProjectsBySkills () {
+export function filterProjectsBySkills () {
     const skillItems = document.querySelectorAll(".js__skill");
-    const projects = document.querySelectorAll(".js__project");
     const spinner = document.getElementById("js__skill-spinner");
     const projectWrapper = document.getElementById("js__project-wrapper");
-    const projectPlaceholder = document.getElementById("js__project-placeholder");
-
     skillItems.forEach(item => item.addEventListener('click', (e) => {
-        spinner.classList.toggle("hidden");
-        projectWrapper.classList.toggle("hidden");
-        projects.forEach(project => {
-        project.setAttribute("style", "display: grid");
-    })
-
-    setTimeout(() => {
         spinner.classList.toggle("hidden");
         projectWrapper.classList.toggle("hidden");
         e.target.classList.toggle("bg-shade/50");
         e.target.classList.toggle("js__skill_active");
-        const activeSkills = document.querySelectorAll(".js__skill_active");
-        const skillList = Array.from(activeSkills).map(_ => {
-            return _.innerText;
-        })
-        let relevantProjects = false;
-        
-        // todo: fix double for loop
-        projects.forEach(project => {
-            skillList.forEach(skill => {
-                const projectSkills =  Array.from(project.querySelectorAll(".js__project_skill")).map(skillItem => {return skillItem.innerText});
-                if (!projectSkills.some(projectSkill => projectSkill === skill)) {
-                    project.setAttribute("style", "display: none");
-                };
-            });
-            if(!relevantProjects && project.getAttribute("style") !== "display: none") {
-                relevantProjects = true;
-            }
-        });
-        !relevantProjects ? projectPlaceholder.classList.remove("hidden") : projectPlaceholder.classList.add("hidden");
-   
-    }, 1000)
-
-}))
+        let skillsArr = [];
+        if (window.location.search) {
+            skillsArr = window.location.search.replace("?", "")
+            .split("&")
+            .filter(item => item.includes("skills="))[0]
+            .split("=")[1].split(",")
+        }
+        const targetId = e.target.id.replace("_", "")
+        if (targetId == "0") {
+            return window.location = window.location.href.split("?")[0] //delete query string if reset button (id _0) is hit
+        }
+        if (!skillsArr.includes(targetId)) { // if skill id is not in the query string, append id
+            console.log(skillsArr, targetId)
+            window.location = window.location.href.split("?")[0] + "?" + "skills=" + [...skillsArr, targetId].join(",")
+        } else {
+            const newSkillsArrayString = skillsArr.filter(q => q != targetId).join(",")
+            window.location = window.location.host + window.location.pathname + newSkillsArrayString.length && "?skills=" + newSkillsArrayString
+        }
+    }))
 }

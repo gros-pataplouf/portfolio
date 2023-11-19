@@ -7,7 +7,7 @@
 
 <div class="flex flex-col md:flex-row mt-16 mb-4 max-w-screen justify-center items-center">
     <h1 class="text-terminal md:block title">~/skills:$&nbsp;</h1>
-    <h1 class="title typing">{% trans "Click a skill "%}<br class="md:hidden"/>{% trans " to learn more" %}</h1>
+    <h1 class="title typing"></h1>
 </div>
     {% regroup skills by skill_type as skill_list %}
     <div class="flex flex-col carousel_container  ">
@@ -19,13 +19,6 @@
                     <div class="relative flex flex-wrap items-center justify-center my-2 text-center">
                     {% for entry in skill_type.list %}
                         <div class="p-1 m-1.5 font-bold rounded-lg js__show_skill_description bg-gradient-to-r from-accent to-action hover:cursor-help shadow-accent">{{ entry.name }}
-                            <dialog open class="relative top-0 hidden w-full rounded-lg lg:fixed lg:h-full bg-gradient-to-b from-primary-700 to-primary-600 js__skill_description">
-                                <div class="absolute flex flex-col items-center justify-center w-8 h-8 rounded-full -right-2 -top-8 lg:hidden">
-                                    <i class="text-lg text-center align-middle fa-solid fa-xmark"></i>
-                                    </div>
-                                <h3 class="hidden text-2xl lg:block">{{entry.name}}</h3>
-                                <p>{{entry.proficiency|safe}}</p>
-                            </dialog>
                         </div>
                     {% endfor %}
                 </p>

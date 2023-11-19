@@ -1071,14 +1071,6 @@ html, dialog {
   position: relative;
 }
 
-.-right-2 {
-  right: -0.5rem;
-}
-
-.-top-8 {
-  top: -2rem;
-}
-
 .bottom-6 {
   bottom: 1.5rem;
 }
@@ -1208,10 +1200,6 @@ html, dialog {
   margin-right: 24rem;
 }
 
-.mr-auto {
-  margin-right: auto;
-}
-
 .mt-16 {
   margin-top: 4rem;
 }
@@ -1276,14 +1264,6 @@ html, dialog {
   height: 1.25rem;
 }
 
-.h-7 {
-  height: 1.75rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -1323,14 +1303,6 @@ html, dialog {
 
 .w-5 {
   width: 1.25rem;
-}
-
-.w-7 {
-  width: 1.75rem;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-full {
@@ -1430,10 +1402,6 @@ html, dialog {
   overflow: clip;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1459,12 +1427,12 @@ html, dialog {
   border-width: 4px;
 }
 
-.border-solid {
-  border-style: solid;
+.border-\[1px\] {
+  border-width: 1px;
 }
 
-.border-primary-200 {
-  border-color: hsl(var(--primarylight));
+.border-solid {
+  border-style: solid;
 }
 
 .border-primary-200\/20 {
@@ -1479,14 +1447,18 @@ html, dialog {
   border-color: transparent;
 }
 
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .bg-\[\#0077B5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 119 181 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#04F404\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(4 244 4 / var(--tw-bg-opacity));
+.bg-accent {
+  background-color: hsl(var(--accent));
 }
 
 .bg-action {
@@ -1561,12 +1533,6 @@ html, dialog {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-primary-700 {
-  --tw-gradient-from: hsl(var(--primarydark)) var(--tw-gradient-from-position);
-  --tw-gradient-to: hsl(var(--primarydark) / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-primary-800 {
   --tw-gradient-from: hsl(var(--primarydarkest)) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--primarydarkest) / 0) var(--tw-gradient-to-position);
@@ -1633,10 +1599,6 @@ html, dialog {
   padding: 1.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1646,12 +1608,12 @@ html, dialog {
   padding-bottom: 3rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
+.pb-16 {
+  padding-bottom: 4rem;
 }
 
-.pl-2 {
-  padding-left: 0.5rem;
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .pl-4 {
@@ -1737,11 +1699,6 @@ html, dialog {
   color: hsl(var(--primarydarkest));
 }
 
-.text-sky-300 {
-  --tw-text-opacity: 1;
-  color: rgb(125 211 252 / var(--tw-text-opacity));
-}
-
 .text-terminal {
   color: hsl(var(--terminal));
 }
@@ -1766,10 +1723,6 @@ html, dialog {
 .shadow-action {
   --tw-shadow-color: hsl(var(--action));
   --tw-shadow: var(--tw-shadow-colored);
-}
-
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .\[\&\>li\]\:navbar-item>li {
@@ -1861,24 +1814,12 @@ html, dialog {
     margin-left: 1.5rem;
   }
 
-  .md\:ml-8 {
-    margin-left: 2rem;
-  }
-
   .md\:ml-auto {
     margin-left: auto;
   }
 
   .md\:mr-0 {
     margin-right: 0px;
-  }
-
-  .md\:mr-8 {
-    margin-right: 2rem;
-  }
-
-  .md\:mr-auto {
-    margin-right: auto;
   }
 
   .md\:mt-0 {
@@ -1909,10 +1850,6 @@ html, dialog {
     height: 1.5rem;
   }
 
-  .md\:h-9 {
-    height: 2.25rem;
-  }
-
   .md\:h-fit {
     height: -moz-fit-content;
     height: fit-content;
@@ -1924,14 +1861,6 @@ html, dialog {
 
   .md\:w-2\/3 {
     width: 66.666667%;
-  }
-
-  .md\:w-24 {
-    width: 6rem;
-  }
-
-  .md\:w-9 {
-    width: 2.25rem;
   }
 
   .md\:w-min {
@@ -2019,11 +1948,6 @@ html, dialog {
     line-height: 2rem;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -2042,10 +1966,6 @@ html, dialog {
 }
 
 @media (min-width: 1024px) {
-  .lg\:fixed {
-    position: fixed;
-  }
-
   .lg\:relative {
     position: relative;
   }
@@ -2090,10 +2010,6 @@ html, dialog {
     grid-row-start: 2;
   }
 
-  .lg\:ml-4 {
-    margin-left: 1rem;
-  }
-
   .lg\:mt-8 {
     margin-top: 2rem;
   }
@@ -2116,10 +2032,6 @@ html, dialog {
 
   .lg\:h-24 {
     height: 6rem;
-  }
-
-  .lg\:h-full {
-    height: 100%;
   }
 
   .lg\:w-1 {
@@ -2179,10 +2091,6 @@ html, dialog {
 
   .lg\:p-0 {
     padding: 0px;
-  }
-
-  .lg\:pl-0 {
-    padding-left: 0px;
   }
 
   .lg\:pt-8 {

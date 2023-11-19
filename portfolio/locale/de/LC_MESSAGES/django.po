@@ -223,7 +223,7 @@ msgstr "Web-Projekte"
 
 #: portfolio_app/templates/portfolio_app/projects.html:9
 msgid "Filter by skill"
-msgstr "nach Skill filtern"
+msgstr " nach Skill filtern"
 
 #: portfolio_app/templates/portfolio_app/skills.html:10
 msgid "Click a skill "

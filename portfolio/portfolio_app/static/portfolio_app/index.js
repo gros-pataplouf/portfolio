@@ -1,6 +1,5 @@
 import {drawBackground, addMobileNav, addScrollUpButton, languageSwitcher} from './scripts/main.js';
 import { animateSkillCarousel } from './scripts/skills.js';
-import { enableFilteringBio } from './scripts/bio.js';
 import { optimizeContactForm } from './scripts/contact.js';
 import { filterProjectsBySkills } from './scripts/projects.js';
 
@@ -9,10 +8,7 @@ addMobileNav();
 addScrollUpButton();
 languageSwitcher();
 
-if (window.location.pathname.includes('bio')) {
-    enableFilteringBio();
-}
-else if (window.location.pathname.includes('projects')) { 
+if (window.location.pathname.includes('projects')) { 
     filterProjectsBySkills();
 }
 else if (window.location.pathname.includes('skills')) {

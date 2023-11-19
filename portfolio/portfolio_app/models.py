@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 class Skill(TranslatableModel):
     translations = TranslatedFields(
         name = models.CharField(max_length=250),
-        skill_type = models.CharField(max_length=50, choices=[("Languages", _("Languages")), ("Coding", _("Coding")), ("Frontend", _("Frontend")), ("Backend", _("Backend")), ("Databases", _("Databases")), ("Tooling", _("Tooling")), ("Providers", _("Providers")), ("Other", _("Other"))]),
+        skill_type = models.CharField(max_length=50, choices=[("Languages", _("Languages")), ("Frontend", _("Frontend")), ("Backend", _("Backend")), ("Databases", _("Databases")), ("Tooling", _("Tooling")), ("Webdesign", _("Webdesign")), ("Other", _("Other"))]),
         proficiency = models.TextField(max_length=500, null=True, blank=True),
         rating = models.IntegerField(null=True, blank=True),
         )
