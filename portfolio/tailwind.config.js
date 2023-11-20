@@ -38,6 +38,7 @@ module.exports = {
       'js__nav-invisible',
       'js__skill_active',
       'js__language-switcher',
+      'js__close-skill-description',
       'bg-lilac', 
       'bg-terminal',
       'bg-action'

@@ -145,6 +145,14 @@
   .anchorInactive {
     @apply hover:bg-primary-600;
   }
+
+  .skillActive {
+    @apply px-2 mt-2 mr-2 rounded-md bg-action hover:bg-primary-700 active:bg-action hover: /90 js__skill;
+  }
+
+  .skillInactive {
+    @apply px-2 mt-2 mr-2 rounded-md bg-primary hover:bg-primary-700 active:bg-action hover: /90 js__skill;
+  }
   .hexagon {
     clip-path: polygon(
         50% 0%,

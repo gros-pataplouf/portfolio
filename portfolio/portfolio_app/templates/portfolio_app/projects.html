@@ -1,6 +1,7 @@
 {% extends "portfolio_app/base.html" %}
 {% load static %}
 {% load i18n %}
+{% load portfolio_extras %}
 
 {% block content %}
 <div class="container flex flex-col justify-start min-h-screen p-2 mb-auto 2xl:mt-24 2xl:mb-6 2xl:w-1/2">
@@ -11,7 +12,11 @@
     <ul class="flex flex-wrap justify-center">
         <a><li id="_0" class="px-2 mt-2 mr-2 rounded-md bg-primary-800 border-white border-[1px] hover:bg-primary-700 active:bg-action hover: /90 js__skill">Reset</li></a>
         {% for skill in skills %}
+        {% if request.GET|parsed_queried_skills:skill.id  %}
+        <a><li id="_{{skill.id}}" class="px-2 mt-2 mr-2 rounded-md border-white border-[1px] bg-gradient-to-r from-purple-800 to-accent hover:bg-primary-700 active:bg-action hover: /90 js__skill">{{skill.name}}</li></a>
+        {% else %}
         <a><li id="_{{skill.id}}" class="px-2 mt-2 mr-2 rounded-md bg-primary hover:bg-primary-700 active:bg-action hover: /90 js__skill">{{skill.name}}</li></a>
+        {% endif %}
         {% endfor %}
     </ul>
     <div id="js__skill-spinner" class="hidden w-full p-10 mt-4 mb-auto">

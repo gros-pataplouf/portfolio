@@ -16,14 +16,17 @@ export function filterProjectsBySkills () {
         }
         const targetId = e.target.id.replace("_", "")
         if (targetId == "0") {
-            return window.location = window.location.href.split("?")[0] //delete query string if reset button (id _0) is hit
+            return window.location.href = window.location.href.split("?")[0] //delete query string if reset button (id _0) is hit
         }
-        if (!skillsArr.includes(targetId)) { // if skill id is not in the query string, append id
-            console.log(skillsArr, targetId)
-            window.location = window.location.href.split("?")[0] + "?" + "skills=" + [...skillsArr, targetId].join(",")
+        if (!skillsArr.includes(targetId)) { // if skill id is not in the query string, append it
+            window.location.href = window.location.href.split("?")[0] + "?" + "skills=" + [...skillsArr, targetId].join(",")
         } else {
             const newSkillsArrayString = skillsArr.filter(q => q != targetId).join(",")
-            window.location = window.location.host + window.location.pathname + newSkillsArrayString.length && "?skills=" + newSkillsArrayString
+            let query = "";
+            if (newSkillsArrayString) {
+                query = `?skills=${newSkillsArrayString}`
+            }
+           window.location.href = window.location.pathname + query;
         }
     }))
 }

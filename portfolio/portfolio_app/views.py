@@ -25,14 +25,13 @@ def index(request):
     return render(request, "portfolio_app/intro.html")
 
 def bio(request):
-
     def sort_by_date(item):
         return list(item.keys())[0]
     work_history = WorkExperience.objects.all()
     education = Education.objects.all()
     work_by_date = [{item.end_date if item.end_date is not None else date.today(): item} for item in work_history]
     education_by_date = [{item.end_date if item.end_date is not None else date.today(): item} for item in education]
-    all_by_date =   work_by_date + education_by_date
+    all_by_date =  education_by_date # for a complete, cv-like, timeline, work_by_date can be added here.
     all_by_date.sort(key=sort_by_date)
     context = {
         "all_by_date": all_by_date
@@ -50,7 +49,6 @@ def projects(request):
     error = None
     query_dict = request.GET.dict()
     queried_skills = query_dict.get("skills")
-    # queried_skills = set(map(lambda item: int(item), list(request.GET.dict().keys())))
     all_skills = set()
     projects = Project.objects.all()
     for project in projects:
@@ -64,7 +62,6 @@ def projects(request):
             validated_skills = set(map(lambda item: int(item), skill_array))
         except Exception as e:
             error = e
-            print(error)
         for project in Project.objects.all():
             skill_ids = set(project.skills.values_list("id", flat=True))
             if set(validated_skills) & skill_ids and len(validated_skills) == len(set(validated_skills) & skill_ids):

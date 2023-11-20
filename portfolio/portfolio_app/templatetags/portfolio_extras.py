@@ -14,6 +14,13 @@ def anchor_color(path, args):
     clean_args = [arg.strip(" ") for arg in args_lst]
     return (clean_args[1] if clean_args[0] == path else clean_args[2])
 
+@register.filter
+def parsed_queried_skills(query_dict, skill_id):
+    if query_dict.get("skills"):
+        return str(skill_id) in query_dict.get("skills")
+    return False
+
+
 @register.filter()
 def parse_items(args):
     """parses a string containing items separated by # into a list"""
