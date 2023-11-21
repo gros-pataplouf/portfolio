@@ -1,91 +1,45 @@
 {% extends "portfolio_app/base.html" %}
 {% load portfolio_extras %}
 {% load i18n %}
-
 {% block content %}
 <div class="container flex flex-col justify-start min-h-screen mb-auto 2xl:mt-24 2xl:mb-6 2xl:w-1/2">
-    
     <!-- subpage title -->
-
-    <div class="flex flex-col lg:flex-row mt-16 pb-16 max-w-screen justify-start items-center">
+    <div class="flex flex-col lg:flex-row mt-16 pb-4 max-w-screen justify-start items-center">
         <h1 class="text-terminal lg:block title">~/bio:$&nbsp;</h1>
-        <h1 class="title typing text-center">{% trans 'My journey' %}
-            <br class="lg:hidden"/> 
-            {% trans "from teaching to tech." %}
+        <h1 class="title typing text-center">{% trans 'Who I am' %}
         </h1>
     </div>
-
-    <!-- bio items from database, edu and work merged, sorted by date in descending order -->
-
-    {% for entry in all_by_date %}
-    <div id={{"js__scroll_"|addstring:forloop.counter}} class="relative p-4 flex flex-col w-screen h-full bg-transparent lg:w-1 lg:p-0 first:rounded-t-3xl last:rounded-b-md lg:bg-gradient-to-b from-primary-600 via-primary-700 to-primary-600 ">
-        {% for date, entry in entry.items %}
-        <!-- Work item = entry has place attribute  -->
-        {% if entry.place %}
-            {% if forloop.parentloop|even %}
-            <!-- odd items will be shown on the right of timeline and even items on the left, opening div tag and decorative hexagon vary accordingly  -->
-            <div class="relative p-1 w-full js__work-item lg:left-4 lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
-            <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-action hexagon"></div>
-            {% else %}
-            <div class="relative p-1 w-full lg:-left-[30.75rem] 2xl:-left-[40.75rem] js__work-item lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-action to-accent mr-16">
-            <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 lg:translate-x-0 lg:-right-6 bg-gradient-to-br top-2 from-accent to-action hexagon"></div>
-            {% endif %}
-            <div class="w-full h-full p-4 bg-black rounded-lg">
-                <p class="text-primary-200 text-md text-right">{{entry.start_date.year}} -
-                        {% if entry.end_date %}
-                        {{entry.end_date.year}}
-                        {% else %}
-                        {% trans "currently" %}
-                        {% endif %}
-                </p>        
-                <div>
-                    <h2 class="text-xl">{{ entry.job_title }}</h2>
-                    <h3 class="italic">{{ entry.company }}</h3>
-                    <p class="italic">{{ entry.place }}</p>
-                    <ul class="mt-2 pl-4">
-                    {% for task in entry.description|parse_items %}
-                        <li class="list-disc">{{ task }}</li>
-                    {% endfor %}
-                    </ul>
-                <div>
-            </div>
-            </div>
-            </div>
-            </div>
-
-        <!-- education items -->
-
-        {% else %}
-        <div class="relative p-1 w-full js__edu-item lg:left-4 lg:w-120 2xl:w-160 rounded-lg bg-gradient-to-br from-accent to-green mr-16">
-            <div class="absolute hidden lg:block w-5 h-5 -translate-x-6 top-2 lg:translate-x-0 lg:-left-6 bg-gradient-to-br from-accent to-green hexagon"></div>
-                <div class="w-full h-full p-4 bg-black rounded-lg">
-                    <p class="text-primary-200 text-md text-right">
-                        <!-- if there is no start date don't try to display it because it is a diploma obtention date -->
-                        {% if entry.start_date %}
-                        {{entry.start_date.year}} -
-                        {% endif %}
-                        {% if entry.end_date%}
-                        {{entry.end_date.year}}
-                        {% else %}
-                        {% trans "currently" %}
-                        {% endif %} 
-                    </p>
-                    <div>
-                        <h2 class="text-xl">{{ entry.name }}</h2>
-                        <h3 class="italic">{{ entry.school }}</h3>
-                        {% if entry.description %}
-                        <ul class="mt-2 pl-4">
-                            {% for task in entry.description|parse_items %}
-                            <li class="list-disc">{{ task }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </div>
+        <!-- the current version only features one bio section and no timeline.
+    code for timeline can be found in commit 2535f74-->
+    <div class="relative p-4 flex flex-col w-full h-full bg-transparent">
+        <div class="w-full h-full">
+            <div class="space-y-4 text-lg">
+                <div class="flex justify-start items-center">
+                    <div class="hexagon w-8 h-8 bg-gradient-to-br from-accent to-action"></div>
+                <h2 class="text-center text-2xl mx-auto">I love helping people solve problems. <br/> Here's what keeps me going.</h2>
                 </div>
+                <div class="p-1 w-full rounded-lg bg-gradient-to-br from-accent to-green">
+                    <div class="w-full h-full p-4 bg-black rounded-lg">
+                    <h3 class="text-xl font-bold"><i class="fa-solid fa-lightbulb text-yellow-100"></i>&nbsp; Curiosity, languages and code spark joy.</h3> 
+                <p>Structures and patterns of natural and programming languages have been my livelong passion. I still remember the thrill I felt solving the newspaper's cryptogram puzzle in my head as a little child, a fascination that came back when I took up Python during the pandemic. Yet, my desire to build bridges between people and cultures made me study French and Italian. After 6 years as a teacher in the French school system, I decided to take a sabbatical and work and live in Ireland. </p>
+                </div>
+                </div>
+                <div class="p-1 w-full rounded-lg bg-gradient-to-br from-green to-action">
+                    <div class="w-full h-full p-4 bg-black rounded-lg">
+                    <h3 class="text-xl font-bold"><i class="fa-solid text-red-800 fa-heart animate-pulse"></i> &nbsp; I deeply care for the user and customer.</h3>
+                <p>I got closer to technology by working for a Technical and Medical Assistance provider. Working in four languages as part of the team of Europ Assistance Switzerland and Germany, I also learned Html and CSS to write clickable decision trees for the browser based softphone. Today, I'm responsible for optimizing, documenting and developing new features a phone system with 400+ users and 300 incoming lines. Whatever I do is focused on helping the customer, end-users and team-members.</p>
+            </div>    
             </div>
-        {% endif %}
-        {% endfor %}
+                <div class="p-1 w-full rounded-lg bg-gradient-to-br from-action to-accent">
+                    <div class="w-full h-full p-4 bg-black rounded-lg">
+                <h3 class="text-xl font-bold"><i class="fa-solid fa-people-group text-sky-200"></i> &nbsp; Community matters.</h3> 
+                <p>When I decided to transition to software development professionnaly in 2022, I was working full-time - a bootcamp was not an option. While online ressources are abondant, the Tech Community - local tech meetups, Women Who Code and Ladies of Code London have been crucial to my learning journey.
+                </p>
+                </div>
+                <div>
+            </div>
+            </div>
+        </div>
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

@@ -14,35 +14,6 @@ class Skill(TranslatableModel):
     def __str__(self):
         return self.name
 
-class WorkExperience(TranslatableModel):
-    translations = TranslatedFields(
-        job_title = models.CharField(max_length=250),
-        #company = models.CharField(max_length=250),
-        place = models.CharField(max_length=250),
-        start_date = models.DateField("start date"),
-        end_date = models.DateField("end date", null=True, blank=True),
-        # skills = models.ManyToManyField(Skill),
-        description = models.TextField(max_length=2000, null=True, blank=True),
-        result = models.CharField(max_length=300, blank=True, null=True)
-    )
-    def __str__(self):
-        return self.job_title
-
-class Education(TranslatableModel):
-    translation = TranslatedFields(
-        name = models.CharField(max_length=250),
-        #edu_type = models.CharField(choices=[("diploma", "diploma"), ("certificate", "certificate"), ("studying", "studying")], max_length=250),
-        school = models.CharField(max_length=250),
-        start_date = models.DateField("start date", null=True, blank=True),
-        end_date = models.DateField("end date", null=True, blank=True),
-        # skills = models.ManyToManyField(Skill),
-        description = models.TextField(max_length=2000, null=True, blank=True),
-        result = models.CharField(max_length=300, blank=True, null=True)
-
-    )
-    def __str__(self):
-        return self.name
-
    
 class Project(TranslatableModel):
     translations = TranslatedFields(
