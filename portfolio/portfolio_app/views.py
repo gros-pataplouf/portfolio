@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from .models import Skill, Project
 from .forms import ContactForm
+#Load environment variables 
 
 import logging
 
