@@ -18,5 +18,5 @@ def anchor_color(path, args):
 def parsed_queried_skills(query_dict, skill_id):
     """this is to determine if the id of a skill is in the query string, to adapt styling dynamically"""
     if query_dict.get("skills"):
-        return str(skill_id) in query_dict.get("skills")
+        return str(skill_id) in query_dict.get("skills").split(",")
     return False
