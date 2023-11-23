@@ -1,3 +1,16 @@
+function getQueryObj(searchStr, queryObj=null) {
+    if (queryObj == null) {
+        queryObj = {}
+    }
+    const searchString = window.location.search.replace("?", "")
+    const searchStringArr = searchString.split("&")
+    for (let item of searchStringArr) {
+        queryObj[item.split("=")[0]] =  item.split("=")[1].split(",")
+    }
+    return queryObj;
+}
+
+
 export function filterProjectsBySkills () {
     const skillItems = document.querySelectorAll(".js__skill");
     const spinner = document.getElementById("js__skill-spinner");
@@ -8,11 +21,9 @@ export function filterProjectsBySkills () {
         e.target.classList.toggle("bg-shade/50");
         e.target.classList.toggle("js__skill_active");
         let skillsArr = [];
-        if (window.location.search) {
-            skillsArr = window.location.search.replace("?", "")
-            .split("&")
-            .filter(item => item.includes("skills="))[0]
-            .split("=")[1].split(",")
+        const queryObj = window.location.search && getQueryObj(window.location.search);
+        if (window.location.search && Object.keys(queryObj).includes("skills")) {
+            skillsArr = queryObj.skills;
         }
         const targetId = e.target.id.replace("_", "")
         if (targetId == "0") {
@@ -21,6 +32,7 @@ export function filterProjectsBySkills () {
         if (!skillsArr.includes(targetId)) { // if skill id is not in the query string, append it
             window.location.href = window.location.href.split("?")[0] + "?" + "skills=" + [...skillsArr, targetId].join(",")
         } else {
+            console.log(skillsArr)
             const newSkillsArrayString = skillsArr.filter(q => q != targetId).join(",")
             let query = "";
             if (newSkillsArrayString) {
