@@ -34,24 +34,45 @@ def projects(request):
     error = None
     query_dict = request.GET.dict()
     queried_skills = query_dict.get("skills")
+    queried_projects = query_dict.get("id")
+
     all_skills = set()
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by("translations__github").distinct()
     for project in projects:
         for skill in project.skills.all():
             all_skills.add(skill)
+    if queried_skills and queried_projects:
+        context  = {
+        "projects": [],
+        "skills": all_skills, 
+        "error": "You cannot filter by both projects and skills."
+        }
+        return render(request, "portfolio_app/projects.html", context)
+
     if queried_skills:
         projects = []
         validated_skills = []
-        skill_array = queried_skills.split(",")
+        skill_lst = queried_skills.split(",")
         try:
-            validated_skills = set(map(lambda item: int(item), skill_array))
+            validated_skills = set(map(lambda item: int(item), skill_lst))
         except Exception as e:
             error = e
         for project in Project.objects.all():
             skill_ids = set(project.skills.values_list("id", flat=True))
             if set(validated_skills) & skill_ids and len(validated_skills) == len(set(validated_skills) & skill_ids):
                 projects.append(project)
-
+    elif queried_projects:
+        projects = []
+        project_id_lst = queried_projects.split(",")
+        try:
+            validated_ids = set(map(lambda id: int(id), project_id_lst))
+            print(validated_ids)
+        except Exception as e:
+            error = e
+        for project in Project.objects.all():
+            project_id = project.__dict__['id'] #bad
+            if project_id in validated_ids:
+                projects.append(project)
     context = {
         "projects": projects,
         "skills": all_skills, 
