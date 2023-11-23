@@ -138,7 +138,6 @@ export const languageSwitcher = () => Array.from(languageSwitcherButtons).forEac
     element.addEventListener("click", (e) => {
         const path = window.location.pathname.replaceAll("/", ",/,").split(",");
         const newPath = path.map(i => i === 'en' || i == 'fr' ||  i == 'de' ? e.target.getAttribute('data') : i ).join("");
-        console.log(e.target.getAttribute("data"));
         window.location.pathname = newPath;
     })
 });

@@ -22,16 +22,23 @@ export const animateSkillCarousel = () => {
         const skillNodeList = document.querySelectorAll(".js__show_skill_description");
 
         skillNodeList.forEach(skill => {
-            skill.addEventListener("click", (e) => { 
-                console.log("next", e.target.childNodes[0])
-                let dialog =  e.target.querySelector("dialog");
+            skill.addEventListener("mouseover", (e) => {
+                const dialog =  e.target.querySelector("dialog");
+                dialog && dialog.classList.toggle("hidden");
+            })
+        })
+
+        skillNodeList.forEach(skill => {
+            skill.addEventListener("click", (e) => {
+                const dialog =  e.target.querySelector("dialog");
                 dialog.classList.toggle("hidden");
             })
         })
 
+
         const closeIconList = document.querySelectorAll(".js__close-skill-description");
         closeIconList.forEach(icon => {
-            icon.addEventListener("click", (e)  => {
+            icon.addEventListener("mouseover", (e)  => {
                 icon.closest("dialog").classList.toggle("hidden");
             })
         })

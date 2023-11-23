@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 11:10+0200\n"
+"POT-Creation-Date: 2023-11-23 18:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,10 +39,6 @@ msgid "Languages"
 msgstr ""
 
 #: portfolio_app/models.py:10
-msgid "Coding"
-msgstr ""
-
-#: portfolio_app/models.py:10
 msgid "Frontend"
 msgstr ""
 
@@ -59,7 +55,7 @@ msgid "Tooling"
 msgstr ""
 
 #: portfolio_app/models.py:10
-msgid "Providers"
+msgid "Webdesign"
 msgstr ""
 
 #: portfolio_app/models.py:10
@@ -79,7 +75,7 @@ msgid "Skills"
 msgstr ""
 
 #: portfolio_app/templates/portfolio_app/base.html:48
-#: portfolio_app/templates/portfolio_app/intro.html:30
+#: portfolio_app/templates/portfolio_app/intro.html:29
 msgid "Projects"
 msgstr ""
 
@@ -109,25 +105,63 @@ msgstr ""
 msgid "Send me an email"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/bio.html:12
-msgid "My journey"
+#: portfolio_app/templates/portfolio_app/bio.html:9
+msgid "Who I am"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/bio.html:14
-msgid "from teaching to tech."
+#: portfolio_app/templates/portfolio_app/bio.html:18
+msgid "I'm a self-taught programmer"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/bio.html:21
-msgid "Work"
+#: portfolio_app/templates/portfolio_app/bio.html:18
+msgid "and passionnate problem-solver."
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:22
+msgid "Curiosity, languages and code spark joy."
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:23
+msgid ""
+"Structures and patterns of natural and programming languages have been my "
+"livelong passion. I still remember the thrill I felt solving the newspaper's "
+"cryptogram puzzle in my head as a little child, a fascination that came back "
+"when I took up Python during the pandemic. Yet, my desire to build bridges "
+"between people and cultures made me study French and Italian. After 6 years "
+"as a teacher in the French school system, I decided to take a sabbatical and "
+"work and live in Ireland. When I came back from Ireland, going back to my "
+"teaching career was not an option: there was so much more to learn and to "
+"discover."
 msgstr ""
 
 #: portfolio_app/templates/portfolio_app/bio.html:28
-msgid "Study"
+msgid "I love helping people solve problems."
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/bio.html:51
-#: portfolio_app/templates/portfolio_app/bio.html:83
-msgid "currently"
+#: portfolio_app/templates/portfolio_app/bio.html:29
+msgid ""
+"Back to the Swiss-French border region, I got closer to technology by "
+"working for a Technical and Medical Assistance provider. While working the "
+"phone lines in four languages to get Swiss customers in emergency situation "
+"safely home, I also learned HTML and CSS to help agents with a clickable "
+"decision trees for the browser-based softphone. Today, I'm responsible for "
+"optimizing, documenting and developing new features for a phone system with "
+"400+ users and 300+ incoming lines. Whatever I do is focused on helping the "
+"customer, end-users and team-members."
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:34
+msgid "Community matters."
+msgstr ""
+
+#: portfolio_app/templates/portfolio_app/bio.html:35
+msgid ""
+"As a self-taught developer, I have found a vital and supportive network in "
+"the tech community. Local React meetups as well as pair programming and "
+"practising TDD with Ladies of Code London have been an important for "
+"feedback and a change of perspective. I'm giving back to the community by "
+"volunteering and currently searching for occasions to Open Source projects "
+"with Django."
 msgstr ""
 
 #: portfolio_app/templates/portfolio_app/contact.html:10
@@ -138,113 +172,97 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:17
+#: portfolio_app/templates/portfolio_app/intro.html:16
 msgid "Hi, I'm Cornelia!"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:22
+#: portfolio_app/templates/portfolio_app/intro.html:21
 msgid "I'm a"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:22
+#: portfolio_app/templates/portfolio_app/intro.html:21
 msgid "Full-Stack Developer"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:22
+#: portfolio_app/templates/portfolio_app/intro.html:21
 msgid "with a strong focus on"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:22
+#: portfolio_app/templates/portfolio_app/intro.html:21
 msgid "Django"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:22
+#: portfolio_app/templates/portfolio_app/intro.html:21
 msgid "and"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:22
+#: portfolio_app/templates/portfolio_app/intro.html:21
 msgid "React.js"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:24
+#: portfolio_app/templates/portfolio_app/intro.html:23
 msgid "Searching an"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:24
+#: portfolio_app/templates/portfolio_app/intro.html:23
 msgid "entry-level position"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:24
+#: portfolio_app/templates/portfolio_app/intro.html:23
 msgid "as a"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:24
+#: portfolio_app/templates/portfolio_app/intro.html:23
 msgid "Backend or Full-Stack Webdeveloper"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:25
+#: portfolio_app/templates/portfolio_app/intro.html:24
 msgid "Immediately available part-time, full-time within a 3 months' notice."
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:26
+#: portfolio_app/templates/portfolio_app/intro.html:25
 msgid "Based near Hamburg, happy to relocate, remote or hybrid preferred."
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:27
+#: portfolio_app/templates/portfolio_app/intro.html:26
 msgid "Looking for"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:27
+#: portfolio_app/templates/portfolio_app/intro.html:26
 msgid " open-source collaborations and volunteer opportunities"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:27
+#: portfolio_app/templates/portfolio_app/intro.html:26
 msgid "causes: human rights, zero waste, biodiversity"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:30
+#: portfolio_app/templates/portfolio_app/intro.html:29
 msgid "See projects"
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/intro.html:31
-msgid "Download CV"
-msgstr ""
-
-#: portfolio_app/templates/portfolio_app/intro.html:31
-msgid "CV"
-msgstr ""
-
-#: portfolio_app/templates/portfolio_app/projects.html:9
+#: portfolio_app/templates/portfolio_app/projects.html:10
 msgid "Check out my projects."
 msgstr ""
 
-#: portfolio_app/templates/portfolio_app/projects.html:9
+#: portfolio_app/templates/portfolio_app/projects.html:10
 msgid "Filter by skill"
-msgstr ""
-
-#: portfolio_app/templates/portfolio_app/skills.html:10
-msgid "Click a skill "
-msgstr ""
-
-#: portfolio_app/templates/portfolio_app/skills.html:10
-msgid " to learn more"
 msgstr ""
 
 #: portfolio_app/templates/portfolio_app/thanks.html:9
 msgid "Thank you"
 msgstr ""
 
-#: portfolio_core/settings.py:130 portfolio_core/settings_dev.py:130
-#: portfolio_core/settings_prod.py:151
+#: portfolio_core/settings.py:132 portfolio_core/settings_dev.py:130
+#: portfolio_core/settings_prod.py:153
 msgid "English"
 msgstr ""
 
-#: portfolio_core/settings.py:131 portfolio_core/settings_dev.py:131
-#: portfolio_core/settings_prod.py:152
+#: portfolio_core/settings.py:133 portfolio_core/settings_dev.py:131
+#: portfolio_core/settings_prod.py:154
 msgid "German"
 msgstr ""
 
-#: portfolio_core/settings.py:132 portfolio_core/settings_dev.py:132
-#: portfolio_core/settings_prod.py:153
+#: portfolio_core/settings.py:134 portfolio_core/settings_dev.py:132
+#: portfolio_core/settings_prod.py:155
 msgid "French"
 msgstr ""

@@ -19,7 +19,7 @@
                     <div class="relative flex flex-wrap items-center justify-center my-2 text-center">
                     {% for entry in skill_type.list %}
                         {% if entry.proficiency %}
-                        <div class="p-1 m-1.5 font-bold rounded-lg js__show_skill_description bg-gradient-to-r from-accent to-action hover:cursor-help hover:animate-pulse shadow-accent">{{ entry.name }}
+                        <div class="p-1 m-1.5 font-bold rounded-lg js__show_skill_description bg-gradient-to-r from-accent to-action hover:cursor-help shadow-accent">{{ entry.name }}
                             <dialog open class="relative top-0 hidden w-full rounded-lg lg:fixed lg:h-full bg-gradient-to-b from-primary-700 to-primary-600 js__skill_description">
                                 <div class="js__close-skill-description absolute flex flex-col items-center justify-center w-8 h-8 rounded-full -right-2 -top-8 lg:right-0 lg:top-0">
                                     <i class="text-lg text-center align-middle fa-solid fa-xmark"></i>
