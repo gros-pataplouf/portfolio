@@ -2220,6 +2220,18 @@ html, dialog {
   }
 }
 
+.\[\&\>a\]\:text-action>a {
+  color: hsl(var(--action));
+}
+
+.\[\&\>a\]\:text-accent>a {
+  color: hsl(var(--accent));
+}
+
+.\[\&\>a\]\:underline>a {
+  text-decoration-line: underline;
+}
+
 .\[\&\>div\>\*\]\:w-\[92vw\]>div>* {
   width: 92vw;
 }
