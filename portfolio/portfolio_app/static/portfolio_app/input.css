@@ -180,7 +180,6 @@
     animation: higher .5s .5s;  
   }
 
-  /*todo: write some actual tailwind instead of putting it into half-arsed BEM */
 .project-visual:hover > .project-visual-img {
   animation: scrolling 6s alternate infinite ease-in-out;
 }
@@ -217,41 +216,38 @@
 
 @media (min-width: 1024px){
   .carousel_container {
-    
     width: 22rem;
     height: 12rem;
     position: relative;
     perspective: 250rem;
     margin-top: 5rem;
     left: 3.3rem;
-
   }
 
-  @media (min-width: 1536px){
-    .carousel_container {
-      width: 15rem;
-      height: 12rem;
-      position: relative;
-      perspective: 250rem;
-      margin-top: 10rem;
-      left: 3.3rem;
-    }}
+@media (min-width: 1536px){
+  .carousel_container {
+    width: 15rem;
+    height: 12rem;
+    position: relative;
+    perspective: 250rem;
+    margin-top: 10rem;
+    left: 3.3rem;
+  }}
 
     /* █ */
 
 .carousel {
   width: 18rem;
-  height: 12rem;
+  height: 18rem;
   position: absolute;
   transform-style: preserve-3d;
   transform: rotateX(-12deg);
-
-  
+ 
 }
 
 .carousel_cell {
   position: absolute;
-  width: 22rem;
+  width: 25.5vw;
   height: 18rem;
   right: 0%;
   top: 0%;
